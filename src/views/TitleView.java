@@ -12,7 +12,7 @@ public final class TitleView extends JPanel {
     private static final int HEIGHT = 700;
 
     // TitleView 의 2개의 버튼: 로그인, 회원가입
-    final JButton[] buttons;
+    private final JButton[] buttons;
 
     public TitleView() {
         Font font = new Font("Default", Font.BOLD, 20);
@@ -35,5 +35,13 @@ public final class TitleView extends JPanel {
         setLayout(null);
         setFocusable(true);
         setPreferredSize(new Dimension(WIDTH, HEIGHT));
+    }
+    
+    public JButton getSignInButton() {
+    	return buttons[0];
+    }
+    
+    public JButton getSignUpButton() {
+    	return buttons[1];
     }
 }

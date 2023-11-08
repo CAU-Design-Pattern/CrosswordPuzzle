@@ -1,8 +1,7 @@
 package controllers;
 
 import javax.swing.*;
-import views.HomeView;
-import views.TitleView;
+import views.*;
 import java.awt.*;
 
 public final class Controller {
@@ -10,12 +9,23 @@ public final class Controller {
     private final JPanel panel;
     private final CardLayout cardLayout;
 
-    public Controller(TitleView titleView, HomeView homeView) {
+    public Controller(
+    		TitleView titleView, 
+    		SignUpView signUpView,
+    		HomeView homeView,
+    		LeaderboardView leaderboardView,
+    		WordRegistrationView wordRegistrationView, 
+    		ReviewNoteView reviewNoteView)
+    {
         frame = new JFrame();
         cardLayout = new CardLayout();
         panel = new JPanel(cardLayout);
         panel.add(titleView, "titleView");
+        panel.add(signUpView, "signUpView");
         panel.add(homeView, "homeView");
+        panel.add(leaderboardView, "leaderboardView");
+        panel.add(wordRegistrationView, "wordRegistrationView");
+        panel.add(reviewNoteView, "reviewNoteView");
         frame.add(panel);
 
         cardLayout.show(panel, "titleView");
@@ -28,11 +38,24 @@ public final class Controller {
         frame.setVisible(true);
         
         titleView.getSignInButton().addActionListener(e -> {
+        	// TODO: 로그인 logic
         	cardLayout.show(panel, "homeView");
         });
         
         titleView.getSignUpButton().addActionListener(e -> {
+        	cardLayout.show(panel,  "signUpView");
+        });
+        
+        signUpView.getBackButton().addActionListener(e -> {
+        	cardLayout.show(panel,  "titleView");
+        });
+        
+        signUpView.getSignUpButton().addActionListener(e -> {
         	// TODO
+        });
+        
+        homeView.getSignOutButton().addActionListener(e -> {
+        	cardLayout.show(panel, "titleView");
         });
         
         homeView.getStartGameButton().addActionListener(e -> {
@@ -40,15 +63,35 @@ public final class Controller {
         });
         
         homeView.getLeaderboardButton().addActionListener(e -> {
-        	// TODO
+        	cardLayout.show(panel, "leaderboardView");
         });
         
         homeView.getWordRegistrationButton().addActionListener(e -> {
-        	// TODO
+        	cardLayout.show(panel, "wordRegistrationView");
         });
         
         homeView.getReviewNoteButton().addActionListener(e -> {
+        	cardLayout.show(panel, "reviewNoteView");
+        });
+        
+        leaderboardView.getBackButton().addActionListener(e -> {
+        	cardLayout.show(panel, "homeView");
+        });
+        
+        wordRegistrationView.getBackButton().addActionListener(e -> {
+        	cardLayout.show(panel, "homeView");
+        });
+        
+        wordRegistrationView.getImportButton().addActionListener(e -> {
         	// TODO
+        });
+        
+        wordRegistrationView.getRegistrationButton().addActionListener(e -> {
+        	// TODO
+        });
+        
+        reviewNoteView.getBackButton().addActionListener(e -> {
+        	cardLayout.show(panel, "homeView");
         });
     }
 }

@@ -1,20 +1,23 @@
 package views;
 
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+
 import javax.swing.*;
 import javax.swing.border.BevelBorder;
-import java.awt.*;
 
-public final class TitleView extends JPanel {
-    // TitleView 의  Width
+public class SignUpView extends JPanel {
+	// SignUpView 의  Width
     private static final int WIDTH = 1400;
 
-    // TitleView 의 Height
+    // SignUpView 의 Height
     private static final int HEIGHT = 700;
 
-    // TitleView 의 2개의 버튼: 로그인, 회원가입
+    // SignUpView 의 2개의 버튼: 이전으로, 회원가입
     private final JButton[] buttons;
 
-    public TitleView() {
+    public SignUpView() {
         Font font = new Font("Default", Font.BOLD, 20);
 
         buttons = new JButton[2];
@@ -27,8 +30,8 @@ public final class TitleView extends JPanel {
             buttons[i].setFont(font);
             add(buttons[i]);
         }
-        buttons[0].setText("로그인");
-        buttons[0].setBounds(600, 400, 200, 80);
+        buttons[0].setText("이전으로");
+        buttons[0].setBounds(1180, 20, 200, 80);
         buttons[1].setText("회원가입");
         buttons[1].setBounds(600, 500, 200, 80);
 
@@ -37,7 +40,7 @@ public final class TitleView extends JPanel {
         setPreferredSize(new Dimension(WIDTH, HEIGHT));
     }
     
-    public JButton getSignInButton() {
+    public JButton getBackButton() {
     	return buttons[0];
     }
     

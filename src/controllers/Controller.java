@@ -10,12 +10,14 @@ public final class Controller {
     private final CardLayout cardLayout;
 
     public Controller(
-    		TitleView titleView, 
-    		SignUpView signUpView,
-    		HomeView homeView,
-    		LeaderboardView leaderboardView,
-    		WordRegistrationView wordRegistrationView, 
-    		ReviewNoteView reviewNoteView)
+    	TitleView titleView, 
+    	SignUpView signUpView,
+    	HomeView homeView,
+    	GameLevelView gameLevelView,
+    	GameView gameView,
+   		LeaderboardView leaderboardView,
+   		WordRegistrationView wordRegistrationView, 
+    	ReviewNoteView reviewNoteView)
     {
         frame = new JFrame();
         cardLayout = new CardLayout();
@@ -23,6 +25,8 @@ public final class Controller {
         panel.add(titleView, "titleView");
         panel.add(signUpView, "signUpView");
         panel.add(homeView, "homeView");
+        panel.add(gameLevelView, "gameLevelView");
+        panel.add(gameView, "gameView");
         panel.add(leaderboardView, "leaderboardView");
         panel.add(wordRegistrationView, "wordRegistrationView");
         panel.add(reviewNoteView, "reviewNoteView");
@@ -59,7 +63,7 @@ public final class Controller {
         });
         
         homeView.getStartGameButton().addActionListener(e -> {
-        	// TODO
+        	cardLayout.show(panel, "gameLevelView");
         });
         
         homeView.getLeaderboardButton().addActionListener(e -> {
@@ -72,6 +76,25 @@ public final class Controller {
         
         homeView.getReviewNoteButton().addActionListener(e -> {
         	cardLayout.show(panel, "reviewNoteView");
+        });
+        
+        gameLevelView.getBackButton().addActionListener(e -> {
+        	cardLayout.show(panel, "homeView");
+        });
+        
+        gameLevelView.getLevel1Button().addActionListener(e -> {
+        	gameView.setLevel(1);
+        	cardLayout.show(panel, "gameView");
+        });
+        
+        gameLevelView.getLevel2Button().addActionListener(e -> {
+        	gameView.setLevel(2);
+        	cardLayout.show(panel, "gameView");
+        });
+        
+        gameLevelView.getLevel3Button().addActionListener(e -> {
+        	gameView.setLevel(3);
+        	cardLayout.show(panel, "gameView");
         });
         
         leaderboardView.getBackButton().addActionListener(e -> {

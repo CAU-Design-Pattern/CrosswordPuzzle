@@ -11,7 +11,7 @@ public class HomeView extends JPanel {
     // HomeView 의 Height
     private static final int HEIGHT = 700;
     
-    // HomeView 의 4개의 버튼: 게임 시작, 리더보드, 단어 등록, 오답 노트
+    // HomeView 의 5개의 버튼: 로그 아웃, 게임 시작, 리더보드, 단어 등록, 오답 노트
     private JButton[] buttons;
 
     public HomeView() {

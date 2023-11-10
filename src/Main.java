@@ -1,3 +1,9 @@
+import java.io.IOException;
+
+import com.holub.database.Database;
+import com.holub.database.Table;
+import com.holub.text.ParseFailure;
+
 import controllers.Controller;
 import views.*;
 
@@ -37,5 +43,31 @@ public class Main {
         	wordRegistrationView,
         	reviewNoteView
         );
+    	
+    	/*
+    	Database db;
+    	try {
+			db = new Database("C:/Users/user/eclipse-workspace/HolubSQL/Dbase");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			db = null;
+		}
+    	
+    	if (db != null) {
+    		String sql = "update name set addrId = 2 where addrId = 0";
+    		//sql = "select * from name";
+    		try {
+    			db.execute(sql);
+				Table result = db.execute(sql);
+				if (result != null) {
+					System.out.println(result.toString());
+				}
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+    	}
+    	*/
     }
 }

@@ -3,6 +3,7 @@
 	<name>CrosswordPuzzle</name>
 	<comment></comment>
 	<projects>
+		<project>HolubSQL</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

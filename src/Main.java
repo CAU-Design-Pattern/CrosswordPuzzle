@@ -2,9 +2,11 @@ import java.io.IOException;
 
 import com.holub.database.Database;
 import com.holub.database.Table;
+import com.holub.database.TableFactory;
 import com.holub.text.ParseFailure;
 
 import controllers.Controller;
+import repository.WordRepository;
 import views.*;
 
 public class Main {
@@ -54,20 +56,32 @@ public class Main {
 			System.out.println("[DB Connection Error]");
 			e.printStackTrace();
 			db = null;
-		}
-    	
-    	if (db != null) {
-    		System.out.println("test");
+		} catch (ParseFailure e) {
+            e.printStackTrace();
+			db = null;
+        }
+
+        if (db != null) {
+			System.out.println("test");
+			WordRepository wordRepository = new WordRepository(db);
+			try {
+				wordRepository.getWordList();
+			} catch (IOException | ParseFailure e){
+				e.printStackTrace();
+			}
 //    		String sql = "insert into name VALUES ('Test',  'TestTest', '99')";
     		//sql = "select * from name";
     		String sql = "select * from name where first like '%Te%'";
     		try {
     			Table table = db.execute(sql);
 //				Table result = db.execute(sql);
+				db.execute("insert into word VALUES ('Test',  'TestTest', 1, 4)");
+				Table table1 = db.execute("select * from word");
 				if (table != null) {
 					System.out.println(table.toString());
 				}
-//				db.dump();
+				System.out.println("table1 = " + table1);
+				db.dump();
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

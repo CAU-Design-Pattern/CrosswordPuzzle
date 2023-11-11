@@ -44,30 +44,36 @@ public class Main {
         	reviewNoteView
         );
     	
-    	/*
+    	
     	Database db;
     	try {
-			db = new Database("C:/Users/user/eclipse-workspace/HolubSQL/Dbase");
+			DatabaseConnector instance = DatabaseConnector.getInstance();
+			db = instance.getDatabase();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
+			System.out.println("[DB Connection Error]");
 			e.printStackTrace();
 			db = null;
 		}
     	
     	if (db != null) {
-    		String sql = "update name set addrId = 2 where addrId = 0";
+    		System.out.println("test");
+//    		String sql = "insert into name VALUES ('Test',  'TestTest', '99')";
     		//sql = "select * from name";
+    		String sql = "select * from name where first like '%Te%'";
     		try {
-    			db.execute(sql);
-				Table result = db.execute(sql);
-				if (result != null) {
-					System.out.println(result.toString());
+    			Table table = db.execute(sql);
+//				Table result = db.execute(sql);
+				if (table != null) {
+					System.out.println(table.toString());
 				}
+//				db.dump();
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
     	}
-    	*/
+    	
+    	
     }
 }

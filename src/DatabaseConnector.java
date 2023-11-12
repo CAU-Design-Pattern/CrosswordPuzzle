@@ -19,12 +19,17 @@ public class DatabaseConnector {
 
         // table 생성 로직은 별도 분리 ?
         String[] tableList = properties.getProperty("database.tableList").split(",");
+        System.out.println("테이블 생성");
         for (String tableName : tableList) {
             try{
-                TableFactory.load(tableName, path);
+            	System.out.println("[Table load : " + tableName + " ]");
+                TableFactory.load(tableName + ".csv", path);
+                System.out.println("[Talbe load success : " + tableName + " ]");
             } catch (IOException e){
+            	System.out.println("[Table load fail : " + tableName + " ]");
                 String columns = properties.getProperty("table." + tableName);
                 database.execute("create table " + tableName + "("+columns+")");
+                System.out.println("[Table create : " + tableName + " ]");
             }
         }
 

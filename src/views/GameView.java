@@ -1,9 +1,12 @@
 package views;
 
+import models.*;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import javax.swing.*;
+
+import models.CrosswordGame;
 
 public class GameView extends JPanel {
 	// GameView 의  Width
@@ -14,6 +17,8 @@ public class GameView extends JPanel {
     
     // 게임의 난이도
     private final JLabel levelLabel;
+    
+    private CrosswordGame crosswordGame;
     
     /*
     // GameView 의 ?개의 버튼
@@ -57,5 +62,16 @@ public class GameView extends JPanel {
     
     public void setLevel(int level) {
     	levelLabel.setText("LEVEL: " + level);
+    }
+    
+    public void prepareGame(CrosswordGame crosswordGame) {
+    	this.crosswordGame = crosswordGame;
+    	
+    	// TODO
+    	this.crosswordGame.play();
+    	
+    	char[][] board = this.crosswordGame.getBoard();
+    	
+    	
     }
 }

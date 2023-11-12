@@ -49,6 +49,22 @@ public class WordRepository {
     	return transferWordList(cursor);
     }
     
+    /**
+     * 특정 알파벳 포함하는 단어 목록 조회
+     * @param character
+     * @return
+     * @throws IOException
+     * @throws ParseFailure
+     */
+    public List<Word> getWordList(char character) throws IOException, ParseFailure{
+    	String sql = "select * from word where word like " + "'%" + character + "%'";
+    	Table table = database.execute(sql);
+    	System.out.println(table.toString());
+    	Cursor cursor = table.rows();
+    	
+    	return transferWordList(cursor);
+    }
+    
     
     /**
      * word insert

@@ -68,12 +68,13 @@ public class Main {
 			WordRepository wordRepository = new WordRepository(db);
 			try {
 				wordRepository.getWordList();
-				wordRepository.insertOneWord(new Word("Apple", "Red", 1));
-				wordRepository.insertOneWord(new Word("Hello", "hi", 1));
-				wordRepository.insertOneWord(new Word("lol", "lol", 3));
-				wordRepository.insertOneWord(new Word("school", "student", 2));
+//				wordRepository.insertOneWord(new Word("Apple", "Red", 1));
+//				wordRepository.insertOneWord(new Word("Hello", "hi", 1));
+//				wordRepository.insertOneWord(new Word("lol", "lol", 3));
+//				wordRepository.insertOneWord(new Word("school", "student", 2));
 				wordRepository.getWordList();
 				wordRepository.getWordList(5);
+				wordRepository.getWordList('p');
 			} catch (IOException | ParseFailure e){
 				e.printStackTrace();
 			}

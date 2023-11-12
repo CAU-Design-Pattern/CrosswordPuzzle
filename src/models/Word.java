@@ -1,31 +1,49 @@
 package models;
 
+import java.util.Map;
+
 public class Word {
-    private String word; // 단어
-    private String desc; // 단어 설명
-    private int level; // 단어 난이도
-    private int length; // 단어 길이
+	private String word; // 단어
+	private String desc; // 단어 설명
+	private int level; // 단어 난이도
+	private int length; // 단어 길이
 
-    public Word(String word, String desc, int level, int length) {
-        this.word = word;
-        this.desc = desc;
-        this.level = level;
-        this.length = length;
-    }
+	public Word(Map<String, Object> rowMap) {
+		this(rowMap.get("word").toString(), rowMap.get("desc").toString(),
+				Integer.parseInt(rowMap.get("level").toString()), Integer.parseInt(rowMap.get("length").toString()));
+	}
 
-    public String getWord() {
-        return word;
-    }
+	public Word(String word, String desc, int level) {
+		this(word, desc, level, word.length());
+		System.out.println(this.length);
+	}
 
-    public String getDesc() {
-        return desc;
-    }
+	public Word(String word, String desc, int level, int length) {
+		this.word = word;
+		this.desc = desc;
+		this.level = level;
+		this.length = length;
+	}
 
-    public int getLevel() {
-        return level;
-    }
+	public String getWord() {
+		return word;
+	}
 
-    public int getLength() {
-        return length;
-    }
+	public String getDesc() {
+		return desc;
+	}
+
+	public int getLevel() {
+		return level;
+	}
+
+	public int getLength() {
+		return length;
+	}
+
+	@Override
+	public String toString() {
+		return "Word [word=" + word + ", desc=" + desc + ", level=" + level + ", length=" + length + "]";
+	}
+
 }

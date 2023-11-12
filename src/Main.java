@@ -6,6 +6,7 @@ import com.holub.database.TableFactory;
 import com.holub.text.ParseFailure;
 
 import controllers.Controller;
+import models.Word;
 import repository.WordRepository;
 import views.*;
 
@@ -67,7 +68,12 @@ public class Main {
 			WordRepository wordRepository = new WordRepository(db);
 			try {
 				wordRepository.getWordList();
-				db.dump();
+				wordRepository.insertOneWord(new Word("Apple", "Red", 1));
+				wordRepository.insertOneWord(new Word("Hello", "hi", 1));
+				wordRepository.insertOneWord(new Word("lol", "lol", 3));
+				wordRepository.insertOneWord(new Word("school", "student", 2));
+				wordRepository.getWordList();
+				wordRepository.getWordList(5);
 			} catch (IOException | ParseFailure e){
 				e.printStackTrace();
 			}

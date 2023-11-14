@@ -79,6 +79,7 @@ public class GameView extends JPanel {
     			if (board[i][j] != ' ') {
     				JTextField textField = new JTextField(" ");
     				textField.setDocument(new LengthRestrictedDocument(1));
+    				textField.setHorizontalAlignment(JTextField.CENTER);
     				textField.setBackground(Color.WHITE);
     				textField.setOpaque(true);
     				textField.setBounds(i * 30, j * 30, 25, 25);

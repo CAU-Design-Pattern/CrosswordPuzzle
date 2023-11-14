@@ -1,6 +1,10 @@
 package controllers;
 
 import javax.swing.*;
+
+import models.CrosswordGameLevel1;
+import models.CrosswordGameLevel2;
+import models.CrosswordGameLevel3;
 import views.*;
 import java.awt.*;
 
@@ -84,16 +88,19 @@ public final class Controller {
         
         gameLevelView.getLevel1Button().addActionListener(e -> {
         	gameView.setLevel(1);
+        	gameView.prepareGame(new CrosswordGameLevel1());
         	cardLayout.show(panel, "gameView");
         });
         
         gameLevelView.getLevel2Button().addActionListener(e -> {
         	gameView.setLevel(2);
+        	gameView.prepareGame(new CrosswordGameLevel2());
         	cardLayout.show(panel, "gameView");
         });
         
         gameLevelView.getLevel3Button().addActionListener(e -> {
         	gameView.setLevel(3);
+        	gameView.prepareGame(new CrosswordGameLevel3());
         	cardLayout.show(panel, "gameView");
         });
         

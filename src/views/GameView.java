@@ -71,7 +71,22 @@ public class GameView extends JPanel {
     	this.crosswordGame.play();
     	
     	char[][] board = this.crosswordGame.getBoard();
-    	
-    	
+    	for (int i = 0; i < board.length; i++) {
+    		for (int j = 0; j < board[0].length; j++) {
+    			if (board[i][j] != ' ') {
+    				JTextField textField = new JTextField(" ");
+    				textField.setBackground(Color.WHITE);
+    				textField.setOpaque(true);
+    				textField.setBounds(i * 30, j * 30, 25, 25);
+    				add(textField);
+    			} else {
+    				JLabel label = new JLabel();
+    				label.setBackground(Color.GRAY);
+    				label.setOpaque(true);
+    				label.setBounds(i * 30, j * 30, 25, 25);
+    				add(label);
+    			}
+    		}
+    	}
     }
 }

@@ -10,6 +10,8 @@ public abstract class CrosswordGame extends Observable {
 	
 	public void play() {
 		// TODO
+		createBoard();
+		placeWords();
 	}
 	
 	public abstract void createBoard();

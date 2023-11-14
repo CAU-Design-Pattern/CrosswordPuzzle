@@ -5,6 +5,9 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import javax.swing.*;
+import javax.swing.text.AttributeSet;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.PlainDocument;
 
 import models.CrosswordGame;
 
@@ -75,6 +78,7 @@ public class GameView extends JPanel {
     		for (int j = 0; j < board[0].length; j++) {
     			if (board[i][j] != ' ') {
     				JTextField textField = new JTextField(" ");
+    				textField.setDocument(new LengthRestrictedDocument(1));
     				textField.setBackground(Color.WHITE);
     				textField.setOpaque(true);
     				textField.setBounds(i * 30, j * 30, 25, 25);
@@ -86,6 +90,22 @@ public class GameView extends JPanel {
     				label.setBounds(i * 30, j * 30, 25, 25);
     				add(label);
     			}
+    		}
+    	}
+    }
+    
+    final class LengthRestrictedDocument extends PlainDocument {
+    	private final int limit;
+    	
+    	public LengthRestrictedDocument(int limit) {
+    		this.limit = limit;
+    	}
+    	
+    	@Override
+    	public void insertString(int offs, String str, AttributeSet a) throws BadLocationException {
+    		if (str == null) return;
+    		if ((getLength() + str.length()) <= limit) {
+    			super.insertString(offs, str, a);
     		}
     	}
     }

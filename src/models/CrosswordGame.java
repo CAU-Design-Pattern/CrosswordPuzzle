@@ -7,11 +7,13 @@ import java.util.Observer;
 public abstract class CrosswordGame extends Observable {
 	protected char[][] board;
 	protected ArrayList<String> wordList;
+	protected Timer timer = Timer.getInstance();
 	
 	public void play() {
 		// TODO
 		createBoard();
 		placeWords();
+		startGame();
 	}
 	
 	public abstract void createBoard();
@@ -27,6 +29,8 @@ public abstract class CrosswordGame extends Observable {
 	
 	public void startGame() {
 		// TODO
+		timer.setTime(300);
+		timer.start();
 	}
 	
 	public void printResult() {

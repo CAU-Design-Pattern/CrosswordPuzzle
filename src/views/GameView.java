@@ -21,6 +21,10 @@ public class GameView extends JPanel {
     // 게임의 난이도
     private final JLabel levelLabel;
     
+    // 게임의 남은 시간
+    private final JLabel timeLabel;
+    private final JLabel timeStampLabel;
+    
     private CrosswordGame crosswordGame;
     
     /*
@@ -33,9 +37,30 @@ public class GameView extends JPanel {
     	
     	levelLabel = new JLabel("LEVEL ?");
     	levelLabel.setFont(font);
-    	levelLabel.setForeground(Color.BLACK);
-    	levelLabel.setBounds(1280, 0, 100, 80);
+    	levelLabel.setHorizontalAlignment(JLabel.CENTER);
+    	levelLabel.setForeground(Color.WHITE);
+    	levelLabel.setBackground(Color.BLUE);
+    	levelLabel.setOpaque(true);
+    	levelLabel.setBounds(1280, 20, 100, 50);
     	add(levelLabel);
+    	
+    	timeLabel = new JLabel("남은 시간");
+    	timeLabel.setFont(font);
+    	timeLabel.setHorizontalAlignment(JLabel.CENTER);
+    	timeLabel.setForeground(Color.WHITE);
+    	timeLabel.setBackground(Color.BLUE);
+    	timeLabel.setOpaque(true);
+    	timeLabel.setBounds(1280, 80, 100, 35);
+    	add(timeLabel);
+    	
+    	timeStampLabel = new JLabel("05:00");
+    	timeStampLabel.setFont(font);
+    	timeStampLabel.setHorizontalAlignment(JLabel.CENTER);
+    	timeStampLabel.setForeground(Color.WHITE);
+    	timeStampLabel.setBackground(Color.BLUE);
+    	timeStampLabel.setOpaque(true);
+    	timeStampLabel.setBounds(1280, 115, 100, 35);
+    	add(timeStampLabel);
     	
     	/*
         buttons = new JButton[4];

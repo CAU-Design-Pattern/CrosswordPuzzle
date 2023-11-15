@@ -24,15 +24,17 @@ public class Timer extends Thread {
 		return second;
 	}
 	
+	public String getTimeStamp() {
+		return "%02d:%02d".formatted(second / 60, second % 60);
+	}
+	
 	@Override
 	public void run() {
 		do {
-			int minute = second / 60;
-			//System.out.printf("%02d:%02d\n", minute, second % 60);
+			//System.out.printf("%02d:%02d\n", second / 60, second % 60);
 			try {
-				this.sleep(1000);
+				Thread.sleep(1000);
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			second--;

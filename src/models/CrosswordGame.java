@@ -28,8 +28,7 @@ public abstract class CrosswordGame extends Observable {
 	}
 	
 	public void startGame() {
-		// TODO
-		timer.setTime(300);
+		timer.setTime(300); // 300 seconds = 5 minutes
 		timer.start();
 	}
 	

@@ -7,7 +7,7 @@ import java.util.Observer;
 public abstract class CrosswordGame extends Observable {
 	protected char[][] board;
 	protected ArrayList<String> wordList;
-	protected Timer timer = Timer.getInstance();
+	protected GameTimer gameTimer = GameTimer.getInstance();
 	
 	public void play() {
 		// TODO
@@ -28,8 +28,8 @@ public abstract class CrosswordGame extends Observable {
 	}
 	
 	public void startGame() {
-		timer.setTime(300); // 300 seconds = 5 minutes
-		timer.start();
+		gameTimer.setTime(300); // 300 seconds = 5 minutes
+		new Thread(gameTimer).start();
 	}
 	
 	public void printResult() {

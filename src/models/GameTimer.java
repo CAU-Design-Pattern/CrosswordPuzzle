@@ -1,17 +1,19 @@
 package models;
 
-public class Timer extends Thread {
-	private static Timer instance;
+import java.util.Observable;
+
+public class GameTimer extends Observable implements Runnable {
+	private static GameTimer instance;
 	
 	private int second;
 	
-	private Timer() {
+	private GameTimer() {
 		second = 0;
 	}
 	
-	public static Timer getInstance() {
+	public static GameTimer getInstance() {
 		if (instance == null) {
-			instance = new Timer();
+			instance = new GameTimer();
 		}
 		return instance;
 	}
@@ -38,6 +40,8 @@ public class Timer extends Thread {
 				e.printStackTrace();
 			}
 			second--;
-		} while (second >= 0);
+			setChanged();
+			notifyObservers();
+		} while (second > 0);
 	}
 }

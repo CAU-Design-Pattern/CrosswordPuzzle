@@ -1,17 +1,15 @@
 package views;
 
-import models.*;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.util.Observable;
+import java.util.Observer;
 import javax.swing.*;
-import javax.swing.text.AttributeSet;
-import javax.swing.text.BadLocationException;
-import javax.swing.text.PlainDocument;
+import javax.swing.text.*;
+import models.*;
 
-import models.CrosswordGame;
-
-public class GameView extends JPanel {
+public class GameView extends JPanel implements Observer {
 	// GameView 의  Width
     private static final int WIDTH = 1400;
 
@@ -25,12 +23,11 @@ public class GameView extends JPanel {
     private final JLabel timeLabel;
     private final JLabel timeStampLabel;
     
+    // 게임 화면의 삽자말풀이 게임
     private CrosswordGame crosswordGame;
     
-    /*
-    // GameView 의 ?개의 버튼
-    private JButton[] buttons;
-    */
+    private GameTimer gameTimer;
+
 
     public GameView() {
     	Font font = new Font("Default", Font.BOLD, 20);
@@ -74,26 +71,8 @@ public class GameView extends JPanel {
     	horizontalLine.setBounds(0, 460, 1235, 5);
     	add(horizontalLine);
     	
-    	/*
-        buttons = new JButton[4];
-        for (int i = 0; i < 4; i++) {
-            buttons[i] = new JButton();
-            buttons[i].setContentAreaFilled(true);
-            buttons[i].setBorder(new BevelBorder(BevelBorder.RAISED));
-            buttons[i].setForeground(Color.WHITE);
-            buttons[i].setBackground(Color.GREEN);
-            buttons[i].setFont(font);
-            add(buttons[i]);
-        }
-        buttons[0].setText("이전으로");
-        buttons[0].setBounds(600, 160, 200, 80);
-        buttons[1].setText("LEVEL 1");
-        buttons[1].setBounds(600, 260, 200, 80);
-        buttons[2].setText("LEVEL 2");
-        buttons[2].setBounds(600, 360, 200, 80);
-        buttons[3].setText("LEVEL 3");
-        buttons[3].setBounds(600, 460, 200, 80);
-        */
+    	gameTimer = gameTimer.getInstance();
+    	gameTimer.addObserver(this);
     	
         setLayout(null);
         setFocusable(true);
@@ -106,8 +85,6 @@ public class GameView extends JPanel {
     
     public void prepareGame(CrosswordGame crosswordGame) {
     	this.crosswordGame = crosswordGame;
-    	
-    	// TODO
     	this.crosswordGame.play();
     	
     	char[][] board = this.crosswordGame.getBoard();
@@ -131,6 +108,11 @@ public class GameView extends JPanel {
     		}
     	}
     }
+    
+    @Override
+	public void update(Observable obs, Object arg) {
+		timeStampLabel.setText(gameTimer.getTimeStamp());
+	}
     
     final class LengthRestrictedDocument extends PlainDocument {
     	private final int limit;

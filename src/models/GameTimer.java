@@ -5,10 +5,10 @@ import java.util.Observable;
 public class GameTimer extends Observable implements Runnable {
 	private static GameTimer instance;
 	
-	private int second;
+	private int seconds;
 	
 	private GameTimer() {
-		second = 0;
+		seconds = 0;
 	}
 	
 	public static GameTimer getInstance() {
@@ -18,16 +18,31 @@ public class GameTimer extends Observable implements Runnable {
 		return instance;
 	}
 	
-	public void setTime(int second) {
-		this.second = second;
+	public void setTime(int seconds) {
+		this.seconds = seconds;
 	}
 	
 	public int getTime() {
-		return second;
+		return seconds;
 	}
 	
 	public String getTimeStamp() {
-		return "%02d:%02d".formatted(second / 60, second % 60);
+		//return "%02d:%02d".formatted(second / 60, second % 60);
+		int minute = seconds / 60;
+		int second = seconds % 60;
+		
+		StringBuilder sb = new StringBuilder();
+		if (minute < 10) {
+			sb.append("0");
+		}
+		sb.append(String.valueOf(minute));
+		sb.append(":");
+		if (second < 10) {
+			sb.append("0");
+		}
+		sb.append(String.valueOf(second));
+		
+		return sb.toString();
 	}
 	
 	@Override
@@ -40,9 +55,9 @@ public class GameTimer extends Observable implements Runnable {
 				
 				break;
 			}
-			second--;
+			seconds--;
 			setChanged();
 			notifyObservers();
-		} while (second > 0);
+		} while (seconds > 0);
 	}
 }

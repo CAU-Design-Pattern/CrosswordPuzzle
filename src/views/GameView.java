@@ -36,7 +36,11 @@ public class GameView extends JPanel implements Observer {
     private final JLabel horizontalWord;
     private final JLabel verticalWord;
     
+    // 제출 버튼
     private final JButton submitButton;
+    
+    // 게임의 보드 화면
+    private final JPanel boardPanel;
 
     public GameView() {
     	Font font = new Font("Default", Font.BOLD, 20);
@@ -143,12 +147,24 @@ public class GameView extends JPanel implements Observer {
     	gameTimer = GameTimer.getInstance();
     	gameTimer.addObserver(this);
     	
+    	// 게임의 보드 화면
+    	boardPanel = new JPanel();
+    	boardPanel.setBackground(Color.WHITE);
+    	boardPanel.setOpaque(true);
+    	boardPanel.setBounds(0, 0, 1235, 460);
+    	boardPanel.setLayout(null);
+    	boardPanel.setFocusable(true);
+    	add(boardPanel);
+    	
         setLayout(null);
         setFocusable(true);
         setPreferredSize(new Dimension(WIDTH, HEIGHT));
     }
     
     public void startGame(CrosswordGame crosswordGame) {
+    	// 게임 시작 전 이미 있던 보드 삭제
+    	boardPanel.removeAll();
+    	
     	this.crosswordGame = crosswordGame;
     	this.crosswordGame.play();
     	levelLabel.setText(crosswordGame.getLevel());
@@ -176,13 +192,13 @@ public class GameView extends JPanel implements Observer {
     						verticalWord.setText("i: " + x + ", j: " + y);
     					}
     				});
-    				add(textField);
+    				boardPanel.add(textField);
     			} else {
     				JLabel label = new JLabel();
     				label.setBackground(Color.GRAY);
     				label.setOpaque(true);
     				label.setBounds(i * 30 + 5, j * 30 + 5, 25, 25);
-    				add(label);
+    				boardPanel.add(label);
     			}
     		}
     	}
@@ -216,7 +232,5 @@ public class GameView extends JPanel implements Observer {
     			super.insertString(offs, str, a);
     		}
     	}
-    	
-    	
     }
 }

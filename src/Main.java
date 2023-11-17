@@ -47,7 +47,6 @@ public class Main {
         	reviewNoteView
         );
     	
-    	
     	Database db;
     	try {
 			DatabaseConnector instance = DatabaseConnector.getInstance();
@@ -96,7 +95,6 @@ public class Main {
 //				e.printStackTrace();
 //			}
     	}
-    	
     	
     }
 }

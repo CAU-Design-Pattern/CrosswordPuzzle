@@ -146,8 +146,10 @@ public class GameView extends JPanel implements Observer {
     					@Override
     					public void mouseClicked(MouseEvent e) {
     						// TODO
-    						//horizontalWord.setText("?");
-    						//verticalWord.setText("?");
+    						int x = e.getComponent().getX() / 30;
+    						int y = e.getComponent().getY() / 30;
+    						horizontalWord.setText("i: " + x + ", j: " + y);
+    						verticalWord.setText("i: " + x + ", j: " + y);
     					}
     				});
     				add(textField);

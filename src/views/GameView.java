@@ -3,6 +3,8 @@ package views;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.Observable;
 import java.util.Observer;
 import javax.swing.*;
@@ -26,8 +28,11 @@ public class GameView extends JPanel implements Observer {
     // 게임 화면의 삽자말풀이 게임
     private CrosswordGame crosswordGame;
     
+    // 게임 화면의 남은 시간
     private GameTimer gameTimer;
-
+    
+    private final JLabel horizontalWord;
+    private final JLabel verticalWord;
 
     public GameView() {
     	Font font = new Font("Default", Font.BOLD, 20);
@@ -62,16 +67,56 @@ public class GameView extends JPanel implements Observer {
     	JLabel verticalLine = new JLabel();
     	verticalLine.setBackground(Color.BLACK);
     	verticalLine.setOpaque(true);
-    	verticalLine.setBounds(1235, 0, 5, 700);
+    	verticalLine.setBounds(1235, 0, 3, 700);
     	add(verticalLine);
     	
     	JLabel horizontalLine = new JLabel();
     	horizontalLine.setBackground(Color.BLACK);
     	horizontalLine.setOpaque(true);
-    	horizontalLine.setBounds(0, 460, 1235, 5);
+    	horizontalLine.setBounds(0, 460, 1235, 3);
     	add(horizontalLine);
     	
-    	gameTimer = gameTimer.getInstance();
+    	JLabel innerHorizontalLine = new JLabel();
+    	innerHorizontalLine.setBackground(Color.BLACK);
+    	innerHorizontalLine.setOpaque(true);
+    	innerHorizontalLine.setBounds(0, 580, 1235, 3);
+    	add(innerHorizontalLine);
+    	
+    	JLabel horizontalLabel = new JLabel("가로");
+    	horizontalLabel.setFont(font);
+    	horizontalLabel.setForeground(Color.BLACK);
+    	horizontalLabel.setBackground(Color.WHITE);
+    	horizontalLabel.setOpaque(true);
+    	horizontalLabel.setBounds(0, 465, 1235, 20);
+    	add(horizontalLabel);
+    	
+    	JLabel verticalLabel = new JLabel("세로");
+    	verticalLabel.setFont(font);
+    	verticalLabel.setForeground(Color.BLACK);
+    	verticalLabel.setBackground(Color.WHITE);
+    	verticalLabel.setOpaque(true);
+    	verticalLabel.setBounds(0, 585, 1235, 20);
+    	add(verticalLabel);
+    	
+    	horizontalWord = new JLabel("");
+    	horizontalWord.setFont(font);
+    	horizontalWord.setVerticalAlignment(JLabel.NORTH);
+    	horizontalWord.setForeground(Color.BLACK);
+    	horizontalWord.setBackground(Color.WHITE);
+    	horizontalWord.setOpaque(true);
+    	horizontalWord.setBounds(0, 485, 1235, 95);
+    	add(horizontalWord);
+    	
+    	verticalWord = new JLabel();
+    	verticalWord.setFont(font);
+    	verticalWord.setVerticalAlignment(JLabel.NORTH);
+    	verticalWord.setForeground(Color.BLACK);
+    	verticalWord.setBackground(Color.WHITE);
+    	verticalWord.setOpaque(true);
+    	verticalWord.setBounds(0, 605, 1235, 95);
+    	add(verticalWord);
+    	
+    	gameTimer = GameTimer.getInstance();
     	gameTimer.addObserver(this);
     	
         setLayout(null);
@@ -97,6 +142,14 @@ public class GameView extends JPanel implements Observer {
     				textField.setBackground(Color.WHITE);
     				textField.setOpaque(true);
     				textField.setBounds(i * 30 + 5, j * 30 + 5, 25, 25);
+    				textField.addMouseListener(new MouseAdapter() {
+    					@Override
+    					public void mouseClicked(MouseEvent e) {
+    						// TODO
+    						//horizontalWord.setText("?");
+    						//verticalWord.setText("?");
+    					}
+    				});
     				add(textField);
     			} else {
     				JLabel label = new JLabel();
@@ -109,6 +162,7 @@ public class GameView extends JPanel implements Observer {
     	}
     }
     
+    // 게임의 남은 시간을 실시간으로 표시
     @Override
 	public void update(Observable obs, Object arg) {
 		timeStampLabel.setText(gameTimer.getTimeStamp());
@@ -128,5 +182,7 @@ public class GameView extends JPanel implements Observer {
     			super.insertString(offs, str, a);
     		}
     	}
+    	
+    	
     }
 }

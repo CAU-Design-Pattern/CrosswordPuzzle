@@ -151,8 +151,10 @@ public class GameView extends JPanel implements Observer {
     public void startGame(CrosswordGame crosswordGame) {
     	this.crosswordGame = crosswordGame;
     	this.crosswordGame.play();
-    	this.levelLabel.setText(crosswordGame.getLevel());
-    	this.timeStampLabel.setText(gameTimer.getTimeStamp());
+    	levelLabel.setText(crosswordGame.getLevel());
+    	timeStampLabel.setText(gameTimer.getTimeStamp());
+    	horizontalWord.setText("");
+    	verticalWord.setText("");
     	
     	char[][] board = this.crosswordGame.getBoard();
     	for (int i = 0; i < board.length; i++) {

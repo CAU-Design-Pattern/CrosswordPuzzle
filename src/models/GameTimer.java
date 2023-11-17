@@ -33,11 +33,12 @@ public class GameTimer extends Observable implements Runnable {
 	@Override
 	public void run() {
 		do {
-			//System.out.printf("%02d:%02d\n", second / 60, second % 60);
 			try {
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {
-				e.printStackTrace();
+				//e.printStackTrace();
+				
+				break;
 			}
 			second--;
 			setChanged();

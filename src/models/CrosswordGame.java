@@ -5,9 +5,11 @@ import java.util.Observable;
 import java.util.Observer;
 
 public abstract class CrosswordGame extends Observable {
+	protected String level;
 	protected char[][] board;
 	protected ArrayList<String> wordList;
 	protected GameTimer gameTimer = GameTimer.getInstance();
+	protected Thread timerThread;
 	
 	public void play() {
 		// TODO
@@ -29,11 +31,20 @@ public abstract class CrosswordGame extends Observable {
 	
 	public void startGame() {
 		gameTimer.setTime(300); // 300 seconds = 5 minutes
-		new Thread(gameTimer).start();
+		timerThread = new Thread(gameTimer);
+		timerThread.start();
 	}
 	
 	public void printResult() {
 		// TODO
+	}
+	
+	public void stopGame() {
+		timerThread.interrupt();
+	}
+	
+	public String getLevel() {
+		return level;
 	}
 	
 	public char[][] getBoard() {

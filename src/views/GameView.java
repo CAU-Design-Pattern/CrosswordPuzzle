@@ -8,6 +8,7 @@ import java.awt.event.MouseEvent;
 import java.util.Observable;
 import java.util.Observer;
 import javax.swing.*;
+import javax.swing.border.BevelBorder;
 import javax.swing.text.*;
 import models.*;
 
@@ -31,26 +32,31 @@ public class GameView extends JPanel implements Observer {
     // 게임 화면의 남은 시간
     private GameTimer gameTimer;
     
+    // 십자말풀이 게임의 설명란
     private final JLabel horizontalWord;
     private final JLabel verticalWord;
+    
+    private final JButton submitButton;
 
     public GameView() {
     	Font font = new Font("Default", Font.BOLD, 20);
     	
+    	// 게임의 난이도 표시
     	levelLabel = new JLabel("LEVEL ?");
     	levelLabel.setFont(font);
     	levelLabel.setHorizontalAlignment(JLabel.CENTER);
     	levelLabel.setForeground(Color.WHITE);
-    	levelLabel.setBackground(Color.BLUE);
+    	levelLabel.setBackground(Color.GREEN);
     	levelLabel.setOpaque(true);
     	levelLabel.setBounds(1260, 20, 120, 50);
     	add(levelLabel);
     	
+    	// 게임의 남은 시간 표시
     	timeLabel = new JLabel("남은 시간");
     	timeLabel.setFont(font);
     	timeLabel.setHorizontalAlignment(JLabel.CENTER);
     	timeLabel.setForeground(Color.WHITE);
-    	timeLabel.setBackground(Color.BLUE);
+    	timeLabel.setBackground(Color.GREEN);
     	timeLabel.setOpaque(true);
     	timeLabel.setBounds(1260, 80, 120, 35);
     	add(timeLabel);
@@ -59,29 +65,43 @@ public class GameView extends JPanel implements Observer {
     	timeStampLabel.setFont(font);
     	timeStampLabel.setHorizontalAlignment(JLabel.CENTER);
     	timeStampLabel.setForeground(Color.WHITE);
-    	timeStampLabel.setBackground(Color.BLUE);
+    	timeStampLabel.setBackground(Color.GREEN);
     	timeStampLabel.setOpaque(true);
     	timeStampLabel.setBounds(1260, 115, 120, 35);
     	add(timeStampLabel);
     	
+    	// 제출 버튼
+    	submitButton = new JButton("제출");
+    	submitButton.setFont(font);
+    	submitButton.setContentAreaFilled(true);
+    	submitButton.setBorder(new BevelBorder(BevelBorder.RAISED));
+    	submitButton.setForeground(Color.WHITE);
+    	submitButton.setBackground(Color.GREEN);
+    	submitButton.setBounds(1260, 640, 120, 40);
+    	add(submitButton);
+    	
+    	// 세로 구분선
     	JLabel verticalLine = new JLabel();
     	verticalLine.setBackground(Color.BLACK);
     	verticalLine.setOpaque(true);
     	verticalLine.setBounds(1235, 0, 3, 700);
     	add(verticalLine);
     	
+    	// 게임과 설명란 사이의 구분선
     	JLabel horizontalLine = new JLabel();
     	horizontalLine.setBackground(Color.BLACK);
     	horizontalLine.setOpaque(true);
     	horizontalLine.setBounds(0, 460, 1235, 3);
     	add(horizontalLine);
     	
+    	// 설명란 내부의 구분선
     	JLabel innerHorizontalLine = new JLabel();
     	innerHorizontalLine.setBackground(Color.BLACK);
     	innerHorizontalLine.setOpaque(true);
     	innerHorizontalLine.setBounds(0, 580, 1235, 3);
     	add(innerHorizontalLine);
     	
+    	// 가로 설명란
     	JLabel horizontalLabel = new JLabel("가로");
     	horizontalLabel.setFont(font);
     	horizontalLabel.setForeground(Color.BLACK);
@@ -90,6 +110,7 @@ public class GameView extends JPanel implements Observer {
     	horizontalLabel.setBounds(0, 465, 1235, 20);
     	add(horizontalLabel);
     	
+    	// 세로 설명란
     	JLabel verticalLabel = new JLabel("세로");
     	verticalLabel.setFont(font);
     	verticalLabel.setForeground(Color.BLACK);
@@ -98,6 +119,7 @@ public class GameView extends JPanel implements Observer {
     	verticalLabel.setBounds(0, 585, 1235, 20);
     	add(verticalLabel);
     	
+    	// 가로 설명란
     	horizontalWord = new JLabel("");
     	horizontalWord.setFont(font);
     	horizontalWord.setVerticalAlignment(JLabel.NORTH);
@@ -107,6 +129,7 @@ public class GameView extends JPanel implements Observer {
     	horizontalWord.setBounds(0, 485, 1235, 95);
     	add(horizontalWord);
     	
+    	// 세로 설명란
     	verticalWord = new JLabel();
     	verticalWord.setFont(font);
     	verticalWord.setVerticalAlignment(JLabel.NORTH);
@@ -116,6 +139,7 @@ public class GameView extends JPanel implements Observer {
     	verticalWord.setBounds(0, 605, 1235, 95);
     	add(verticalWord);
     	
+    	// 게임의 timer
     	gameTimer = GameTimer.getInstance();
     	gameTimer.addObserver(this);
     	
@@ -124,13 +148,11 @@ public class GameView extends JPanel implements Observer {
         setPreferredSize(new Dimension(WIDTH, HEIGHT));
     }
     
-    public void setLevel(int level) {
-    	levelLabel.setText("LEVEL: " + level);
-    }
-    
-    public void prepareGame(CrosswordGame crosswordGame) {
+    public void startGame(CrosswordGame crosswordGame) {
     	this.crosswordGame = crosswordGame;
     	this.crosswordGame.play();
+    	this.levelLabel.setText(crosswordGame.getLevel());
+    	this.timeStampLabel.setText(gameTimer.getTimeStamp());
     	
     	char[][] board = this.crosswordGame.getBoard();
     	for (int i = 0; i < board.length; i++) {
@@ -162,6 +184,14 @@ public class GameView extends JPanel implements Observer {
     			}
     		}
     	}
+    }
+    
+    public void stopGame() {
+    	this.crosswordGame.stopGame();
+    }
+    
+    public JButton getSubmitButton() {
+    	return submitButton;
     }
     
     // 게임의 남은 시간을 실시간으로 표시

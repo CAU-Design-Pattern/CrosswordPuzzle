@@ -28,4 +28,13 @@ public class Account {
     public Integer getLevel() {
         return level;
     }
+
+    @Override
+    public String toString() {
+        return "Account{" +
+                "id='" + id + '\'' +
+                ", password='" + password + '\'' +
+                ", level=" + level +
+                '}';
+    }
 }

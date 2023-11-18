@@ -4,12 +4,11 @@ import com.holub.database.Cursor;
 import com.holub.database.Database;
 import com.holub.database.Table;
 import com.holub.text.ParseFailure;
-import models.Word;
+import dto.Word;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -27,7 +26,7 @@ public class WordRepository {
     public List<Word> getWordList() throws IOException, ParseFailure {
         String sql = "select * from word";
         Table table = database.execute(sql);
-        System.out.println(table.toString());
+
         Cursor cursor = table.rows();
         
         return transferWordList(cursor);
@@ -43,7 +42,7 @@ public class WordRepository {
     public List<Word> getWordList(int length) throws IOException, ParseFailure{
     	String sql = "select * from word where length = " + length;
     	Table table = database.execute(sql);
-    	System.out.println(table.toString());
+
     	Cursor cursor = table.rows();
     	
     	return transferWordList(cursor);
@@ -59,10 +58,27 @@ public class WordRepository {
     public List<Word> getWordList(char character) throws IOException, ParseFailure{
     	String sql = "select * from word where word like " + "'%" + character + "%'";
     	Table table = database.execute(sql);
-    	System.out.println(table.toString());
+
     	Cursor cursor = table.rows();
     	
     	return transferWordList(cursor);
+    }
+
+    /**
+     * 특정 word를 가져옴
+     * @param word
+     * @return
+     * @throws IOException
+     * @throws ParseFailure
+     */
+    public Word getWord(String word) throws IOException, ParseFailure {
+        String sql = "select * from word where word = '" + word + "'";
+        Table table = database.execute(sql);
+        Cursor cursor = table.rows();
+        List<Word> words = transferWordList(cursor);
+        if(words.isEmpty())
+            return null;
+        return words.get(0);
     }
     
     
@@ -73,9 +89,19 @@ public class WordRepository {
      * @throws ParseFailure
      */
     public void insertOneWord(Word word) throws IOException, ParseFailure {
-    	String insertSql = "insert into word VALUES ('"+ word.getWord() +"',  '"+ word.getDesc() +"', "+ word.getLevel() +", "+ word.getLength() +")";
+        if(getWord(word.getWord()) != null) // 이미 같은 word가 있는 경우 (pk설정이 이미 있는 db에서 불러올때 안되는듯함)
+            return;
+        String insertSql = "insert into word VALUES ('"+ word.getWord() +"',  '"+ word.getDesc() +"', "+ word.getLevel() +", "+ word.getLength() +")";
     	database.execute(insertSql);
     	database.dump();
+    }
+
+    public void updateOneWord(Word word) throws IOException, ParseFailure {
+        String descSql = "update word set desc = \"" + word.getDesc() +"\"  where word = \"" + word.getWord() + "\"" ;
+        database.execute(descSql);
+        String levelSql = "update word set level = " + word.getLevel() +"  where word = \"" + word.getWord() + "\"" ;
+        database.execute(levelSql);
+        database.dump();
     }
     
     private List<Word> transferWordList(Cursor cursor) {

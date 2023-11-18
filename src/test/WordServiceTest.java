@@ -1,11 +1,11 @@
-package test.service;
+package test;
 
 import com.holub.database.Database;
 import com.holub.text.ParseFailure;
 import connector.DatabaseConnector;
 import dto.Word;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import repository.WordRepository;
 import service.WordService;
 
@@ -14,20 +14,20 @@ import java.util.List;
 
 public class WordServiceTest {
 
-    private WordRepository wordRepository;
     private WordService wordService;
 
-    @Before
+    @BeforeEach
     public void setUp() throws IOException, ParseFailure {
         DatabaseConnector instance = DatabaseConnector.getInstance();
         Database database = instance.getDatabase();
-        wordRepository = new WordRepository(database);
+        WordRepository wordRepository = new WordRepository(database);
+        wordService = new WordService(wordRepository);
     }
 
     @Test
     public void test() throws IOException, ParseFailure {
         // transaction ??? - > 현재 repo 계층에서 dump를 진행중이라 불가?
-        List<Word> wordList = wordRepository.getWordList();
+        List<Word> wordList = wordService.getAllWordList();
         for (Word word : wordList) {
             System.out.println("word = " + word);
         }

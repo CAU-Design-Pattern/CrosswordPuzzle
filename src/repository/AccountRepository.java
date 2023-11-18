@@ -33,7 +33,7 @@ public class AccountRepository {
     public void insertOneAccount(Account account) throws IOException, ParseFailure, UniqueFailException {
         Account existAccount = getOneAccountById(account.getId());
         if(existAccount != null) throw new UniqueFailException();
-        String sql = "insert into account values ('" + account.getId() + "', '" + account.getPassword() +"', " + account.getClass() +")";
+        String sql = "insert into account values ('" + account.getId() + "', '" + account.getPassword() +"', " + account.getLevel() +")";
         database.execute(sql);
         database.dump();
     }

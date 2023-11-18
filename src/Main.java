@@ -1,12 +1,10 @@
 import java.io.IOException;
 
 import com.holub.database.Database;
-import com.holub.database.Table;
-import com.holub.database.TableFactory;
 import com.holub.text.ParseFailure;
 
+import connector.DatabaseConnector;
 import controllers.Controller;
-import models.Word;
 import repository.WordRepository;
 import views.*;
 

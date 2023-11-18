@@ -1,9 +1,10 @@
+package connector;
+
 import com.holub.database.Database;
 import com.holub.database.TableFactory;
 import com.holub.text.ParseFailure;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 

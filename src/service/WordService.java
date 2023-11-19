@@ -1,10 +1,14 @@
 package service;
 
+import com.holub.database.*;
 import com.holub.text.ParseFailure;
 import dto.Word;
+import exception.UnsupportedExtensionException;
 import repository.WordRepository;
 
+import java.io.FileReader;
 import java.io.IOException;
+import java.io.Reader;
 import java.util.List;
 import java.util.Random;
 
@@ -55,5 +59,35 @@ public class WordService {
 
     public void updateOneWord(Word word) throws IOException, ParseFailure {
         wordRepository.updateOneWord(word);
+    }
+
+    /**
+     * 파일경로와 확장자를 넘겨주면 해당 파일에 있는 단어목록을 db에 저장 (필요시 사용)
+     * @param filePath
+     * @param extension
+     * @throws IOException
+     * @throws UnsupportedExtensionException
+     * @throws ParseFailure
+     */
+    public void importWordList(String filePath, String extension) throws IOException, UnsupportedExtensionException, ParseFailure {
+
+        filePath = filePath + "." +extension;
+        Reader in = new FileReader(filePath);
+        Table.Importer importer;
+        switch (extension){
+            case "csv":
+                importer = new CSVImporter(in);
+                break;
+//            case "xml":
+//                importer = new XMLImporter(in);
+//                break;
+            default:
+                throw new UnsupportedExtensionException();
+        }
+        UnmodifiableTable importTable = new UnmodifiableTable(new ConcreteTable(importer));
+        in.close();
+        Cursor cursor = importTable.rows();
+        List<Word> words = wordRepository.transferWordList(cursor);
+        this.insertManyWord(words);
     }
 }

@@ -10,7 +10,7 @@ public class Word {
 
 	public Word(Map<String, Object> rowMap) {
 		this(rowMap.get("word").toString(), rowMap.get("desc").toString(),
-				Integer.parseInt(rowMap.get("level").toString()), Integer.parseInt(rowMap.get("length").toString()));
+				Integer.parseInt(rowMap.get("level").toString()));
 	}
 
 	public Word(String word, String desc, int level) {

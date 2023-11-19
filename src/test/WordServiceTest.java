@@ -4,6 +4,7 @@ import com.holub.database.Database;
 import com.holub.text.ParseFailure;
 import connector.DatabaseConnector;
 import dto.Word;
+import exception.UnsupportedExtensionException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import repository.WordRepository;
@@ -30,6 +31,14 @@ public class WordServiceTest {
         List<Word> wordList = wordService.getAllWordList();
         for (Word word : wordList) {
             System.out.println("word = " + word);
+        }
+
+        System.out.println("----------------");
+        try{
+            String fileName= "C:/dp2023/migration";
+            wordService.importWordList(fileName, "csv");
+        } catch (UnsupportedExtensionException e){
+            e.printStackTrace();
         }
     }
 }

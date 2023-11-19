@@ -104,7 +104,7 @@ public class WordRepository {
         database.dump();
     }
     
-    private List<Word> transferWordList(Cursor cursor) {
+    public List<Word> transferWordList(Cursor cursor) {
     	List<Word> res = new ArrayList<>();
     	int columnCnt = cursor.columnCount();
         while(cursor.advance()){

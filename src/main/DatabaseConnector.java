@@ -1,3 +1,4 @@
+package main;
 import com.holub.database.Database;
 import com.holub.database.TableFactory;
 import com.holub.text.ParseFailure;
@@ -24,7 +25,7 @@ public class DatabaseConnector {
             try{
             	System.out.println("[Table load : " + tableName + " ]");
                 TableFactory.load(tableName + ".csv", path);
-                System.out.println("[Talbe load success : " + tableName + " ]");
+                System.out.println("[Table load success : " + tableName + " ]");
             } catch (IOException e){
             	System.out.println("[Table load fail : " + tableName + " ]");
                 String columns = properties.getProperty("table." + tableName);

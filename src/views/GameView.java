@@ -271,6 +271,10 @@ public class GameView extends JPanel implements Observer {
     @Override
 	public void update(Observable obs, Object arg) {
 		timeStampLabel.setText(gameTimer.getTimeStamp());
+		if (gameTimer.getTime() <= 0) {
+			// TODO: 게임 종료
+			System.out.println("게임 종료");
+		}
 	}
     
     final class LengthRestrictedDocument extends PlainDocument {

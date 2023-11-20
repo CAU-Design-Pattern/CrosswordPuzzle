@@ -1,6 +1,13 @@
 package models;
 
+import java.io.IOException;
 import java.util.*;
+
+import com.holub.database.Database;
+import com.holub.text.ParseFailure;
+
+import main.DatabaseConnector;
+import repository.WordRepository;
 
 public abstract class CrosswordGame extends Observable {
 	protected String level;
@@ -11,7 +18,6 @@ public abstract class CrosswordGame extends Observable {
 	protected Thread timerThread;
 	
 	public void play() {
-		// TODO
 		initalize();
 		createBoard();
 		placeWords();
@@ -27,6 +33,31 @@ public abstract class CrosswordGame extends Observable {
 	
 	public void placeWords() {
 		// TODO: 수정 필요, DB와 연동 필요
+		
+		Database db;
+		try {
+			DatabaseConnector dbConnector = DatabaseConnector.getInstance();
+			db = dbConnector.getDatabase();
+			db.dump();
+		} catch (IOException e) {
+			System.out.println("[DB Connection Error]");
+			e.printStackTrace();
+			db = null;
+		} catch (ParseFailure e) {
+			e.printStackTrace();
+			db = null;
+		}
+		
+		if (db != null) {
+			WordRepository wordRepository = new WordRepository(db);
+			try {
+				wordRepository.getWordList();
+			} catch (IOException | ParseFailure e) {
+				e.printStackTrace();
+			}
+		} else {
+			
+		}
 		
 		wordList.put("apple", "Red");
 		board[2][0] = 'a';

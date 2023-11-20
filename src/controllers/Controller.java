@@ -41,7 +41,7 @@ public final class Controller {
 
         frame.setResizable(false);
         frame.pack();
-        frame.setTitle("Crossword Puzzle Game");
+        frame.setTitle("Crossword Puzzle");
         frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);

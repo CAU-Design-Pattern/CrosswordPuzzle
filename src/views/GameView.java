@@ -9,6 +9,7 @@ import java.util.Observable;
 import java.util.Observer;
 import javax.swing.*;
 import javax.swing.border.BevelBorder;
+import javax.swing.border.LineBorder;
 import javax.swing.text.*;
 import models.*;
 
@@ -52,104 +53,108 @@ public class GameView extends JPanel implements Observer {
     // 보드의 좌표
     private int x;
     private int y;
+    
+    // 화면 이미지
+    private final JLabel image;
+    private final ImageIcon icon;
 
     public GameView() {
-    	Font font = new Font("Default", Font.BOLD, 20);
+    	Font font = new Font("Serif", Font.BOLD, 20);
     	
     	// 게임의 난이도 표시
     	levelLabel = new JLabel("LEVEL ?");
     	levelLabel.setFont(font);
     	levelLabel.setHorizontalAlignment(JLabel.CENTER);
-    	levelLabel.setForeground(Color.WHITE);
-    	levelLabel.setBackground(Color.GREEN);
+    	levelLabel.setForeground(Color.BLACK);
+    	levelLabel.setBackground(Color.WHITE);
     	levelLabel.setOpaque(true);
-    	levelLabel.setBounds(1260, 20, 120, 50);
+    	levelLabel.setBounds(1218, 20, 172, 50);
     	add(levelLabel);
     	
     	// 게임의 남은 시간 표시
-    	timeLabel = new JLabel("남은 시간");
+    	timeLabel = new JLabel("Time Remaining");
     	timeLabel.setFont(font);
     	timeLabel.setHorizontalAlignment(JLabel.CENTER);
-    	timeLabel.setForeground(Color.WHITE);
-    	timeLabel.setBackground(Color.GREEN);
+    	timeLabel.setForeground(Color.BLACK);
+    	timeLabel.setBackground(Color.WHITE);
     	timeLabel.setOpaque(true);
-    	timeLabel.setBounds(1260, 80, 120, 35);
+    	timeLabel.setBounds(1218, 80, 172, 35);
     	add(timeLabel);
     	
-    	timeStampLabel = new JLabel("05:00");
+    	timeStampLabel = new JLabel();
     	timeStampLabel.setFont(font);
     	timeStampLabel.setHorizontalAlignment(JLabel.CENTER);
-    	timeStampLabel.setForeground(Color.WHITE);
-    	timeStampLabel.setBackground(Color.GREEN);
+    	timeStampLabel.setForeground(Color.BLACK);
+    	timeStampLabel.setBackground(Color.WHITE);
     	timeStampLabel.setOpaque(true);
-    	timeStampLabel.setBounds(1260, 115, 120, 35);
+    	timeStampLabel.setBounds(1218, 116, 172, 35);
     	add(timeStampLabel);
     	
-    	hintLabel = new JLabel("남은 힌트");
+    	hintLabel = new JLabel("Hint Remaining");
     	hintLabel.setFont(font);
     	hintLabel.setHorizontalAlignment(JLabel.CENTER);
-    	hintLabel.setForeground(Color.WHITE);
-    	hintLabel.setBackground(Color.GREEN);
+    	hintLabel.setForeground(Color.BLACK);
+    	hintLabel.setBackground(Color.WHITE);
     	hintLabel.setOpaque(true);
-    	hintLabel.setBounds(1260, 160, 120, 35);
+    	hintLabel.setBounds(1218, 161, 172, 35);
     	add(hintLabel);
     	
     	hintButton = new JButton("3");
     	hintButton.setFont(font);
     	hintButton.setContentAreaFilled(true);
-    	hintButton.setForeground(Color.WHITE);
-    	hintButton.setBackground(Color.GREEN);
-    	hintButton.setBounds(1260, 195, 120, 35);
+    	hintButton.setBorder(new LineBorder(Color.WHITE, 1));
+    	hintButton.setForeground(Color.BLACK);
+    	hintButton.setBackground(Color.WHITE);
+    	hintButton.setBounds(1218, 197, 172, 35);
     	hintButton.setEnabled(false);
     	add(hintButton);
     	
     	// 제출 버튼
-    	submitButton = new JButton("제출");
+    	submitButton = new JButton("Submit");
     	submitButton.setFont(font);
-    	submitButton.setContentAreaFilled(true);
-    	submitButton.setBorder(new BevelBorder(BevelBorder.RAISED));
+    	submitButton.setContentAreaFilled(false);
+    	submitButton.setBorder(new LineBorder(Color.WHITE, 2));
     	submitButton.setForeground(Color.WHITE);
-    	submitButton.setBackground(Color.GREEN);
-    	submitButton.setBounds(1260, 640, 120, 40);
+    	submitButton.setBounds(1218, 640, 172, 40);
     	add(submitButton);
     	
     	// 세로 구분선
     	JLabel verticalLine = new JLabel();
-    	verticalLine.setBackground(Color.BLACK);
+    	verticalLine.setBackground(Color.WHITE);
     	verticalLine.setOpaque(true);
-    	verticalLine.setBounds(1235, 0, 3, 700);
+    	verticalLine.setBounds(1205, 0, 3, 700);
     	add(verticalLine);
     	
     	// 게임과 설명란 사이의 구분선
     	JLabel horizontalLine = new JLabel();
-    	horizontalLine.setBackground(Color.BLACK);
+    	horizontalLine.setBackground(Color.WHITE);
     	horizontalLine.setOpaque(true);
-    	horizontalLine.setBounds(0, 460, 1235, 3);
+    	horizontalLine.setBounds(0, 460, 1205, 3);
     	add(horizontalLine);
     	
     	// 설명란 내부의 구분선
     	JLabel innerHorizontalLine = new JLabel();
-    	innerHorizontalLine.setBackground(Color.BLACK);
+    	innerHorizontalLine.setBackground(Color.WHITE);
     	innerHorizontalLine.setOpaque(true);
-    	innerHorizontalLine.setBounds(0, 580, 1235, 3);
+    	innerHorizontalLine.setBounds(0, 580, 1205, 3);
     	add(innerHorizontalLine);
     	
     	// 가로 설명란
-    	JLabel horizontalLabel = new JLabel("가로");
+    	JLabel horizontalLabel = new JLabel("Across");
     	horizontalLabel.setFont(font);
     	horizontalLabel.setForeground(Color.BLACK);
     	horizontalLabel.setBackground(Color.WHITE);
     	horizontalLabel.setOpaque(true);
-    	horizontalLabel.setBounds(0, 465, 1235, 20);
+    	horizontalLabel.setBounds(5, 470, 1195, 20);
     	add(horizontalLabel);
     	
     	// 세로 설명란
-    	JLabel verticalLabel = new JLabel("세로");
+    	JLabel verticalLabel = new JLabel("Down");
     	verticalLabel.setFont(font);
     	verticalLabel.setForeground(Color.BLACK);
     	verticalLabel.setBackground(Color.WHITE);
     	verticalLabel.setOpaque(true);
-    	verticalLabel.setBounds(0, 585, 1235, 20);
+    	verticalLabel.setBounds(5, 590, 1195, 20);
     	add(verticalLabel);
     	
     	// 가로 설명란
@@ -159,7 +164,7 @@ public class GameView extends JPanel implements Observer {
     	horizontalWord.setForeground(Color.BLACK);
     	horizontalWord.setBackground(Color.WHITE);
     	horizontalWord.setOpaque(true);
-    	horizontalWord.setBounds(0, 485, 1235, 95);
+    	horizontalWord.setBounds(5, 490, 1195, 85);
     	add(horizontalWord);
     	
     	// 세로 설명란
@@ -169,7 +174,7 @@ public class GameView extends JPanel implements Observer {
     	verticalWord.setForeground(Color.BLACK);
     	verticalWord.setBackground(Color.WHITE);
     	verticalWord.setOpaque(true);
-    	verticalWord.setBounds(0, 605, 1235, 95);
+    	verticalWord.setBounds(5, 610, 1195, 85);
     	add(verticalWord);
     	
     	// 게임의 timer
@@ -178,12 +183,17 @@ public class GameView extends JPanel implements Observer {
     	
     	// 게임의 보드 화면
     	boardPanel = new JPanel();
-    	boardPanel.setBackground(Color.WHITE);
-    	boardPanel.setOpaque(true);
+    	boardPanel.setOpaque(false);
     	boardPanel.setBounds(0, 0, 1235, 460);
     	boardPanel.setLayout(null);
     	boardPanel.setFocusable(true);
     	add(boardPanel);
+    	
+    	image = new JLabel();
+    	icon = new ImageIcon("resources/background.jpg");
+    	image.setIcon(icon);
+    	image.setBounds(0, 0, WIDTH, HEIGHT);
+    	add(image);
     	
         setLayout(null);
         setFocusable(true);
@@ -270,7 +280,8 @@ public class GameView extends JPanel implements Observer {
     // 게임의 남은 시간을 실시간으로 표시
     @Override
 	public void update(Observable obs, Object arg) {
-		timeStampLabel.setText(gameTimer.getTimeStamp());
+    	timeStampLabel.setText(gameTimer.getTimeStamp());
+    	
 		if (gameTimer.getTime() <= 0) {
 			// TODO: 게임 종료
 			System.out.println("게임 종료");

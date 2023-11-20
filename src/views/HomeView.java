@@ -1,7 +1,7 @@
 package views;
 
 import javax.swing.*;
-import javax.swing.border.BevelBorder;
+import javax.swing.border.LineBorder;
 import java.awt.*;
 
 public class HomeView extends JPanel {
@@ -13,30 +13,39 @@ public class HomeView extends JPanel {
     
     // HomeView 의 5개의 버튼: 로그 아웃, 게임 시작, 리더보드, 단어 등록, 오답 노트
     private JButton[] buttons;
+    
+    // 화면 이미지
+    private final JLabel image;
+    private final ImageIcon icon;
 
     public HomeView() {
-    	Font font = new Font("Default", Font.BOLD, 20);
+    	Font font = new Font("Serif", Font.BOLD, 25);
 
         buttons = new JButton[5];
         for (int i = 0; i < 5; i++) {
             buttons[i] = new JButton();
-            buttons[i].setContentAreaFilled(true);
-            buttons[i].setBorder(new BevelBorder(BevelBorder.RAISED));
+            buttons[i].setContentAreaFilled(false);
+            buttons[i].setBorder(new LineBorder(Color.WHITE, 2));
             buttons[i].setForeground(Color.WHITE);
-            buttons[i].setBackground(Color.GREEN);
             buttons[i].setFont(font);
             add(buttons[i]);
         }
-        buttons[0].setText("로그 아웃");
+        buttons[0].setText("Sign Out");
         buttons[0].setBounds(1180, 20, 200, 80);
-        buttons[1].setText("게임 시작");
-        buttons[1].setBounds(600, 300, 200, 80);
-        buttons[2].setText("리더보드");
-        buttons[2].setBounds(600, 400, 200, 80);
-        buttons[3].setText("단어 등록");
-        buttons[3].setBounds(600, 500, 200, 80);
-        buttons[4].setText("오답 노트");
-        buttons[4].setBounds(600, 600, 200, 80);
+        buttons[1].setText("Start Game");
+        buttons[1].setBounds(550, 160, 300, 80);
+        buttons[2].setText("Leaderboard");
+        buttons[2].setBounds(550, 260, 300, 80);
+        buttons[3].setText("Add New Words");
+        buttons[3].setBounds(550, 360, 300, 80);
+        buttons[4].setText("Review Note");
+        buttons[4].setBounds(550, 460, 300, 80);
+        
+        image = new JLabel();
+    	icon = new ImageIcon("resources/background.jpg");
+    	image.setIcon(icon);
+    	image.setBounds(0, 0, WIDTH, HEIGHT);
+    	add(image);
         
         setLayout(null);
         setFocusable(true);

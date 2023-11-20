@@ -1,3 +1,4 @@
+package main;
 import java.io.IOException;
 
 import com.holub.database.Database;
@@ -45,6 +46,7 @@ public class Main {
         	reviewNoteView
         );
     	
+    	/*
     	Database db;
     	try {
 			DatabaseConnector instance = DatabaseConnector.getInstance();
@@ -93,6 +95,6 @@ public class Main {
 //				e.printStackTrace();
 //			}
     	}
-    	
+    	*/
     }
 }

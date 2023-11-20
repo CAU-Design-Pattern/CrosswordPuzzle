@@ -102,6 +102,10 @@ public final class Controller {
         	cardLayout.show(panel, "gameView");
         });
         
+        gameView.getHintButton().addActionListener(e -> {
+        	gameView.useHint();
+        });
+        
         gameView.getSubmitButton().addActionListener(e -> {
         	gameView.stopGame();
         	cardLayout.show(panel, "homeView");

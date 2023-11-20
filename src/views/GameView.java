@@ -36,11 +36,22 @@ public class GameView extends JPanel implements Observer {
     private final JLabel horizontalWord;
     private final JLabel verticalWord;
     
+    // 게임의 남은 힌트
+    private final JLabel hintLabel;
+    private final JButton hintButton;
+    
     // 제출 버튼
     private final JButton submitButton;
     
     // 게임의 보드 화면
     private final JPanel boardPanel;
+    
+    // 보드의 입력칸
+    private JTextField[][] boardField;
+    
+    // 보드의 좌표
+    private int x;
+    private int y;
 
     public GameView() {
     	Font font = new Font("Default", Font.BOLD, 20);
@@ -73,6 +84,24 @@ public class GameView extends JPanel implements Observer {
     	timeStampLabel.setOpaque(true);
     	timeStampLabel.setBounds(1260, 115, 120, 35);
     	add(timeStampLabel);
+    	
+    	hintLabel = new JLabel("남은 힌트");
+    	hintLabel.setFont(font);
+    	hintLabel.setHorizontalAlignment(JLabel.CENTER);
+    	hintLabel.setForeground(Color.WHITE);
+    	hintLabel.setBackground(Color.GREEN);
+    	hintLabel.setOpaque(true);
+    	hintLabel.setBounds(1260, 160, 120, 35);
+    	add(hintLabel);
+    	
+    	hintButton = new JButton("3");
+    	hintButton.setFont(font);
+    	hintButton.setContentAreaFilled(true);
+    	hintButton.setForeground(Color.WHITE);
+    	hintButton.setBackground(Color.GREEN);
+    	hintButton.setBounds(1260, 195, 120, 35);
+    	hintButton.setEnabled(false);
+    	add(hintButton);
     	
     	// 제출 버튼
     	submitButton = new JButton("제출");
@@ -169,10 +198,12 @@ public class GameView extends JPanel implements Observer {
     	this.crosswordGame.play();
     	levelLabel.setText(crosswordGame.getLevel());
     	timeStampLabel.setText(gameTimer.getTimeStamp());
+    	hintButton.setText("" + crosswordGame.getHintCount());
     	horizontalWord.setText("");
     	verticalWord.setText("");
     	
     	char[][] board = this.crosswordGame.getBoard();
+    	boardField = new JTextField[board.length][board[0].length];
     	for (int i = 0; i < board.length; i++) {
     		for (int j = 0; j < board[0].length; j++) {
     			if (board[i][j] != ' ') {
@@ -186,26 +217,50 @@ public class GameView extends JPanel implements Observer {
     					@Override
     					public void mouseClicked(MouseEvent e) {
     						// TODO
-    						int x = e.getComponent().getX() / 30;
-    						int y = e.getComponent().getY() / 30;
+    						x = e.getComponent().getX() / 30;
+    						y = e.getComponent().getY() / 30;
     						horizontalWord.setText("i: " + x + ", j: " + y);
     						verticalWord.setText("i: " + x + ", j: " + y);
+    						
+    						if (crosswordGame.getHintCount() > 0) {
+    							hintButton.setEnabled(true);
+    						}
     					}
     				});
     				boardPanel.add(textField);
+    				boardField[i][j] = textField;
     			} else {
-    				JLabel label = new JLabel();
-    				label.setBackground(Color.GRAY);
-    				label.setOpaque(true);
-    				label.setBounds(i * 30 + 5, j * 30 + 5, 25, 25);
-    				boardPanel.add(label);
+    				JTextField nullField = new JTextField();
+    				nullField.setBackground(Color.GRAY);
+    				nullField.setOpaque(true);
+    				nullField.setBounds(i * 30 + 5, j * 30 + 5, 25, 25);
+    				nullField.setEnabled(false);
+    				boardPanel.add(nullField);
+    				boardField[i][j] = nullField;
     			}
     		}
     	}
     }
     
+    public void useHint() {
+    	int hintCount = crosswordGame.getHintCount();
+    	if (hintCount > 0) {
+    		hintCount--;
+    		crosswordGame.setHintCount(hintCount);
+    		hintButton.setText("" + hintCount);
+    		boardField[x][y].setText("" + crosswordGame.getBoard()[x][y]);
+    		boardField[x][y].setEnabled(false);
+    	}
+    	
+    	hintButton.setEnabled(false);
+    }
+    
     public void stopGame() {
     	this.crosswordGame.stopGame();
+    }
+    
+    public JButton getHintButton() {
+    	return hintButton;
     }
     
     public JButton getSubmitButton() {

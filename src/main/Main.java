@@ -1,10 +1,10 @@
 package main;
-import java.io.IOException;
 
+import java.io.IOException;
 import com.holub.database.Database;
 import com.holub.text.ParseFailure;
 
-import connector.DatabaseConnector;
+//import connector.DatabaseConnector;
 import controllers.Controller;
 import repository.WordRepository;
 import views.*;

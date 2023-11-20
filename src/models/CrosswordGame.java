@@ -6,7 +6,7 @@ import java.util.*;
 import com.holub.database.Database;
 import com.holub.text.ParseFailure;
 
-import main.DatabaseConnector;
+import connector.DatabaseConnector;
 import repository.WordRepository;
 
 public abstract class CrosswordGame extends Observable {

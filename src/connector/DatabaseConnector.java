@@ -1,9 +1,5 @@
-<<<<<<<< HEAD:src/connector/DatabaseConnector.java
 package connector;
 
-========
-package main;
->>>>>>>> remotes/origin/main:src/main/DatabaseConnector.java
 import com.holub.database.Database;
 import com.holub.database.TableFactory;
 import com.holub.text.ParseFailure;

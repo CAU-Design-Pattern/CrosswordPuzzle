@@ -27,7 +27,6 @@ public class GameTimer extends Observable implements Runnable {
 	}
 	
 	public String getTimeStamp() {
-		//return "%02d:%02d".formatted(second / 60, second % 60);
 		int minute = seconds / 60;
 		int second = seconds % 60;
 		
@@ -52,7 +51,6 @@ public class GameTimer extends Observable implements Runnable {
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {
 				//e.printStackTrace();
-				
 				break;
 			}
 			seconds--;

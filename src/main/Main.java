@@ -4,9 +4,12 @@ import java.io.IOException;
 import com.holub.database.Database;
 import com.holub.text.ParseFailure;
 
+import connector.DatabaseConnector;
 //import connector.DatabaseConnector;
 import controllers.Controller;
+import repository.RankRepository;
 import repository.WordRepository;
+import service.WordService;
 import views.*;
 
 public class Main {
@@ -46,7 +49,7 @@ public class Main {
         	reviewNoteView
         );
     	
-    	/*
+    	
     	Database db;
     	try {
 			DatabaseConnector instance = DatabaseConnector.getInstance();
@@ -61,7 +64,7 @@ public class Main {
             e.printStackTrace();
 			db = null;
         }
-
+    	
         if (db != null) {
 //			System.out.println("test");
 			WordRepository wordRepository = new WordRepository(db);
@@ -71,9 +74,9 @@ public class Main {
 //				wordRepository.insertOneWord(new Word("Hello", "hi", 1));
 //				wordRepository.insertOneWord(new Word("lol", "lol", 3));
 //				wordRepository.insertOneWord(new Word("school", "student", 2));
-				wordRepository.getWordList();
-				wordRepository.getWordList(5);
-				wordRepository.getWordList('p');
+//				wordRepository.getWordList();
+//				wordRepository.getWordList(5);
+//				wordRepository.getWordList('p');
 			} catch (IOException | ParseFailure e){
 				e.printStackTrace();
 			}
@@ -95,6 +98,5 @@ public class Main {
 //				e.printStackTrace();
 //			}
     	}
-    	*/
     }
 }

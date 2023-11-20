@@ -7,13 +7,14 @@ import com.holub.database.Database;
 import com.holub.text.ParseFailure;
 
 import connector.DatabaseConnector;
+import dto.Word;
 import repository.WordRepository;
 
 public abstract class CrosswordGame extends Observable {
 	protected String level;
 	protected int hintCount;
 	protected char[][] board;
-	protected HashMap<String, String> wordList;
+	protected ArrayList<Word> wordList;
 	protected GameTimer gameTimer = GameTimer.getInstance();
 	protected Thread timerThread;
 	
@@ -26,7 +27,7 @@ public abstract class CrosswordGame extends Observable {
 	
 	public void initalize() {
 		hintCount = 3;
-		wordList = new HashMap<String, String>();
+		wordList = new ArrayList<Word>();
 	}
 	
 	public abstract void createBoard();
@@ -59,14 +60,14 @@ public abstract class CrosswordGame extends Observable {
 			
 		}
 		
-		wordList.put("apple", "Red");
+		//wordList.add();
 		board[2][0] = 'a';
 		board[2][1] = 'p';
 		board[2][2] = 'p';
 		board[2][3] = 'l';
 		board[2][4] = 'e';
 		
-		wordList.put("hello", "hi");
+		//wordList.add();
 		board[0][3] = 'h';
 		board[1][3] = 'e';
 		board[2][3] = 'l';
@@ -100,7 +101,7 @@ public abstract class CrosswordGame extends Observable {
 		return board;
 	}
 	
-	public HashMap<String, String> getWordList() {
+	public ArrayList<Word> getWordList() {
 		return wordList;
 	}
 	

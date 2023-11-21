@@ -3,13 +3,10 @@ package main;
 import java.io.IOException;
 import com.holub.database.Database;
 import com.holub.text.ParseFailure;
-
 import connector.DatabaseConnector;
-//import connector.DatabaseConnector;
 import controllers.Controller;
-import repository.RankRepository;
-import repository.WordRepository;
-import service.WordService;
+import dto.*;
+import repository.*;
 import views.*;
 
 public class Main {
@@ -68,8 +65,14 @@ public class Main {
         if (db != null) {
 //			System.out.println("test");
 			WordRepository wordRepository = new WordRepository(db);
+			RankRepository rankRepository = new RankRepository(db);
 			try {
-				wordRepository.getWordList();
+				for (Word word : wordRepository.getWordList()) {
+					System.out.println(word.toString());
+				}
+				for (Rank rank : rankRepository.getAllRankList()) {
+					System.out.println(rank.toString());
+				}
 //				wordRepository.insertOneWord(new Word("Apple", "Red", 1));
 //				wordRepository.insertOneWord(new Word("Hello", "hi", 1));
 //				wordRepository.insertOneWord(new Word("lol", "lol", 3));

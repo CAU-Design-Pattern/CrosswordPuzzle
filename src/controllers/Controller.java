@@ -72,6 +72,7 @@ public final class Controller {
         });
         
         homeView.getLeaderboardButton().addActionListener(e -> {
+        	leaderboardView.init();
         	cardLayout.show(panel, "leaderboardView");
         });
         

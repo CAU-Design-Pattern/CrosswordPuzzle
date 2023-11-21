@@ -234,7 +234,13 @@ public class GameView extends JPanel implements Observer {
     					@Override
     					public void mousePressed(MouseEvent e) {
     						// TODO
-    						x = e.getComponent().getX() / 30;
+    						int temp = 0;
+    						if (crosswordGame.getLevel().equals("LEVEL 1")) {
+    							temp = 300;
+    						} else if (crosswordGame.getLevel().equals("LEVEL 2")) {
+    							temp = 150;
+    						}
+    						x = (e.getComponent().getX() - temp) / 30;
     						y = e.getComponent().getY() / 30;
     						horizontalWord.setText("i: " + x + ", j: " + y);
     						verticalWord.setText("i: " + x + ", j: " + y);

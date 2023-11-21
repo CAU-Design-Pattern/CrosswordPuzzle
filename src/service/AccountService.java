@@ -16,8 +16,8 @@ public class AccountService {
     }
 
     /**
-     * 회원가입
-     *
+     * 회원가입 (id, password) 를 받으면 중복되지 않은 id에 한해서 회원가입을 해줍니다.
+     * 중복된 경우 UniqueFailException 을 던집니다.
      * @param id
      * @param password
      * @return
@@ -37,7 +37,8 @@ public class AccountService {
     }
 
     /**
-     * 로그인
+     * 로그인 : id와 password를 받고 맞으면 해당 사용자의 정보 (id, password, level)을 저장한 Account 인스턴스를 return합니다.
+     * 만약 password가 맞지않아 실패한 경우 IncorrectPasswordException 를 던집니다.
      * @param id
      * @param password
      * @return

@@ -11,6 +11,8 @@ import javax.swing.*;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.LineBorder;
 import javax.swing.text.*;
+
+import factory.WordInfo;
 import models.*;
 
 public class GameView extends JPanel implements Observer {
@@ -212,7 +214,7 @@ public class GameView extends JPanel implements Observer {
     	horizontalWord.setText("");
     	verticalWord.setText("");
     	
-    	char[][] board = this.crosswordGame.getBoard();
+    	WordInfo[][] board = this.crosswordGame.getBoard();
     	boardField = new JTextField[board.length][board[0].length];
     	int offset = 0;
     	if (crosswordGame.getLevel().equals("LEVEL 1")) {
@@ -223,7 +225,7 @@ public class GameView extends JPanel implements Observer {
     	
     	for (int i = 0; i < board.length; i++) {
     		for (int j = 0; j < board[0].length; j++) {
-    			if (board[i][j] != ' ') {
+    			if (board[i][j].getLetter() != '@') {
     				JTextField textField = new JTextField(" ");
     				textField.setDocument(new LengthRestrictedDocument(1));
     				textField.setHorizontalAlignment(JTextField.CENTER);
@@ -242,8 +244,8 @@ public class GameView extends JPanel implements Observer {
     						}
     						x = (e.getComponent().getX() - temp) / 30;
     						y = e.getComponent().getY() / 30;
-    						horizontalWord.setText("i: " + x + ", j: " + y);
-    						verticalWord.setText("i: " + x + ", j: " + y);
+    						horizontalWord.setText(crosswordGame.getBoard()[x][y].getDesc());
+    						verticalWord.setText(crosswordGame.getBoard()[x][y].getDesc());
     						
     						if (crosswordGame.getHintCount() > 0) {
     							hintButton.setBackground(Color.WHITE);
@@ -273,7 +275,7 @@ public class GameView extends JPanel implements Observer {
     		crosswordGame.setHintCount(hintCount);
     		hintButton.setBackground(new Color(200, 200, 200, 255));
     		hintButton.setText("" + hintCount);
-    		boardField[x][y].setText("" + crosswordGame.getBoard()[x][y]);
+    		boardField[x][y].setText("" + crosswordGame.getBoard()[x][y].getLetter());
     		boardField[x][y].setEnabled(false);
     	}
     	

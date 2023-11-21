@@ -8,12 +8,14 @@ import com.holub.text.ParseFailure;
 
 import connector.DatabaseConnector;
 import dto.Word;
+import factory.PuzzleGenerator;
+import factory.WordInfo;
 import repository.WordRepository;
 
 public abstract class CrosswordGame extends Observable {
 	protected String level;
 	protected int hintCount;
-	protected char[][] board;
+	protected WordInfo[][] board;
 	protected List<Word> wordList;
 	protected GameTimer gameTimer = GameTimer.getInstance();
 	protected Thread timerThread;
@@ -32,52 +34,11 @@ public abstract class CrosswordGame extends Observable {
 	public abstract void createBoard();
 	
 	public void placeWords() {
-		Database db;
-		try {
-			DatabaseConnector dbConnector = DatabaseConnector.getInstance();
-			db = dbConnector.getDatabase();
-			db.dump();
-		} catch (IOException e) {
-			System.out.println("[DB Connection Error]");
-			e.printStackTrace();
-			db = null;
-		} catch (ParseFailure e) {
-			e.printStackTrace();
-			db = null;
-		}
+		/**
+		 * TODO: DB로부터 단어를 받아서 보드 생성하기
+		 */
 		
-		if (db != null) {
-			WordRepository wordRepository = new WordRepository(db);
-			try {
-				wordList = wordRepository.getWordList();
-				for (Word word : wordList) {
-					System.out.println(word.toString());
-				}
-			} catch (IOException | ParseFailure e) {
-				e.printStackTrace();
-				wordList = null;
-			}
-		} else {
-			wordList = null;
-		}
-		
-		if (wordList != null) {
-			//wordList.add();
-			board[2][0] = 'a';
-			board[2][1] = 'p';
-			board[2][2] = 'p';
-			board[2][3] = 'l';
-			board[2][4] = 'e';
-			
-			//wordList.add();
-			board[0][3] = 'h';
-			board[1][3] = 'e';
-			board[2][3] = 'l';
-			board[3][3] = 'l';
-			board[4][3] = 'o';
-		} else {
-			
-		}
+		PuzzleGenerator.placeWords(board);
 	}
 	
 	public void startGame() {
@@ -102,7 +63,7 @@ public abstract class CrosswordGame extends Observable {
 		return hintCount;
 	}
 	
-	public char[][] getBoard() {
+	public WordInfo[][] getBoard() {
 		return board;
 	}
 	

@@ -214,6 +214,13 @@ public class GameView extends JPanel implements Observer {
     	
     	char[][] board = this.crosswordGame.getBoard();
     	boardField = new JTextField[board.length][board[0].length];
+    	int offset = 0;
+    	if (crosswordGame.getLevel().equals("LEVEL 1")) {
+    		offset = 300;
+    	} else if (crosswordGame.getLevel().equals("LEVEL 2")) {
+    		offset = 150;
+    	}
+    	
     	for (int i = 0; i < board.length; i++) {
     		for (int j = 0; j < board[0].length; j++) {
     			if (board[i][j] != ' ') {
@@ -222,7 +229,7 @@ public class GameView extends JPanel implements Observer {
     				textField.setHorizontalAlignment(JTextField.CENTER);
     				textField.setBackground(Color.WHITE);
     				textField.setOpaque(true);
-    				textField.setBounds(i * 30 + 5, j * 30 + 5, 25, 25);
+    				textField.setBounds(offset + i * 30 + 5, j * 30 + 5, 25, 25);
     				textField.addMouseListener(new MouseAdapter() {
     					@Override
     					public void mouseClicked(MouseEvent e) {
@@ -244,7 +251,7 @@ public class GameView extends JPanel implements Observer {
     				JTextField nullField = new JTextField();
     				nullField.setBackground(Color.GRAY);
     				nullField.setOpaque(true);
-    				nullField.setBounds(i * 30 + 5, j * 30 + 5, 25, 25);
+    				nullField.setBounds(offset + i * 30 + 5, j * 30 + 5, 25, 25);
     				nullField.setEnabled(false);
     				boardPanel.add(nullField);
     				boardField[i][j] = nullField;

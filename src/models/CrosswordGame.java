@@ -27,7 +27,6 @@ public abstract class CrosswordGame extends Observable {
 	
 	public void initalize() {
 		hintCount = 3;
-		wordList = new ArrayList<Word>();
 	}
 	
 	public abstract void createBoard();
@@ -51,11 +50,9 @@ public abstract class CrosswordGame extends Observable {
 			WordRepository wordRepository = new WordRepository(db);
 			try {
 				wordList = wordRepository.getWordList();
-				/*
 				for (Word word : wordList) {
 					System.out.println(word.toString());
 				}
-				*/
 			} catch (IOException | ParseFailure e) {
 				e.printStackTrace();
 				wordList = null;
@@ -84,7 +81,7 @@ public abstract class CrosswordGame extends Observable {
 	}
 	
 	public void startGame() {
-		gameTimer.setTime(300); // 300 seconds = 5 minutes
+		gameTimer.setTime(180); // 180 seconds = 3 minutes
 		timerThread = new Thread(gameTimer);
 		timerThread.start();
 	}

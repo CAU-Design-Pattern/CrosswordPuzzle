@@ -232,7 +232,7 @@ public class GameView extends JPanel implements Observer {
     				textField.setBounds(offset + i * 30 + 5, j * 30 + 5, 25, 25);
     				textField.addMouseListener(new MouseAdapter() {
     					@Override
-    					public void mouseClicked(MouseEvent e) {
+    					public void mousePressed(MouseEvent e) {
     						// TODO
     						x = e.getComponent().getX() / 30;
     						y = e.getComponent().getY() / 30;

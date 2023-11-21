@@ -48,6 +48,26 @@ public class WordRepository {
     	return transferWordList(cursor);
     }
     
+    public List<Word> getWordList(char character, int index) throws IOException, ParseFailure {
+    	String sql = "select * from word where word like '^.{" + (index-1) + "}" + character + "%'";
+    	System.out.println(sql);
+    	Table table = database.execute(sql);
+
+    	Cursor cursor = table.rows();
+    	
+    	return transferWordList(cursor);
+    }
+    
+    public List<Word> getWordList(char character, int index, int length) throws IOException, ParseFailure{
+    	String sql = "select * from word where word like '^.{" + (index-1) + "}" + character + "%' AND length = " + length;
+    	System.out.println(sql);
+    	Table table = database.execute(sql);
+
+    	Cursor cursor = table.rows();
+    	
+    	return transferWordList(cursor);
+    }
+    
     /**
      * 특정 알파벳 포함하는 단어 목록 조회
      * @param character

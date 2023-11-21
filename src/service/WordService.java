@@ -42,6 +42,39 @@ public class WordService {
         int randomIdx = random.nextInt(wordList.size());
         return wordList.get(randomIdx);
     }
+    
+    /**
+     * index번째에 특정 알파벳을 가진 length 길이의 word를 추출
+     * @param alphabet
+     * @param index
+     * @param length
+     * @return
+     * @throws ParseFailure 
+     * @throws IOException 
+     */
+    public Word getRandomWord(char alphabet, int index, int length) throws IOException, ParseFailure {
+    	List<Word> wordList = wordRepository.getWordList(alphabet, index, length);
+        if(wordList.isEmpty()) return null;
+        Random random = new Random();
+        int randomIdx = random.nextInt(wordList.size());
+        return wordList.get(randomIdx);
+    }
+    
+    /**
+     * index번째에 특정 알파벳을 가진 word를 추출
+     * @param alphabet
+     * @param index
+     * @return
+     * @throws IOException
+     * @throws ParseFailure
+     */
+    public Word getRandomWord(char alphabet, int index) throws IOException, ParseFailure {
+    	List<Word> wordList = wordRepository.getWordList(alphabet, index);
+        if(wordList.isEmpty()) return null;
+        Random random = new Random();
+        int randomIdx = random.nextInt(wordList.size());
+        return wordList.get(randomIdx);
+    }
 
     public Word getOneWord(String word) throws IOException, ParseFailure {
         return wordRepository.getWord(word);
@@ -56,7 +89,7 @@ public class WordService {
             insertOneWord(word);
         }
     }
-
+    
     public void updateOneWord(Word word) throws IOException, ParseFailure {
         wordRepository.updateOneWord(word);
     }

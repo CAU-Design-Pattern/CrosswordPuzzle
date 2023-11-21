@@ -33,7 +33,18 @@ public class WordServiceTest {
             System.out.println("word = " + word);
         }
 
-        System.out.println("----------------");
+        Word word1 = wordService.getRandomWord('o', 3);
+        System.out.println("word1 = " + word1);
+        Word word2 = wordService.getRandomWord('r', 4);
+        System.out.println("word2 = " + word2);
+
+        Word word3 = wordService.getRandomWord('t', 5, 6);
+        System.out.println("word3 = " + word3);
+
+        Word word4 = wordService.getRandomWord('u', 2, 3);
+        System.out.println("word4 = " + word4);
+
+        System.out.println("-------- migration.csv 에 있는 단어를 import합니다. --------");
         try{
             String fileName= "C:/dp2023/migration";
             wordService.importWordList(fileName, "csv");

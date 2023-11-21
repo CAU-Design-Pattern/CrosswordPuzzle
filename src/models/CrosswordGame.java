@@ -33,8 +33,6 @@ public abstract class CrosswordGame extends Observable {
 	public abstract void createBoard();
 	
 	public void placeWords() {
-		// TODO: 수정 필요, DB와 연동 필요
-		
 		Database db;
 		try {
 			DatabaseConnector dbConnector = DatabaseConnector.getInstance();
@@ -53,29 +51,36 @@ public abstract class CrosswordGame extends Observable {
 			WordRepository wordRepository = new WordRepository(db);
 			try {
 				wordList = wordRepository.getWordList();
+				/*
 				for (Word word : wordList) {
 					System.out.println(word.toString());
 				}
+				*/
 			} catch (IOException | ParseFailure e) {
 				e.printStackTrace();
+				wordList = null;
 			}
+		} else {
+			wordList = null;
+		}
+		
+		if (wordList != null) {
+			//wordList.add();
+			board[2][0] = 'a';
+			board[2][1] = 'p';
+			board[2][2] = 'p';
+			board[2][3] = 'l';
+			board[2][4] = 'e';
+			
+			//wordList.add();
+			board[0][3] = 'h';
+			board[1][3] = 'e';
+			board[2][3] = 'l';
+			board[3][3] = 'l';
+			board[4][3] = 'o';
 		} else {
 			
 		}
-		
-		//wordList.add();
-		board[2][0] = 'a';
-		board[2][1] = 'p';
-		board[2][2] = 'p';
-		board[2][3] = 'l';
-		board[2][4] = 'e';
-		
-		//wordList.add();
-		board[0][3] = 'h';
-		board[1][3] = 'e';
-		board[2][3] = 'l';
-		board[3][3] = 'l';
-		board[4][3] = 'o';
 	}
 	
 	public void startGame() {

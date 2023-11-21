@@ -104,7 +104,7 @@ public class GameView extends JPanel implements Observer {
     	hintButton.setContentAreaFilled(true);
     	hintButton.setBorder(new LineBorder(Color.WHITE, 1));
     	hintButton.setForeground(Color.BLACK);
-    	hintButton.setBackground(Color.WHITE);
+    	hintButton.setBackground(new Color(200, 200, 200, 255));
     	hintButton.setBounds(1218, 197, 172, 35);
     	hintButton.setEnabled(false);
     	add(hintButton);
@@ -233,6 +233,7 @@ public class GameView extends JPanel implements Observer {
     						verticalWord.setText("i: " + x + ", j: " + y);
     						
     						if (crosswordGame.getHintCount() > 0) {
+    							hintButton.setBackground(Color.WHITE);
     							hintButton.setEnabled(true);
     						}
     					}
@@ -257,6 +258,7 @@ public class GameView extends JPanel implements Observer {
     	if (hintCount > 0) {
     		hintCount--;
     		crosswordGame.setHintCount(hintCount);
+    		hintButton.setBackground(new Color(200, 200, 200, 255));
     		hintButton.setText("" + hintCount);
     		boardField[x][y].setText("" + crosswordGame.getBoard()[x][y]);
     		boardField[x][y].setEnabled(false);

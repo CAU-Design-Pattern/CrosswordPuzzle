@@ -33,7 +33,6 @@ public class DatabaseConnector {
                 System.out.println("[Table create : " + tableName + " ]");
             }
         }
-
     }
 
     private Properties getProperties() throws IOException {

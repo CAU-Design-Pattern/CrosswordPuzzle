@@ -115,7 +115,7 @@ public class GameView extends JPanel implements Observer {
     	submitButton.setContentAreaFilled(false);
     	submitButton.setBorder(new LineBorder(Color.WHITE, 2));
     	submitButton.setForeground(Color.WHITE);
-    	submitButton.setBounds(1218, 640, 172, 40);
+    	submitButton.setBounds(1218, 600, 172, 80);
     	add(submitButton);
     	
     	// 세로 구분선

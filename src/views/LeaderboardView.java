@@ -12,6 +12,7 @@ import com.holub.text.ParseFailure;
 import connector.DatabaseConnector;
 import dto.*;
 import repository.*;
+import service.RankService;
 
 public class LeaderboardView extends JPanel {
 	// LeaderboardView 의  Width
@@ -110,9 +111,9 @@ public class LeaderboardView extends JPanel {
 		
 		List<Rank> rankList;
 		if (db != null) {
-			RankRepository rankRepository = new RankRepository(db);
+			RankService rankService = new RankService(new RankRepository(db));
 			try {
-				rankList = rankRepository.getAllRankList();
+				rankList = rankService.getRankList();
 			} catch (IOException | ParseFailure e) {
 				e.printStackTrace();
 				rankList = null;

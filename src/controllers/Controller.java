@@ -82,6 +82,7 @@ public final class Controller {
         });
         
         homeView.getWordRegistrationButton().addActionListener(e -> {
+        	wordRegistrationView.init();
         	cardLayout.show(panel, "wordRegistrationView");
         });
         

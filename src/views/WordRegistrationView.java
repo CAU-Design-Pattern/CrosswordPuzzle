@@ -6,6 +6,8 @@ import java.awt.Font;
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 
+import util.LengthRestrictedDocument;
+
 public class WordRegistrationView extends JPanel {
 	// WordRegistrationView 의  Width
     private static final int WIDTH = 1400;
@@ -23,6 +25,7 @@ public class WordRegistrationView extends JPanel {
     // 단어 등록 테이블
     private final JLabel wordTable;
     private final JLabel[] wordColumns;
+    private final JTextField[][] words;
 
     public WordRegistrationView() {
         Font font = new Font("Serif", Font.BOLD, 25);
@@ -56,16 +59,36 @@ public class WordRegistrationView extends JPanel {
     		wordColumns[i].setFont(font);
     		wordColumns[i].setHorizontalAlignment(JLabel.CENTER);
     		wordColumns[i].setForeground(Color.BLACK);
-    		wordColumns[i].setBackground(Color.WHITE);
+    		wordColumns[i].setBackground(new Color(255, 255, 255, 255));
     		wordColumns[i].setOpaque(true);
     		add(wordColumns[i]);
     	}
 		wordColumns[0].setText("Word");
-		wordColumns[0].setBounds(40, 40, 200, 60);
+		wordColumns[0].setBounds(50, 40, 180, 60);
 		wordColumns[1].setText("Level");
-		wordColumns[1].setBounds(240, 40, 150, 60);
+		wordColumns[1].setBounds(250, 40, 130, 60);
 		wordColumns[2].setText("Discription");
-		wordColumns[2].setBounds(390, 40, 750, 60);
+		wordColumns[2].setBounds(400, 40, 730, 60);
+		
+		words = new JTextField[10][3];
+    	for (int i = 0; i < words.length; i++) {
+    		for (int j = 0; j < words[0].length; j++) {
+    			words[i][j] = new JTextField();
+    			words[i][j].setFont(new Font("Serif", Font.PLAIN, 20));
+    			words[i][j].setHorizontalAlignment(JLabel.CENTER);
+    			words[i][j].setForeground(Color.BLACK);
+    			words[i][j].setBackground(Color.WHITE);
+    			words[i][j].setOpaque(true);
+    			add(words[i][j]);
+    		}
+    		words[i][0].setBounds(50, 120 + i * 55, 180, 45);
+    		words[i][1].setBounds(250, 120 + i * 55, 130, 45);
+    		words[i][2].setBounds(400, 120 + i * 55, 730, 45);
+    		
+    		words[i][0].setDocument(new LengthRestrictedDocument(15));
+    		words[i][1].setDocument(new LengthRestrictedDocument(1));
+    		words[i][2].setDocument(new LengthRestrictedDocument(50));
+    	}
         
         image = new JLabel();
     	icon = new ImageIcon("resources/background.jpg");
@@ -76,6 +99,14 @@ public class WordRegistrationView extends JPanel {
         setLayout(null);
         setFocusable(true);
         setPreferredSize(new Dimension(WIDTH, HEIGHT));
+    }
+    
+    public void init() {
+    	for (int i = 0; i < words.length; i++) {
+    		for (int j = 0; j < words[0].length; j++) {
+    			words[i][j].setText("");
+    		}
+    	}
     }
     
     public JButton getBackButton() {

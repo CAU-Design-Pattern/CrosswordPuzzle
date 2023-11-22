@@ -14,6 +14,7 @@ import javax.swing.text.*;
 
 import factory.WordInfo;
 import models.*;
+import util.LengthRestrictedDocument;
 
 public class GameView extends JPanel implements Observer {
 	// GameView 의  Width
@@ -304,20 +305,4 @@ public class GameView extends JPanel implements Observer {
 			System.out.println("게임 종료");
 		}
 	}
-    
-    final class LengthRestrictedDocument extends PlainDocument {
-    	private final int limit;
-    	
-    	public LengthRestrictedDocument(int limit) {
-    		this.limit = limit;
-    	}
-    	
-    	@Override
-    	public void insertString(int offs, String str, AttributeSet a) throws BadLocationException {
-    		if (str == null) return;
-    		if ((getLength() + str.length()) <= limit) {
-    			super.insertString(offs, str, a);
-    		}
-    	}
-    }
 }

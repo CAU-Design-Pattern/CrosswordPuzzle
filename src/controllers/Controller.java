@@ -142,10 +142,10 @@ public final class Controller {
 						WordService wordService = new WordService(new WordRepository(db));
 						wordService.importWordList(filename, extension);
 					}
-				} catch (IOException | ParseFailure e) {
-					e.printStackTrace();
-				} catch (UnsupportedExtensionException e) {
-					e.printStackTrace();
+					JOptionPane.showMessageDialog(new JFrame(), "Successfully imported");
+					cardLayout.show(panel, "homeView");
+				} catch (Exception e) {
+					JOptionPane.showMessageDialog(new JFrame(), "Failed to import");
 				}
         	}
         });

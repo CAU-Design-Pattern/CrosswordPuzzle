@@ -27,6 +27,7 @@ public class PuzzleGenerator {
 		WordPlacementStrategy wordPlacementStrategy = WordPlacementStrategy.ACROSS;
 		if (db != null) {
 			WordService wordService = new WordService(new WordRepository(db));
+			
 			try {
 				Word word = wordService.getRandomWordIncludingAlphabet('a');
 				String str = word.getWord();

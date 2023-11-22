@@ -19,6 +19,10 @@ public class WordRegistrationView extends JPanel {
     // 화면 이미지
     private final JLabel image;
     private final ImageIcon icon;
+    
+    // 단어 등록 테이블
+    private final JLabel wordTable;
+    private final JLabel[] wordColumns;
 
     public WordRegistrationView() {
         Font font = new Font("Serif", Font.BOLD, 25);
@@ -35,9 +39,33 @@ public class WordRegistrationView extends JPanel {
         buttons[0].setText("Go Back");
         buttons[0].setBounds(1180, 20, 200, 80);
         buttons[1].setText("Import");
-        buttons[1].setBounds(20, 600, 200, 80);
+        buttons[1].setBounds(1180, 500, 200, 80);
         buttons[2].setText("Register");
         buttons[2].setBounds(1180, 600, 200, 80);
+        
+        // 단어 테이블
+        wordTable = new JLabel();
+    	wordTable.setBackground(new Color(255, 255, 255, 100));
+    	wordTable.setOpaque(true);
+    	wordTable.setBounds(20, 20, 1140, 660);
+    	add(wordTable);
+    	
+    	wordColumns = new JLabel[3];
+    	for (int i = 0; i < wordColumns.length; i++) {
+    		wordColumns[i] = new JLabel();
+    		wordColumns[i].setFont(font);
+    		wordColumns[i].setHorizontalAlignment(JLabel.CENTER);
+    		wordColumns[i].setForeground(Color.BLACK);
+    		wordColumns[i].setBackground(Color.WHITE);
+    		wordColumns[i].setOpaque(true);
+    		add(wordColumns[i]);
+    	}
+		wordColumns[0].setText("Word");
+		wordColumns[0].setBounds(40, 40, 200, 60);
+		wordColumns[1].setText("Level");
+		wordColumns[1].setBounds(240, 40, 150, 60);
+		wordColumns[2].setText("Discription");
+		wordColumns[2].setBounds(390, 40, 750, 60);
         
         image = new JLabel();
     	icon = new ImageIcon("resources/background.jpg");

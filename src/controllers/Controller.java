@@ -1,10 +1,20 @@
 package controllers;
 
 import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
+import javax.swing.filechooser.FileSystemView;
 
+import com.holub.database.Database;
+import com.holub.text.ParseFailure;
+
+import connector.DatabaseConnector;
+import exception.UnsupportedExtensionException;
 import models.*;
+import repository.WordRepository;
+import service.WordService;
 import views.*;
 import java.awt.*;
+import java.io.IOException;
 
 public final class Controller {
     private final JFrame frame;
@@ -111,8 +121,33 @@ public final class Controller {
         	cardLayout.show(panel, "homeView");
         });
         
-        wordRegistrationView.getImportButton().addActionListener(e -> {
-        	// TODO
+        wordRegistrationView.getImportButton().addActionListener(actionEvent -> {
+        	// 확장자가 csv 인 파일만 로드할 수 있도록 함.
+        	JFileChooser jfc = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
+        	jfc.setDialogTitle("Select a .csv file you want to import");
+        	jfc.setAcceptAllFileFilterUsed(false);
+        	FileNameExtensionFilter filter = new FileNameExtensionFilter("csv", "csv");
+        	jfc.addChoosableFileFilter(filter);
+        	
+        	int resultValue = jfc.showOpenDialog(null);
+        	if (resultValue == JFileChooser.APPROVE_OPTION) {
+        		String absolutePath = jfc.getSelectedFile().getAbsolutePath();
+        		String filename = absolutePath.substring(0, absolutePath.length() - 4);
+        		String extension = absolutePath.substring(absolutePath.length() - 3);
+        		
+        		try {
+					DatabaseConnector dbConnector = DatabaseConnector.getInstance();
+					Database db = dbConnector.getDatabase();
+					if (db != null) {
+						WordService wordService = new WordService(new WordRepository(db));
+						wordService.importWordList(filename, extension);
+					}
+				} catch (IOException | ParseFailure e) {
+					e.printStackTrace();
+				} catch (UnsupportedExtensionException e) {
+					e.printStackTrace();
+				}
+        	}
         });
         
         wordRegistrationView.getRegistrationButton().addActionListener(e -> {

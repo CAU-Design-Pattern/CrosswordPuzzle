@@ -4,17 +4,15 @@ public class WordInfo {
 	private char letter;
 	private String acrossDesc;
 	private String downDesc;
-	private WordPlacementStrategy wordPlacementStrategy;
 	
-	public WordInfo(char letter, String acrossDesc, String downDesc, WordPlacementStrategy wordPlacementStrategy) {
+	public WordInfo(char letter, String acrossDesc, String downDesc) {
 		this.letter = letter;
 		this.acrossDesc = acrossDesc;
 		this.downDesc = downDesc;
-		this.wordPlacementStrategy = wordPlacementStrategy;
 	}
 	
 	public WordInfo() {
-		this('@', " ", " ", WordPlacementStrategy.NONE);
+		this('@', " ", " ");
 	}
 	
 	public char getLetter() {
@@ -29,10 +27,6 @@ public class WordInfo {
 		return downDesc;
 	}
 	
-	public WordPlacementStrategy getWordPlacementStrategy() {
-		return wordPlacementStrategy;
-	}
-	
 	public void setLetter(char letter) {
 		this.letter = letter;
 	}
@@ -43,9 +37,5 @@ public class WordInfo {
 	
 	public void setDownDesc(String downDesc) {
 		this.downDesc = downDesc;
-	}
-	
-	public void setWordPlacementStrategy(WordPlacementStrategy wordPlacementStrategy) {
-		this.wordPlacementStrategy = wordPlacementStrategy;
 	}
 }

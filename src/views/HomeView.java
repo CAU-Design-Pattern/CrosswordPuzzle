@@ -36,7 +36,7 @@ public class HomeView extends JPanel {
         buttons[1].setBounds(550, 210, 300, 80);
         buttons[2].setText("Leaderboard");
         buttons[2].setBounds(550, 310, 300, 80);
-        buttons[3].setText("Add New Words");
+        buttons[3].setText("Add New Word");
         buttons[3].setBounds(550, 410, 300, 80);
         
         image = new JLabel();

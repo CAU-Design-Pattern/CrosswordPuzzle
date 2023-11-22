@@ -25,7 +25,7 @@ public class WordRegistrationView extends JPanel {
     // 단어 등록 테이블
     private final JLabel wordTable;
     private final JLabel[] wordColumns;
-    private final JTextField[][] words;
+    private final JTextField[] words;
 
     public WordRegistrationView() {
         Font font = new Font("Serif", Font.BOLD, 25);
@@ -50,7 +50,7 @@ public class WordRegistrationView extends JPanel {
         wordTable = new JLabel();
     	wordTable.setBackground(new Color(255, 255, 255, 100));
     	wordTable.setOpaque(true);
-    	wordTable.setBounds(20, 20, 1140, 660);
+    	wordTable.setBounds(20, 250, 1140, 165);
     	add(wordTable);
     	
     	wordColumns = new JLabel[3];
@@ -64,32 +64,28 @@ public class WordRegistrationView extends JPanel {
     		add(wordColumns[i]);
     	}
 		wordColumns[0].setText("Word");
-		wordColumns[0].setBounds(50, 40, 180, 60);
+		wordColumns[0].setBounds(50, 270, 180, 60);
 		wordColumns[1].setText("Level");
-		wordColumns[1].setBounds(250, 40, 130, 60);
+		wordColumns[1].setBounds(250, 270, 130, 60);
 		wordColumns[2].setText("Discription");
-		wordColumns[2].setBounds(400, 40, 730, 60);
+		wordColumns[2].setBounds(400, 270, 730, 60);
 		
-		words = new JTextField[10][3];
-    	for (int i = 0; i < words.length; i++) {
-    		for (int j = 0; j < words[0].length; j++) {
-    			words[i][j] = new JTextField();
-    			words[i][j].setFont(new Font("Serif", Font.PLAIN, 20));
-    			words[i][j].setHorizontalAlignment(JLabel.CENTER);
-    			words[i][j].setForeground(Color.BLACK);
-    			words[i][j].setBackground(Color.WHITE);
-    			words[i][j].setOpaque(true);
-    			add(words[i][j]);
-    		}
-    		words[i][0].setBounds(50, 120 + i * 55, 180, 45);
-    		words[i][1].setBounds(250, 120 + i * 55, 130, 45);
-    		words[i][2].setBounds(400, 120 + i * 55, 730, 45);
-    		
-    		words[i][0].setDocument(new LengthRestrictedDocument(15));
-    		words[i][1].setDocument(new LengthRestrictedDocument(1));
-    		words[i][2].setDocument(new LengthRestrictedDocument(50));
-    	}
-        
+		words = new JTextField[3];
+		for (int i = 0; i < words.length; i++) {
+			words[i] = new JTextField();
+			words[i].setFont(new Font("Serif", Font.PLAIN, 20));
+			words[i].setHorizontalAlignment(JLabel.CENTER);
+			words[i].setForeground(Color.BLACK);
+			words[i].setBackground(Color.WHITE);
+			words[i].setOpaque(true);
+			add(words[i]);
+		}
+		words[0].setBounds(50, 350, 180, 45);
+		words[1].setBounds(250, 350, 130, 45);
+		words[2].setBounds(400, 350, 730, 45);
+		words[0].setDocument(new LengthRestrictedDocument(15));
+		words[1].setDocument(new LengthRestrictedDocument(1));
+		
         image = new JLabel();
     	icon = new ImageIcon("resources/background.jpg");
     	image.setIcon(icon);
@@ -101,11 +97,9 @@ public class WordRegistrationView extends JPanel {
         setPreferredSize(new Dimension(WIDTH, HEIGHT));
     }
     
-    public void init() {
+    public void clear() {
     	for (int i = 0; i < words.length; i++) {
-    		for (int j = 0; j < words[0].length; j++) {
-    			words[i][j].setText("");
-    		}
+    		words[i].setText("");
     	}
     }
     
@@ -119,5 +113,13 @@ public class WordRegistrationView extends JPanel {
     
     public JButton getRegistrationButton() {
     	return buttons[2];
+    }
+    
+    public String[] getWord() {
+    	String[] result = new String[wordColumns.length];
+    	for (int i = 0; i < wordColumns.length; i++) {
+    		result[i] = words[i].getText();
+    	}
+    	return result;
     }
 }

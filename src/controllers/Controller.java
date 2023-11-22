@@ -8,7 +8,9 @@ import com.holub.database.Database;
 import com.holub.text.ParseFailure;
 
 import connector.DatabaseConnector;
+import dto.Word;
 import exception.UnsupportedExtensionException;
+import factory.WordPlacementStrategy;
 import models.*;
 import repository.WordRepository;
 import service.WordService;
@@ -82,7 +84,7 @@ public final class Controller {
         });
         
         homeView.getWordRegistrationButton().addActionListener(e -> {
-        	wordRegistrationView.init();
+        	wordRegistrationView.clear();
         	cardLayout.show(panel, "wordRegistrationView");
         });
         
@@ -139,6 +141,7 @@ public final class Controller {
         		try {
 					DatabaseConnector dbConnector = DatabaseConnector.getInstance();
 					Database db = dbConnector.getDatabase();
+					db.dump();
 					if (db != null) {
 						WordService wordService = new WordService(new WordRepository(db));
 						wordService.importWordList(filename, extension);
@@ -151,8 +154,44 @@ public final class Controller {
         	}
         });
         
-        wordRegistrationView.getRegistrationButton().addActionListener(e -> {
-        	// TODO
+        wordRegistrationView.getRegistrationButton().addActionListener(actionEvent -> {
+        	String[] temp = wordRegistrationView.getWord();
+        	Word word;
+        	try {
+        		word = new Word(temp[0], temp[2], Integer.parseInt(temp[1]));
+        	} catch (NumberFormatException e) {
+        		JOptionPane.showMessageDialog(new JFrame(), "The value of Level must be Integer value.");
+        		return;
+        	}
+        	
+        	Database db;
+    		try {
+    			DatabaseConnector dbConnector = DatabaseConnector.getInstance();
+    			db = dbConnector.getDatabase();
+    			db.dump();
+    		} catch (IOException e) {
+    			System.out.println("[DB Connection Error]");
+    			e.printStackTrace();
+    			db = null;
+    		} catch (ParseFailure e) {
+    			e.printStackTrace();
+    			db = null;
+    		}
+    		
+    		if (db != null) {
+    			WordService wordService = new WordService(new WordRepository(db));
+    			try {
+    				wordService.insertOneWord(word);
+    				JOptionPane.showMessageDialog(new JFrame(), "Successfully added");
+    				wordRegistrationView.clear();
+    				cardLayout.show(panel, "homeView");
+    			} catch (Exception e) {
+    				e.printStackTrace();
+    				JOptionPane.showMessageDialog(new JFrame(), "Failed to add words");
+    			}
+    		} else {
+    			JOptionPane.showMessageDialog(new JFrame(), "Failed to add words");
+    		}
         });
     }
 }

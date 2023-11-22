@@ -7,6 +7,7 @@ import com.holub.text.ParseFailure;
 import connector.DatabaseConnector;
 import dto.Word;
 import repository.WordRepository;
+import service.WordService;
 
 public class PuzzleGenerator {
 	public static void placeWords(WordInfo[][] board) {
@@ -28,9 +29,9 @@ public class PuzzleGenerator {
 		
 		WordPlacementStrategy wordPlacementStrategy = WordPlacementStrategy.HORIZONTAL;
 		if (db != null) {
-			WordRepository wordRepository = new WordRepository(db);
+			WordService wordService = new WordService(new WordRepository(db));
 			try {
-				Word word = wordRepository.getWordList().get(0);
+				Word word = wordService.getRandomWordIncludingAlphabet('a');
 				String str = word.getWord();
 				for (int i = 0; i < word.getLength(); i++) {
 					board[i][0].setLetter(str.charAt(i));

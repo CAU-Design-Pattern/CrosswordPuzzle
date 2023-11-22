@@ -36,8 +36,8 @@ public class GameView extends JPanel implements Observer {
     private GameTimer gameTimer;
     
     // 십자말풀이 게임의 설명란
-    private final JLabel horizontalWord;
-    private final JLabel verticalWord;
+    private final JLabel acrossWord;
+    private final JLabel downWord;
     
     // 게임의 남은 힌트
     private final JLabel hintLabel;
@@ -160,24 +160,24 @@ public class GameView extends JPanel implements Observer {
     	add(verticalLabel);
     	
     	// 가로 설명란
-    	horizontalWord = new JLabel("");
-    	horizontalWord.setFont(font);
-    	horizontalWord.setVerticalAlignment(JLabel.NORTH);
-    	horizontalWord.setForeground(Color.BLACK);
-    	horizontalWord.setBackground(Color.WHITE);
-    	horizontalWord.setOpaque(true);
-    	horizontalWord.setBounds(5, 490, 1195, 85);
-    	add(horizontalWord);
+    	acrossWord = new JLabel("");
+    	acrossWord.setFont(font);
+    	acrossWord.setVerticalAlignment(JLabel.NORTH);
+    	acrossWord.setForeground(Color.BLACK);
+    	acrossWord.setBackground(Color.WHITE);
+    	acrossWord.setOpaque(true);
+    	acrossWord.setBounds(5, 490, 1195, 85);
+    	add(acrossWord);
     	
     	// 세로 설명란
-    	verticalWord = new JLabel();
-    	verticalWord.setFont(font);
-    	verticalWord.setVerticalAlignment(JLabel.NORTH);
-    	verticalWord.setForeground(Color.BLACK);
-    	verticalWord.setBackground(Color.WHITE);
-    	verticalWord.setOpaque(true);
-    	verticalWord.setBounds(5, 610, 1195, 85);
-    	add(verticalWord);
+    	downWord = new JLabel();
+    	downWord.setFont(font);
+    	downWord.setVerticalAlignment(JLabel.NORTH);
+    	downWord.setForeground(Color.BLACK);
+    	downWord.setBackground(Color.WHITE);
+    	downWord.setOpaque(true);
+    	downWord.setBounds(5, 610, 1195, 85);
+    	add(downWord);
     	
     	// 게임의 timer
     	gameTimer = GameTimer.getInstance();
@@ -211,8 +211,8 @@ public class GameView extends JPanel implements Observer {
     	levelLabel.setText(crosswordGame.getLevel());
     	timeStampLabel.setText(gameTimer.getTimeStamp());
     	hintButton.setText("" + crosswordGame.getHintCount());
-    	horizontalWord.setText("");
-    	verticalWord.setText("");
+    	acrossWord.setText("");
+    	downWord.setText("");
     	
     	WordInfo[][] board = this.crosswordGame.getBoard();
     	boardField = new JTextField[board.length][board[0].length];
@@ -244,8 +244,8 @@ public class GameView extends JPanel implements Observer {
     						}
     						x = (e.getComponent().getX() - temp) / 30;
     						y = e.getComponent().getY() / 30;
-    						horizontalWord.setText(crosswordGame.getBoard()[x][y].getDesc());
-    						verticalWord.setText(crosswordGame.getBoard()[x][y].getDesc());
+    						acrossWord.setText(crosswordGame.getBoard()[x][y].getAcrossDesc());
+    						downWord.setText(crosswordGame.getBoard()[x][y].getDownDesc());
     						
     						if (crosswordGame.getHintCount() > 0) {
     							hintButton.setBackground(Color.WHITE);

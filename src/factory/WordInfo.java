@@ -2,25 +2,31 @@ package factory;
 
 public class WordInfo {
 	private char letter;
-	private String desc;
+	private String acrossDesc;
+	private String downDesc;
 	private WordPlacementStrategy wordPlacementStrategy;
 	
-	public WordInfo(char letter, String desc, WordPlacementStrategy wordPlacementStrategy) {
+	public WordInfo(char letter, String acrossDesc, String downDesc, WordPlacementStrategy wordPlacementStrategy) {
 		this.letter = letter;
-		this.desc = desc;
+		this.acrossDesc = acrossDesc;
+		this.downDesc = downDesc;
 		this.wordPlacementStrategy = wordPlacementStrategy;
 	}
 	
 	public WordInfo() {
-		this('@', " ", WordPlacementStrategy.HORIZONTAL);
+		this('@', " ", " ", WordPlacementStrategy.NONE);
 	}
 	
 	public char getLetter() {
 		return letter;
 	}
 	
-	public String getDesc() {
-		return desc;
+	public String getAcrossDesc() {
+		return acrossDesc;
+	}
+	
+	public String getDownDesc() {
+		return downDesc;
 	}
 	
 	public WordPlacementStrategy getWordPlacementStrategy() {
@@ -31,8 +37,12 @@ public class WordInfo {
 		this.letter = letter;
 	}
 	
-	public void setDesc(String desc) {
-		this.desc = desc;
+	public void setAcrossDesc(String acrossDesc) {
+		this.acrossDesc = acrossDesc;
+	}
+	
+	public void setDownDesc(String downDesc) {
+		this.downDesc = downDesc;
 	}
 	
 	public void setWordPlacementStrategy(WordPlacementStrategy wordPlacementStrategy) {

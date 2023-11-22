@@ -28,7 +28,7 @@ public abstract class CrosswordGame extends Observable {
 	}
 	
 	public void initalize() {
-		hintCount = 3;
+		hintCount = 5;
 	}
 	
 	public abstract void createBoard();

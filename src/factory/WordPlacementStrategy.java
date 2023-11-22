@@ -1,3 +1,3 @@
 package factory;
 
-public enum WordPlacementStrategy { HORIZONTAL, VERTICAL}
+public enum WordPlacementStrategy { NONE, ACROSS, DOWN, BOTH }

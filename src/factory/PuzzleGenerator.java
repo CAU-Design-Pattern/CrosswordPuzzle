@@ -27,7 +27,7 @@ public class PuzzleGenerator {
 			db = null;
 		}
 		
-		WordPlacementStrategy wordPlacementStrategy = WordPlacementStrategy.HORIZONTAL;
+		WordPlacementStrategy wordPlacementStrategy = WordPlacementStrategy.ACROSS;
 		if (db != null) {
 			WordService wordService = new WordService(new WordRepository(db));
 			try {
@@ -35,8 +35,12 @@ public class PuzzleGenerator {
 				String str = word.getWord();
 				for (int i = 0; i < word.getLength(); i++) {
 					board[i][0].setLetter(str.charAt(i));
-					board[i][0].setDesc(word.getDesc());
-					board[i][0].setWordPlacementStrategy(WordPlacementStrategy.VERTICAL);
+					if (wordPlacementStrategy == WordPlacementStrategy.ACROSS) {
+						board[i][0].setAcrossDesc(word.getDesc());
+					}else {
+						board[i][0].setDownDesc(word.getDesc());
+					}
+					board[i][0].setWordPlacementStrategy(wordPlacementStrategy);
 					visited[i][0] = true;
 				}	
 			} catch (IOException | ParseFailure e) {

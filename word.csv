@@ -1,79 +1,1002 @@
 word
-word,desc,level,length
-Apple,Red,1,5
-Hello,hi,1,5
-lol,lol,3,3
-school,student,2,6
-haaaa,student,2,5
-happy,testtest,0,5
-computer,computer,2,8
-nice,nice,1,4
-good,good,1,4
-best,best,1,4
-engine,engine,2,6
-lotion,lotion,2,6
-mouse,mouse,2,5
-check,check,1,5
-essence,essence,3,7
-door,door,1,4
-bus,bus,1,3
-smart,smart,1,5
-algorithm,algorithm,3,9
-data,data,1,4
-program,program,1,7
-create,create,2,6
-phone,phone,1,5
-apple,A round fruit with red or green skin,1,5
-bicycle,A vehicle with two wheels that a person sits on and moves by turning the two pedals,2,7
-circle,A round shape that has the same distance from the center to every point on its line,3,6
-elephant,A very large animal with a long flexible nose called a trunk,3,8
-frog,A small creature that has smooth skin lives in water and on land,2,4
-giraffe,An African animal with a very long neck and long legs,3,7
-hamburger,A round patty of ground beef between two pieces of bread,1,9
-ice,Frozen water a brittle transparent crystalline solid,1,3
-jacket,A piece of clothing for the upper body that has sleeves and fastens in the front or slightly on the side,2,6
-kitchen,A room in which food is cooked,2,7
-lemon,A yellow oval fruit with sour juice,1,5
-monkey,A small to medium-sized primate that typically has a long tail,2,6
-notebook,A book of blank paper for writing notes,1,8
-ocean,A very large expanse of sea,2,5
-piano,A large keyboard musical instrument with a wooden case enclosing a soundboard,3,5
-queen,The female ruler of an independent state,3,5
-rainbow,A natural phenomenon featuring a spectrum of light appearing in the sky,2,7
-sun,The star at the center of the solar system,1,3
-turtle,A slow-moving reptile enclosed in a scaly or leathery domed shell,2,6
-umbrella,A device consisting of a circular canopy of cloth on a folding metal frame,1,8
-violin,A string instrument of the violin family,3,6
-window,An opening in the wall or roof of a building that allows light sound and air,1,6
-xylophone,A musical instrument in the percussion family that consists of wooden bars,3,9
-yogurt,A semi-solid sourish food prepared from milk fermented by added bacteria,2,6
-zebra,An African wild horse with black-and-white stripes,3,5
-technology,The application of scientific knowledge for practical purposes,2,10
-communication,The imparting or exchanging of information by speaking writing or using some other medium,1,13
-mathematics,The abstract science of number quantity and space,3,11
-energy,The capacity to do work,2,6
-medicine,The science or practice of the diagnosis treatment and prevention of disease,3,8
-music,The art of arranging sounds in time to produce a composition with harmony melody rhythm and timbre,1,5
-geography,The study of the physical features of the earth,2,9
-psychology,The scientific study of the human mind and its functions,2,10
-galaxy,A system of millions or billions of stars together with gas and dust held together by gravitational attraction,2,6
-justice,The quality of being fair and reasonable,1,7
-vocabulary,All the words known and used by a particular person,3,10
-architecture,The art or practice of designing and constructing buildings,1,12
-gravity,The force that attracts two bodies toward each other,2,7
-invention,The action of inventing something typically a process or device,1,9
-climate,The weather conditions prevailing in an area over a long period,2,7
-biology,The study of living organisms divided into many specialized fields that cover their morphology physiology anatomy behavior origin and distribution,3,7
-chemistry,The branch of science that deals with the identification of the substances of which matter is composed,3,9
-poetry,Literary work in which special intensity is given to the expression of feelings and ideas by the use of distinctive style and rhythm,2,6
-history,The study of past events particularly in human affairs,3,7
-planet,A celestial body moving in an elliptical orbit around a star,1,6
-literature,Written works especially those considered of superior or lasting artistic merit,3,10
-science,The systematic study of the structure and behavior of the physical and natural world through observation and experiment,2,7
-run,To move rapidly,2,3
-blue,Having the color of the clear sky,1,4
-water,A transparent fluid,2,5
-cat,A small mammal,2,3
-house,A place to live,1,5
-book,A written or printed work,2,4
-dog,A domesticated carnivorous mammal,2,3
+word,	desc,	level,	length
+consider,	deem to be,	1,	8
+minute,	infinitely or immeasurably small,	1,	6
+accord,	concurrence of opinion,	1,	6
+evident,	clearly revealed to the mind or the senses or judgment,	1,	7
+practice,	a customary way of operation or behavior,	1,	8
+intend,	have in mind as a purpose,	1,	6
+concern,	something that interests you because it is important,	1,	7
+commit,	perform an act usually with a negative connotation,	1,	6
+issue,	some situation or event that is thought about,	1,	5
+approach,	move towards,	1,	8
+establish,	set up or found,	1,	9
+utter,	without qualification,	1,	5
+conduct,	direct the course of manage or control,	1,	7
+engage,	consume all of ones attention or time,	1,	6
+obtain,	come into possession of,	1,	6
+scarce,	deficient in quantity or number compared with the demand,	1,	6
+policy,	a plan of action adopted by an individual or social group,	1,	6
+straight,	successive without a break,	1,	8
+stock,	capital raised by a corporation through the issue of shares,	1,	5
+apparent,	clearly revealed to the mind or the senses or judgment,	1,	8
+property,	a basic or essential attribute shared by members of a class,	1,	8
+fancy,	imagine conceive of see in ones mind,	1,	5
+concept,	an abstract or general idea inferred from specific instances,	1,	7
+court,	an assembly to conduct judicial business,	1,	5
+appoint,	assign a duty responsibility or obligation to,	1,	7
+passage,	a section of text particularly a section of medium length,	1,	7
+vain,	unproductive of success,	1,	4
+instance,	an occurrence of something,	1,	8
+coast,	the shore of a sea or ocean,	1,	5
+project,	a planned undertaking,	1,	7
+commission,	a special group delegated to consider some matter,	1,	10
+constant,	a quantity that does not vary,	1,	8
+circumstances,	ones overall condition in life,	1,	13
+constitute,	compose or represent,	1,	10
+level,	a relative position or degree of value in a graded group,	1,	5
+affect,	have an influence upon,	1,	6
+institute,	set up or lay the groundwork for,	1,	9
+render,	give an interpretation of,	1,	6
+appeal,	be attractive to,	1,	6
+generate,	bring into existence,	1,	8
+theory,	a wellsubstantiated explanation of some aspect of the world,	1,	6
+range,	a variety of different things or activities,	1,	5
+campaign,	a race between candidates for elective office,	1,	8
+league,	an association of sports teams that organizes matches,	1,	6
+labor,	any piece of work that is undertaken or attempted,	1,	5
+confer,	have a meeting in order to talk something over,	1,	6
+grant,	allow to have,	1,	5
+dwell,	think moodily or anxiously about something,	1,	5
+entertain,	provide amusement for,	1,	9
+contract,	a binding agreement that is enforceable by law,	1,	8
+earnest,	characterized by a firm sincere belief in ones opinions,	1,	7
+yield,	give or supply,	1,	5
+wander,	move or cause to move in a sinuous or circular course,	1,	6
+insist,	be emphatic or resolute and refuse to budge,	1,	6
+knight,	a person of noble birth trained to arms and chivalry,	1,	6
+convince,	make realize the truth or validity of something,	1,	8
+inspire,	serve as the inciting cause of,	1,	7
+convention,	a large formal assembly,	1,	10
+skill,	an ability that has been acquired by training,	1,	5
+harry,	annoy continually or chronically,	1,	5
+financial,	involving fiscal matters,	1,	9
+reflect,	show an image of,	1,	7
+novel,	an extended fictional work in prose,	1,	5
+furnish,	provide with objects or articles that make a room usable,	1,	7
+compel,	force somebody to do something,	1,	6
+venture,	proceed somewhere despite the risk of possible dangers,	1,	7
+territory,	the geographical area under the jurisdiction of a state,	1,	9
+temper,	a characteristic state of feeling,	1,	6
+bent,	fixed in your purpose,	1,	4
+intimate,	marked by close acquaintance association or familiarity,	1,	8
+undertake,	enter upon an activity or enterprise,	1,	9
+majority,	more than half of the votes in an election,	1,	8
+assert,	declare or affirm solemnly and formally as true,	1,	6
+crew,	the people who work on a vehicle,	1,	4
+chamber,	a natural or artificial enclosed space,	1,	7
+humble,	marked by meekness or modesty not arrogant or prideful,	1,	6
+scheme,	an elaborate and systematic plan of action,	1,	6
+keen,	demonstrating ability to recognize or draw fine distinctions,	1,	4
+liberal,	having political views favoring reform and progress,	1,	7
+despair,	a state in which all hope is lost or absent,	1,	7
+tide,	the periodic rise and fall of the sea level,	1,	4
+attitude,	a complex mental state involving beliefs and feelings,	1,	8
+justify,	show to be reasonable or provide adequate ground for,	1,	7
+flag,	a rectangular piece of cloth of distinctive design,	1,	4
+merit,	any admirable or beneficial attribute,	1,	5
+manifest,	reveal its presence or make an appearance,	1,	8
+notion,	a general inclusive concept,	1,	6
+scale,	relative magnitude,	1,	5
+formal,	characteristic of or befitting a person in authority,	1,	6
+resource,	a new or reserve supply that can be drawn upon when needed,	1,	8
+persist,	continue to exist,	1,	7
+contempt,	lack of respect accompanied by a feeling of intense dislike,	1,	8
+tour,	a route all the way around a particular place or area,	1,	4
+plead,	enter a defendants answer,	1,	5
+weigh,	be oppressive or burdensome,	1,	5
+mode,	how something is done or how it happens,	1,	4
+distinction,	a discrimination between things as different,	1,	11
+inclined,	at an angle to the horizontal or vertical position,	1,	8
+attribute,	a quality belonging to or characteristic of an entity,	1,	9
+exert,	make a great effort at a mental or physical task,	1,	5
+oppress,	come down on or keep down by unjust use of ones authority,	1,	7
+contend,	compete for something,	1,	7
+stake,	a strong wooden or metal post driven into the ground,	1,	5
+toil,	work hard,	1,	4
+perish,	pass from physical life,	1,	6
+disposition,	your usual mood,	1,	11
+rail,	complain bitterly,	1,	4
+cardinal,	one of a group of prominent bishops in the Sacred College,	1,	8
+boast,	talk about oneself with excessive pride or selfregard,	1,	5
+advocate,	a person who pleads for a person cause or idea,	1,	8
+bestow,	present,	1,	6
+allege,	report or maintain,	1,	6
+notwithstanding,	despite anything to the contrary,	1,	15
+lofty,	of imposing height especially standing out above others,	1,	5
+multitude,	a large indefinite number,	1,	9
+steep,	having a sharp inclination,	1,	5
+heed,	pay close attention to,	1,	4
+modest,	not large but sufficient in size or amount,	1,	6
+partial,	being or affecting only a segment,	1,	7
+apt,	naturally disposed toward,	1,	3
+esteem,	the condition of being honored,	1,	6
+credible,	appearing to merit belief or acceptance,	1,	8
+provoke,	provide the needed stimulus for,	1,	7
+tread,	a step in walking or running,	1,	5
+ascertain,	learn or discover with confidence,	1,	9
+fare,	proceed get along or succeed,	1,	4
+cede,	relinquish possession or control over,	1,	4
+perpetual,	continuing forever or indefinitely,	1,	9
+decree,	a legally binding command or decision,	1,	6
+contrive,	make or work out a plan for devise,	1,	8
+derived,	formed or developed from something else not original,	1,	7
+elaborate,	marked by complexity and richness of detail,	1,	9
+substantial,	real having a material or factual existence,	1,	11
+frontier,	a wilderness at the edge of a settled area of a country,	1,	8
+facile,	arrived at without due care or effort lacking depth,	1,	6
+cite,	make reference to,	1,	4
+warrant,	show to be reasonable or provide adequate ground for,	1,	7
+sob,	weep convulsively,	1,	3
+rider,	a traveler who actively sits and travels on an animal,	1,	5
+dense,	permitting little if any light to pass through,	1,	5
+afflict,	cause physical pain or suffering in,	1,	7
+flourish,	grow vigorously,	1,	8
+ordain,	invest with ministerial or priestly authority,	1,	6
+pious,	having or showing or expressing reverence for a deity,	1,	5
+vex,	disturb especially by minor irritations,	1,	3
+gravity,	the force of attraction between all masses in the universe,	1,	7
+suspended,	supported or kept from sinking or falling by buoyancy,	1,	9
+conspicuous,	obvious to the eye or mind,	1,	11
+retort,	a quick reply to a question or remark,	1,	6
+jet,	an airplane powered by gas turbines,	1,	3
+bolt,	run away,	1,	4
+assent,	agree or express agreement,	1,	6
+purse,	a sum spoken of as the contents of a money container,	1,	5
+plus,	the arithmetic operation of summing,	1,	4
+sanction,	give authority or permission to,	1,	8
+proceeding,	a sequence of steps by which legal judgments are invoked,	1,	10
+exalt,	praise glorify or honor,	1,	5
+siege,	an action of an armed force that surrounds a fortified place,	1,	5
+malice,	the desire to see others suffer,	1,	6
+extravagant,	recklessly wasteful,	1,	11
+wax,	increase in phase,	1,	3
+throng,	press tightly together or cram,	1,	6
+venerate,	regard with feelings of respect and reverence,	1,	8
+assail,	attack someone physically or emotionally,	1,	6
+sublime,	of high moral or intellectual value,	1,	7
+exploit,	draw from make good use of,	1,	7
+exertion,	use of physical or mental energy hard work,	1,	8
+kindle,	catch fire,	1,	6
+endow,	furnish with a capital fund,	1,	5
+imposed,	set forth authoritatively as obligatory,	1,	7
+humiliate,	cause to feel shame,	1,	9
+suffrage,	a legal right to vote,	1,	8
+ensue,	take place or happen afterward or as a result,	1,	5
+brook,	a natural stream of water smaller than a river,	1,	5
+gale,	a strong wind moving 3440 knots,	1,	4
+muse,	reflect deeply on a subject,	1,	4
+satire,	witty language used to convey insults or scorn,	1,	6
+intrigue,	cause to be interested or curious,	1,	8
+indication,	something that serves to suggest,	1,	10
+dispatch,	send away towards a designated goal,	1,	8
+cower,	crouch or curl up,	1,	5
+wont,	an established custom,	1,	4
+tract,	a system of body parts that serves some specialized purpose,	1,	5
+canon,	a collection of books accepted as holy scripture,	1,	5
+impel,	cause to move forward with force,	1,	5
+latitude,	freedom from normal restraints in conduct,	1,	8
+vacate,	leave behind empty move out of,	1,	6
+undertaking,	any piece of work that is attempted,	1,	11
+slay,	kill intentionally and with premeditation,	1,	4
+predecessor,	one who goes before you in time,	1,	11
+delicacy,	the quality of being exquisitely fine in appearance,	1,	8
+forsake,	leave someone who needs or counts on you leave in the lurch,	1,	7
+beseech,	ask for or request earnestly,	1,	7
+philosophical,	relating to the investigation of existence and knowledge,	1,	13
+grove,	a small growth of trees without underbrush,	1,	5
+frustrate,	hinder or prevent as an effort plan or desire,	1,	9
+illustrious,	widely known and esteemed,	1,	11
+device,	an instrumentality invented for a particular purpose,	1,	6
+pomp,	cheap or pretentious or vain display,	1,	4
+entreat,	ask for or request earnestly,	1,	7
+impart,	transmit as knowledge or a skill,	1,	6
+propriety,	correct behavior,	1,	9
+consecrate,	render holy by means of religious rites,	1,	10
+proceeds,	the income or profit arising from a transaction,	1,	8
+fathom,	come to understand,	1,	6
+objective,	the goal intended to be attained,	1,	9
+clad,	wearing or provided with clothing,	1,	4
+partisan,	devoted to a cause or political group,	1,	8
+faction,	a dissenting clique,	1,	7
+contrived,	artificially formal,	1,	9
+venerable,	impressive by reason of age,	1,	9
+restrained,	not showy or obtrusive,	1,	10
+besiege,	harass as with questions or requests,	1,	7
+manifestation,	a clear appearance,	1,	13
+rebuke,	an act or expression of criticism and censure,	1,	6
+insurgent,	in opposition to a civil authority or government,	1,	9
+rhetoric,	using language effectively to please or persuade,	1,	8
+scrupulous,	having ethical or moral principles,	1,	10
+ratify,	approve and express assent responsibility or obligation,	1,	6
+stump,	cause to be perplexed or confounded,	1,	5
+discreet,	marked by prudence or modesty and wise selfrestraint,	1,	8
+imposing,	impressive in appearance,	1,	8
+wistful,	showing pensive sadness,	1,	7
+mortify,	cause to feel shame,	1,	7
+ripple,	stir up so as to form small waves,	1,	6
+premise,	a statement that is held to be true,	1,	7
+subside,	wear off or die down,	1,	7
+adverse,	contrary to your interests or welfare,	1,	7
+caprice,	a sudden desire,	1,	7
+muster,	summon up call forth or bring together,	1,	6
+comprehensive,	broad in scope,	1,	13
+accede,	yield to anothers wish or opinion,	1,	6
+fervent,	characterized by intense emotion,	1,	7
+cohere,	cause to form a united orderly and consistent whole,	1,	6
+tribunal,	an assembly to conduct judicial business,	1,	8
+austere,	severely simple,	1,	7
+recovering,	returning to health after illness or debility,	1,	10
+stratum,	a group of people sharing similar wealth and status,	1,	7
+conscientious,	characterized by extreme care and great effort,	1,	13
+arbitrary,	based on or subject to individual discretion or preference,	1,	9
+exasperate,	irritate,	1,	10
+conjure,	summon into action or bring into existence,	1,	7
+ominous,	threatening or foreshadowing evil or tragic developments,	1,	7
+edifice,	a structure that has a roof and walls,	1,	7
+elude,	escape either physically or mentally,	1,	5
+pervade,	spread or diffuse through,	1,	7
+foster,	promote the growth of,	1,	6
+admonish,	scold or reprimand take to task,	1,	8
+repeal,	cancel officially,	1,	6
+retiring,	not arrogant or presuming,	1,	8
+incidental,	not of prime or central importance,	1,	10
+acquiesce,	agree or express agreement,	1,	9
+slew,	a large number or amount or extent,	1,	4
+usurp,	seize and take control without authority,	1,	5
+sentinel,	a person employed to keep watch for some anticipated event,	1,	8
+precision,	the quality of being exact,	1,	9
+depose,	force to leave an office,	1,	6
+wanton,	unprovoked or without motive or justification,	1,	6
+odium,	state of disgrace resulting from detestable behavior,	1,	5
+precept,	a rule of personal conduct,	1,	7
+deference,	a courteous expression of esteem or regard,	1,	9
+fray,	a noisy fight,	1,	4
+candid,	openly straightforward and direct without secretiveness,	1,	6
+enduring,	unceasing,	1,	8
+impertinent,	improperly forward or bold,	1,	11
+bland,	lacking stimulating characteristics uninteresting,	1,	5
+insinuate,	suggest in an indirect or covert way give to understand,	1,	9
+nominal,	insignificantly small a matter of form only,	1,	7
+suppliant,	humbly entreating,	1,	9
+languid,	lacking spirit or liveliness,	1,	7
+rave,	praise enthusiastically,	1,	4
+monetary,	relating to or involving money,	1,	8
+headlong,	in a hasty and foolhardy manner,	1,	8
+infallible,	incapable of failure or error,	1,	10
+coax,	influence or persuade by gentle and persistent urging,	1,	4
+explicate,	elaborate as of theories and hypotheses,	1,	9
+gaunt,	very thin especially from disease or hunger or cold,	1,	5
+morbid,	suggesting the horror of death and decay,	1,	6
+ranging,	wandering freely,	1,	7
+pacify,	ease the anger agitation or strong emotion of,	1,	6
+pastoral,	idyllically rustic,	1,	8
+dogged,	stubbornly unyielding,	1,	6
+ebb,	fall away or decline,	1,	3
+aide,	someone who acts as an assistant,	1,	4
+appease,	cause to be more favorably inclined gain the good will of,	1,	7
+stipulate,	make an express demand or provision in an agreement,	1,	9
+recourse,	something or someone turned to for assistance or security,	1,	8
+constrained,	lacking spontaneity not natural,	1,	11
+bate,	moderate or restrain lessen the force of,	1,	4
+aversion,	a feeling of intense dislike,	1,	8
+conceit,	an artistic device or effect,	1,	7
+loath,	strongly opposed,	1,	5
+rampart,	an embankment built around a space for defensive purposes,	1,	7
+extort,	obtain by coercion or intimidation,	1,	6
+tarry,	leave slowly and hesitantly,	1,	5
+perpetrate,	perform an act usually with a negative connotation,	1,	10
+decorum,	propriety in manners and conduct,	1,	7
+luxuriant,	produced or growing in extreme abundance,	1,	9
+cant,	insincere talk about religion or morals,	1,	4
+enjoin,	give instructions to or direct somebody to do something,	1,	6
+avarice,	extreme greed for material wealth,	2,	7
+edict,	a formal or authoritative proclamation,	2,	5
+disconcert,	cause to lose ones composure,	2,	10
+symmetry,	balance among the parts of something,	2,	8
+capitulate,	surrender under agreed conditions,	2,	10
+arbitrate,	act between parties with a view to reconciling differences,	2,	9
+cleave,	separate or cut with a tool such as a sharp instrument,	2,	6
+append,	add to the very end,	2,	6
+visage,	the human face,	2,	6
+horde,	a moving crowd,	2,	5
+parable,	a short moral story,	2,	7
+chastise,	scold or criticize severely,	2,	8
+foil,	hinder or prevent as an effort plan or desire,	2,	4
+veritable,	being truly so called real or genuine,	2,	9
+grapple,	work hard to come to terms with or deal with something,	2,	7
+gentry,	the most powerful members of a society,	2,	6
+pall,	a sudden feeling of dread or gloominess,	2,	4
+maxim,	a saying that is widely accepted on its own merits,	2,	5
+projection,	a prediction made by extrapolating from past observations,	2,	10
+prowess,	a superior skill learned by study and practice,	2,	7
+dingy,	thickly covered with ingrained dirt or soot,	2,	5
+semblance,	the outward or apparent appearance or form of something,	2,	9
+tout,	advertise in strongly positive terms,	2,	4
+fortitude,	strength of mind that enables one to endure adversity,	2,	9
+asunder,	into parts or pieces,	2,	7
+rout,	an overwhelming defeat,	2,	4
+staid,	characterized by dignity and propriety,	2,	5
+beguile,	influence by slyness,	2,	7
+purport,	have the often misleading appearance of being or intending,	2,	7
+deprave,	corrupt morally or by intemperance or sensuality,	2,	7
+bequeath,	leave or give especially by will after ones death,	2,	8
+enigma,	something that baffles understanding and cannot be explained,	2,	6
+assiduous,	marked by care and persistent effort,	2,	9
+vassal,	a person who owes allegiance and service to a feudal lord,	2,	6
+quail,	draw back as with fear or pain,	2,	5
+outskirts,	area relatively far from the center as of a city or town,	2,	9
+bulwark,	a protective structure of stone or concrete,	2,	7
+swerve,	an erratic turn from an intended course,	2,	6
+gird,	prepare oneself for action or a confrontation,	2,	4
+betrothed,	pledged to be married,	2,	9
+prospective,	of or concerned with or related to the future,	2,	11
+advert,	make reference to,	2,	6
+peremptory,	not allowing contradiction or refusal,	2,	10
+rudiment,	the elementary stage of any subject,	2,	8
+deduce,	reason from the general to the particular,	2,	6
+halting,	proceeding in a fragmentary hesitant or ineffective way,	2,	7
+ignominy,	a state of dishonor,	2,	8
+ideology,	an orientation that characterizes the thinking of a group,	2,	8
+pallid,	lacking in vitality or interest or effectiveness,	2,	6
+chagrin,	strong feelings of embarrassment,	2,	7
+obtrude,	thrust oneself in as if by force,	2,	7
+audacious,	disposed to venture or take risks,	2,	9
+construe,	make sense of assign a meaning to,	2,	8
+ford,	cross a river where its shallow,	2,	4
+repast,	the food served and eaten at one time,	2,	6
+stint,	an unbroken period of time during which you do something,	2,	5
+fresco,	a mural done with watercolors on wet plaster,	2,	6
+dutiful,	willingly obedient out of a sense of respect,	2,	7
+hew,	make or shape as with an axe,	2,	3
+parity,	functional equality,	2,	6
+affable,	diffusing warmth and friendliness,	2,	7
+interminable,	tiresomely long seemingly without end,	2,	12
+pillage,	steal goods take as spoils,	2,	7
+foreboding,	a feeling of evil to come,	2,	10
+rend,	tear or be torn violently,	2,	4
+livelihood,	the financial means whereby one supports oneself,	2,	10
+deign,	do something that one considers to be below ones dignity,	2,	5
+capricious,	determined by chance or impulse rather than by necessity,	2,	10
+stupendous,	so great in size force or extent as to elicit awe,	2,	10
+chaff,	material consisting of seed coverings and pieces of stem,	2,	5
+innate,	not established by conditioning or learning,	2,	6
+reverie,	an abstracted state of absorption,	2,	7
+wrangle,	quarrel noisily angrily or disruptively,	2,	7
+crevice,	a long narrow opening,	2,	7
+ostensible,	appearing as such but not necessarily so,	2,	10
+craven,	lacking even the rudiments of courage abjectly fearful,	2,	6
+vestige,	an indication that something has been present,	2,	7
+plumb,	examine thoroughly and in great depth,	2,	5
+reticent,	not inclined to talk or provide information,	2,	8
+propensity,	an inclination to do something,	2,	10
+chide,	scold or reprimand severely or angrily,	2,	5
+espouse,	choose and follow a theory idea policy etc,	2,	7
+raiment,	especially fine or decorative clothing,	2,	7
+intrepid,	invulnerable to fear or intimidation,	2,	8
+seemly,	according with custom or propriety,	2,	6
+allay,	lessen the intensity of or calm,	2,	5
+fitful,	occurring in spells and often abruptly,	2,	6
+erode,	become ground down or deteriorate,	2,	5
+unaffected,	free of artificiality sincere and genuine,	2,	10
+canto,	a major division of a long poem,	2,	5
+docile,	easily handled or managed,	2,	6
+patronize,	treat condescendingly,	2,	9
+teem,	be full of or abuzz with,	2,	4
+estrange,	arouse hostility or indifference in,	2,	8
+spat,	a quarrel about petty points,	2,	4
+warble,	sing or play with trills,	2,	6
+mien,	a persons appearance manner or demeanor,	2,	4
+sate,	fill to contentment,	2,	4
+constituency,	the body of voters who elect a representative for their area,	2,	12
+patrician,	characteristic of the nobility or aristocracy,	2,	9
+parry,	avoid or try to avoid fulfilling answering or performing,	2,	5
+practitioner,	someone who carries out a learned profession,	2,	12
+ravel,	disentangle or separate out,	2,	5
+infest,	occupy in large numbers or live on a host,	2,	6
+actuate,	give an incentive for doing something,	2,	7
+surly,	unfriendly and inclined toward anger or irritation,	2,	5
+convalesce,	get over an illness or shock,	2,	10
+demoralize,	lower someones spirits make downhearted,	2,	10
+devolve,	grow worse,	2,	7
+alacrity,	liveliness and eagerness,	2,	8
+waive,	do without or cease to hold or adhere to,	2,	5
+unwonted,	out of the ordinary,	2,	8
+seethe,	be in an agitated emotional state,	2,	6
+scrutinize,	look at critically or searchingly or in minute detail,	2,	10
+diffident,	lacking selfconfidence,	2,	9
+execrate,	curse or declare to be evil or anathema,	2,	8
+implacable,	incapable of being appeased or pacified,	2,	10
+pique,	a sudden outburst of anger,	2,	5
+mite,	a slight but appreciable amount,	2,	4
+encumber,	hold back impede or weigh down,	2,	8
+uncouth,	lacking refinement or cultivation or taste,	2,	7
+petulant,	easily irritated or annoyed,	2,	8
+expiate,	make amends for,	2,	7
+cavalier,	showing a lack of concern or seriousness,	2,	8
+banter,	light teasing repartee,	2,	6
+bluster,	act in an arrogant overly selfassured or conceited manner,	2,	7
+debase,	corrupt morally or by intemperance or sensuality,	2,	6
+retainer,	a person working in the service of another,	2,	8
+subjugate,	make subservient force to submit or subdue,	2,	9
+extol,	praise glorify or honor,	2,	5
+fraught,	filled with or attended with,	2,	7
+august,	profoundly honored,	2,	6
+fissure,	a long narrow depression in a surface,	2,	7
+knoll,	a small natural mound,	2,	5
+callous,	emotionally hardened,	2,	7
+inculcate,	teach and impress by frequent repetitions or admonitions,	2,	9
+nettle,	disturb especially by minor irritations,	2,	6
+blanch,	turn pale as if in fear,	2,	6
+inscrutable,	difficult or impossible to understand,	2,	11
+tenacious,	stubbornly unyielding,	2,	9
+thrall,	the state of being under the control of another person,	2,	6
+exigency,	a pressing or urgent situation,	2,	8
+disconsolate,	sad beyond comforting incapable of being soothed,	2,	12
+impetus,	a force that makes something happen,	2,	7
+imposition,	an uncalledfor burden,	2,	10
+auspices,	kindly endorsement and guidance,	2,	8
+sonorous,	full and loud and deep,	2,	8
+exploitation,	an act that victimizes someone,	2,	12
+bane,	something causing misery or death,	2,	4
+dint,	force or effort,	2,	4
+ignominious,	deserving or bringing disgrace or shame,	2,	11
+amicable,	characterized by friendship and good will,	2,	8
+onset,	the beginning or early stages,	2,	5
+conservatory,	a schoolhouse with special facilities for fine arts,	2,	12
+zenith,	the highest point of something,	2,	6
+voluble,	marked by a ready flow of speech,	2,	7
+yeoman,	a free man who cultivates his own land,	2,	6
+levity,	a manner lacking seriousness,	2,	6
+rapt,	feeling great delight and interest,	2,	4
+sultry,	characterized by oppressive heat and humidity,	2,	6
+pinion,	restrain or bind,	2,	6
+axiom,	a proposition that is not susceptible of proof or disproof,	2,	5
+descry,	catch sight of,	2,	6
+retinue,	the group following and attending to some important person,	2,	7
+functionary,	a worker who holds or is invested with an office,	2,	11
+imbibe,	take in liquids,	2,	6
+diversified,	having variety of character or form or components,	2,	11
+maraud,	raid and rove in search of plunder,	2,	6
+grudging,	petty or reluctant in giving or spending,	2,	8
+partiality,	a predisposition to like something,	2,	10
+philology,	the humanistic study of language and literature,	2,	9
+wry,	humorously sarcastic or mocking,	2,	3
+caucus,	meet to select a candidate or promote a policy,	2,	6
+permeate,	spread or diffuse through,	2,	8
+propitious,	presenting favorable circumstances,	2,	10
+salient,	conspicuous prominent or important,	2,	7
+propitiate,	make peace with,	2,	10
+excise,	remove by cutting,	2,	6
+betoken,	be a signal for or a symptom of,	2,	7
+palatable,	acceptable to the taste or mind,	2,	9
+upbraid,	express criticism towards,	2,	7
+renegade,	someone who rebels and becomes an outlaw,	2,	8
+hoary,	ancient,	2,	5
+pedantic,	marked by a narrow focus on or display of learning,	2,	8
+coy,	showing marked and often playful evasiveness or reluctance,	2,	3
+troth,	a solemn pledge of fidelity,	2,	5
+encroachment,	entry to anothers property without right or permission,	2,	12
+belie,	be in contradiction with,	2,	5
+armada,	a large fleet,	2,	6
+succor,	assistance in time of difficulty,	2,	6
+imperturbable,	marked by extreme calm and composure,	2,	13
+irresolute,	uncertain how to act or proceed,	2,	10
+knack,	a special way of doing something,	2,	5
+unseemly,	not in keeping with accepted standards of what is proper,	2,	8
+accentuate,	stress or single out as important,	2,	10
+divulge,	make known to the public information previously kept secret,	2,	7
+brawn,	the trait of possessing muscular strength,	2,	5
+burnish,	polish and make shiny,	2,	7
+palpitate,	beat rapidly,	2,	9
+promiscuous,	not selective of a single class or person,	2,	11
+dissemble,	make believe with the intent to deceive,	2,	9
+flotilla,	a fleet of small craft,	2,	8
+invective,	abusive language used to express blame or censure,	2,	9
+hermitage,	the abode of a recluse,	2,	9
+despoil,	destroy and strip of its possession,	2,	7
+sully,	make dirty or spotty,	2,	5
+malevolent,	having or exerting a malignant influence,	2,	10
+irksome,	tedious or irritating,	2,	7
+prattle,	speak about unimportant matters rapidly and incessantly,	2,	7
+subaltern,	inferior in rank or status,	2,	9
+welt,	a raised mark on the skin,	2,	4
+wreak,	cause to happen or to occur as a consequence,	2,	5
+tenable,	based on sound reasoning or evidence,	2,	7
+inimitable,	matchless,	2,	10
+depredation,	a destructive action,	2,	11
+amalgamate,	bring or combine together or with something else,	2,	10
+immutable,	not subject or susceptible to change or variation,	2,	9
+proxy,	a person authorized to act for another,	2,	5
+dote,	shower with love show excessive affection for,	2,	4
+reactionary,	extremely conservative or resistant to change,	2,	11
+rationalism,	the doctrine that reason is the basis for regulating conduct,	2,	11
+endue,	give qualities or abilities to,	2,	5
+discriminating,	showing or indicating careful judgment and discernment,	2,	14
+brooch,	a decorative pin,	2,	6
+pert,	characterized by a lightly saucy or impudent quality,	2,	4
+disembark,	exit from a ship vehicle or aircraft,	2,	9
+aria,	an elaborate song for solo voice,	2,	4
+trappings,	ornaments embellishments to or characteristic signs of,	2,	9
+abet,	assist or encourage usually in some wrongdoing,	2,	4
+clandestine,	conducted with or marked by hidden aims or methods,	2,	11
+distend,	swell from or as if from internal pressure,	2,	7
+glib,	having only superficial plausibility,	2,	4
+pucker,	gather something into small wrinkles or folds,	2,	6
+rejoinder,	a quick reply to a question or remark,	2,	9
+spangle,	adornment consisting of a small piece of shiny material,	2,	7
+blighted,	affected by something that prevents growth or prosperity,	2,	8
+nicety,	conformity with some standard of correctness or propriety,	2,	6
+aggrieve,	infringe on the rights of,	2,	8
+vestment,	a gown worn by the clergy,	2,	8
+urbane,	showing a high degree of refinement,	2,	6
+defray,	bear the expenses of,	2,	6
+spectral,	resembling or characteristic of a phantom,	2,	8
+munificent,	very generous,	2,	10
+dictum,	an authoritative declaration,	2,	6
+fad,	an interest followed with exaggerated zeal,	2,	3
+scabbard,	a sheath for a sword or dagger or bayonet,	2,	8
+adulterate,	make impure by adding a foreign or inferior substance,	2,	10
+beleaguer,	annoy persistently,	2,	9
+gripe,	complain,	2,	5
+remission,	an abatement in intensity or degree,	2,	9
+exorbitant,	greatly exceeding bounds of reason or moderation,	2,	10
+invocation,	the act of appealing for help,	2,	10
+cajole,	influence or urge by gentle urging caressing or flattering,	2,	6
+inclusive,	encompassing much or everything,	2,	9
+interdict,	command against,	2,	9
+abase,	cause to feel shame,	2,	5
+obviate,	do away with,	2,	7
+hurtle,	move with or as if with a rushing sound,	2,	6
+unanimity,	everyone being of one mind,	2,	9
+mettle,	the courage to carry on,	2,	6
+interpolate,	insert words into texts often falsifying it thereby,	2,	11
+surreptitious,	marked by quiet and caution and secrecy,	2,	13
+dissimulate,	hide feelings from other people,	2,	11
+ruse,	a deceptive maneuver especially to avoid capture,	2,	4
+specious,	plausible but false,	2,	8
+revulsion,	intense aversion,	2,	9
+hale,	exhibiting or restored to vigorous good health,	2,	4
+palliate,	lessen or to try to lessen the seriousness or extent of,	2,	8
+obtuse,	lacking in insight or discernment,	2,	6
+querulous,	habitually complaining,	2,	9
+vagary,	an unexpected and inexplicable change in something,	2,	6
+incipient,	only partly in existence imperfectly formed,	2,	9
+obdurate,	stubbornly persistent in wrongdoing,	2,	8
+grovel,	show submission or fear,	2,	6
+refractory,	stubbornly resistant to authority or control,	2,	10
+dregs,	sediment that has settled at the bottom of a liquid,	2,	5
+ascendancy,	the state when one person or group has power over another,	2,	10
+supercilious,	having or showing arrogant superiority,	2,	12
+pundit,	someone who has been admitted to membership in a field,	2,	6
+commiserate,	feel or express sympathy or compassion,	2,	11
+alcove,	a small recess opening off a large room or garden,	2,	6
+assay,	make an effort or attempt,	2,	5
+parochial,	narrowly restricted in outlook or scope,	2,	9
+conjugal,	relating to the relationship between a wife and husband,	2,	8
+abjure,	formally reject or disavow a formerly held belief,	2,	6
+frieze,	an ornament consisting of a horizontal sculptured band,	2,	6
+ornate,	marked by complexity and richness of detail,	2,	6
+inflammatory,	arousing to action or rebellion,	2,	12
+machination,	a crafty and involved plot to achieve your ends,	2,	11
+mendicant,	a pauper who lives by begging,	2,	9
+meander,	move or cause to move in a winding or curving course,	2,	7
+bullion,	gold or silver in bars or ingots,	2,	7
+diffidence,	lack of selfassurance,	2,	10
+makeshift,	done or made using whatever is available,	2,	9
+husbandry,	the practice of cultivating the land or raising stock,	2,	9
+podium,	a platform raised above the surrounding level,	2,	6
+dearth,	an insufficient quantity or number,	2,	6
+granary,	a storehouse for threshed grain or animal feed,	2,	7
+whet,	make keen or more acute,	2,	4
+imposture,	pretending to be another person,	2,	9
+diadem,	an ornamental jeweled headdress signifying sovereignty,	3,	6
+fallow,	undeveloped but potentially useful,	3,	6
+hubbub,	loud confused noise from many sources,	3,	6
+dispassionate,	unaffected by strong emotion or prejudice,	3,	13
+harrowing,	causing extreme distress,	3,	9
+askance,	with suspicion or disapproval,	3,	7
+lancet,	a surgical knife with a pointed doubleedged blade,	3,	6
+rankle,	make resentful or angry,	3,	6
+ramify,	have or develop complicating consequences,	3,	6
+gainsay,	take exception to,	3,	7
+polity,	a governmentally organized unit,	3,	6
+credence,	the mental attitude that something is believable,	3,	8
+indemnify,	make amends for pay compensation for,	3,	9
+ingratiate,	gain favor with somebody by deliberate efforts,	3,	10
+declivity,	a downward slope or bend,	3,	9
+importunate,	making persistent or urgent requests,	3,	11
+passe,	out of fashion,	3,	5
+whittle,	cut small bits or pare shavings from,	3,	7
+repine,	express discontent,	3,	6
+flay,	strip the skin off,	3,	4
+larder,	a small storeroom for storing foods or wines,	3,	6
+threadbare,	thin and tattered with age,	3,	10
+grisly,	shockingly repellent inspiring horror,	3,	6
+untoward,	not in keeping with accepted standards of what is proper,	3,	8
+idiosyncrasy,	a behavioral attribute peculiar to an individual,	3,	12
+quip,	make jokes or witty remarks,	3,	4
+blatant,	without any attempt at concealment completely obvious,	3,	7
+stanch,	stop the flow of a liquid,	3,	6
+incongruity,	the quality of disagreeing,	3,	11
+perfidious,	tending to betray,	3,	10
+platitude,	a trite or obvious remark,	3,	9
+revelry,	unrestrained merrymaking,	3,	7
+delve,	turn up loosen or remove earth,	3,	5
+extenuate,	lessen or to try to lessen the seriousness or degree of,	3,	9
+polemic,	a verbal or written attack especially of a belief or dogma,	3,	7
+enrapture,	hold spellbound,	3,	9
+virtuoso,	someone who is dazzlingly skilled in any field,	3,	8
+glower,	look angry or sullen as if to signal disapproval,	3,	6
+mundane,	found in the ordinary course of events,	3,	7
+fatuous,	devoid of intelligence,	3,	7
+incorrigible,	impervious to correction by punishment,	3,	12
+postulate,	maintain or assert,	3,	9
+gist,	the central meaning or theme of a speech or literary work,	3,	4
+vociferous,	conspicuously and offensively loud,	3,	10
+purvey,	supply with provisions,	3,	6
+baleful,	deadly or sinister,	3,	7
+gibe,	laugh at with contempt and derision,	3,	4
+dyspeptic,	irritable as if suffering from indigestion,	3,	9
+prude,	a person excessively concerned about propriety and decorum,	3,	5
+luminary,	a celebrity who is an inspiration to others,	3,	8
+amenable,	disposed or willing to comply,	3,	8
+willful,	habitually disposed to disobedience and opposition,	3,	7
+overbearing,	having or showing arrogant superiority,	3,	11
+dais,	a platform raised above the surrounding level,	3,	4
+automate,	operate or make run by machines rather than human action,	3,	8
+enervate,	weaken physically mentally or morally,	3,	8
+wheedle,	influence or urge by gentle urging caressing or flattering,	3,	7
+gusto,	vigorous and enthusiastic enjoyment,	3,	5
+bouillon,	a clear seasoned broth,	3,	8
+omniscient,	knowing seeing or understanding everything,	3,	10
+apostate,	not faithful to religion or party or cause,	3,	8
+carrion,	the dead and rotting body of an animal unfit for human food,	3,	7
+emolument,	compensation received by virtue of holding an office,	3,	9
+ungainly,	lacking grace in movement or posture,	3,	8
+impiety,	unrighteousness by virtue of lacking respect for a god,	3,	7
+decadence,	the state of being degenerate in mental or moral qualities,	3,	9
+homily,	a sermon on a moral or religious topic,	3,	6
+avocation,	an auxiliary activity,	3,	9
+circumvent,	avoid or try to avoid fulfilling answering or performing,	3,	10
+syllogism,	reasoning in which a conclusion is derived from two premises,	3,	9
+collation,	assembling in proper numerical or logical sequence,	3,	9
+haggle,	wrangle as over a price or terms of an agreement,	3,	6
+waylay,	wait in hiding to attack,	3,	6
+savant,	a learned person,	3,	6
+cohort,	a group of people having approximately the same age,	3,	6
+unction,	excessive but superficial compliments with affected charm,	3,	7
+adjure,	command solemnly,	3,	6
+acrimony,	a rough and bitter manner,	3,	8
+clarion,	loud and clear,	3,	7
+turbid,	clouded as with sediment,	3,	6
+cupidity,	extreme greed for material wealth,	3,	8
+disaffected,	discontented as toward authority,	3,	11
+preternatural,	surpassing the ordinary or normal,	3,	13
+eschew,	avoid and stay away from deliberately,	3,	6
+expatiate,	add details to clarify an idea,	3,	9
+didactic,	instructive especially excessively,	3,	8
+sinuous,	curved or curving in and out,	3,	7
+rancor,	a feeling of deep and bitter anger and illwill,	3,	6
+puissant,	powerful,	3,	8
+homespun,	characteristic of country life,	3,	8
+embroil,	force into some kind of situation or course of action,	3,	7
+pathological,	caused by or evidencing a mentally disturbed condition,	3,	12
+resonant,	characterized by a loud deep sound,	3,	8
+libretto,	the words of an opera or musical play,	3,	8
+flail,	thrash about,	3,	5
+bandy,	discuss lightly,	3,	5
+gratis,	costing nothing,	3,	6
+upshot,	a phenomenon that is caused by some previous phenomenon,	3,	6
+aphorism,	a short pithy instructive saying,	3,	8
+redoubtable,	worthy of respect or honor,	3,	11
+corpulent,	excessively large,	3,	9
+benighted,	lacking enlightenment or knowledge or culture,	3,	9
+sententious,	abounding in or given to pompous or aphoristic moralizing,	3,	11
+cabal,	a clique that seeks power usually through intrigue,	3,	5
+paraphernalia,	equipment consisting of miscellaneous articles,	3,	13
+vitiate,	make imperfect,	3,	7
+adulation,	exaggerated flattery or praise,	3,	9
+quaff,	swallow hurriedly or greedily or in one draught,	3,	5
+unassuming,	not arrogant,	3,	10
+libertine,	a dissolute person,	3,	9
+maul,	injure badly,	3,	4
+adage,	a condensed but memorable saying embodying an important fact,	3,	5
+expostulation,	the act of expressing earnest opposition or protest,	3,	13
+tawdry,	tastelessly showy,	3,	6
+trite,	repeated too often overfamiliar through overuse,	3,	5
+hireling,	a person who works only for money,	3,	8
+ensconce,	fix firmly,	3,	8
+egregious,	conspicuously and outrageously bad or reprehensible,	3,	9
+cogent,	powerfully persuasive,	3,	6
+incisive,	demonstrating ability to recognize or draw fine distinctions,	3,	8
+errant,	straying from the right course or from accepted standards,	3,	6
+sedulous,	marked by care and persistent effort,	3,	8
+incandescent,	characterized by ardent emotion intensity or brilliance,	3,	12
+derelict,	in deplorable condition,	3,	8
+entomology,	the branch of zoology that studies insects,	3,	10
+execrable,	unequivocally detestable,	3,	9
+sluice,	pour as if from a conduit that carries a rapid flow of water,	3,	6
+moot,	of no legal significance as having been previously decided,	3,	4
+evanescent,	shortlived tending to vanish or disappear,	3,	10
+vat,	a large open vessel for holding or storing liquids,	3,	3
+dapper,	marked by uptodateness in dress and manners,	3,	6
+asperity,	harshness of manner,	3,	8
+flair,	a natural talent,	3,	5
+mote,	a tiny piece of anything,	3,	4
+circumspect,	careful to consider potential consequences and avoid risk,	3,	11
+inimical,	tending to obstruct or cause harm,	3,	8
+apropos,	of a suitable fitting or pertinent nature,	3,	7
+gruel,	a thin porridge,	3,	5
+gentility,	elegance by virtue of fineness of manner and expression,	3,	9
+disapprobation,	an expression of strong disapproval,	3,	14
+cameo,	engraving or carving in low relief on a stone,	3,	5
+gouge,	swindle obtain by coercion,	3,	5
+oratorio,	a musical composition for voices and orchestra,	3,	8
+inclement,	severe of weather,	3,	9
+scintilla,	a tiny or scarcely detectable amount,	3,	9
+confluence,	a flowing together,	3,	10
+squalor,	sordid dirtiness,	3,	7
+stricture,	severe criticism,	3,	9
+emblazon,	decorate with heraldic arms,	3,	8
+augury,	an event indicating important things to come,	3,	6
+abut,	lie adjacent to another or share a boundary,	3,	4
+banal,	repeated too often overfamiliar through overuse,	3,	5
+congeal,	solidify thicken or come together,	3,	7
+pilfer,	make off with belongings of others,	3,	6
+malcontent,	a person who is unsatisfied or disgusted,	3,	10
+sublimate,	direct energy or urges into useful activities,	3,	9
+eugenic,	causing improvement in the offspring produced,	3,	7
+lineament,	the characteristic parts of a persons face,	3,	9
+firebrand,	someone who deliberately foments trouble,	3,	9
+fiasco,	a complete failure or collapse,	3,	6
+foolhardy,	marked by defiant disregard for danger or consequences,	3,	9
+retrench,	tighten ones belt use resources carefully,	3,	8
+ulterior,	lying beyond what is openly revealed or avowed,	3,	8
+equable,	not varying,	3,	7
+inured,	made tough by habitual exposure,	3,	6
+invidious,	containing or implying a slight or showing prejudice,	3,	9
+unmitigated,	not diminished or moderated in intensity or severity,	3,	11
+concomitant,	an event or situation that happens at the same time,	3,	11
+cozen,	cheat or trick,	3,	5
+phlegmatic,	showing little emotion,	3,	10
+dormer,	a gabled extension built out from a sloping roof,	3,	6
+pontifical,	denoting or governed by or relating to a bishop or bishops,	3,	10
+disport,	occupy in an agreeable entertaining or pleasant fashion,	3,	7
+apologist,	a person who argues to defend some policy or institution,	3,	9
+abeyance,	temporary cessation or suspension,	3,	8
+enclave,	an enclosed territory that is culturally distinct,	3,	7
+improvident,	not supplying something useful for the future,	3,	11
+disquisition,	an elaborate analytical or explanatory essay or discussion,	3,	12
+categorical,	not modified or restricted by reservations,	3,	11
+placate,	cause to be more favorably inclined,	3,	7
+redolent,	serving to bring to mind,	3,	8
+felicitous,	exhibiting an agreeably appropriate manner or style,	3,	10
+gusty,	blowing in puffs or short intermittent blasts,	3,	5
+natty,	marked by uptodateness in dress and manners,	3,	5
+pacifist,	opposed to war,	3,	8
+buxom,	healthily plump and vigorous,	3,	5
+heyday,	the period of greatest prosperity or productivity,	3,	6
+herculean,	displaying superhuman strength or power,	3,	9
+burgeon,	grow and flourish,	3,	7
+crone,	an ugly evillooking old woman,	3,	5
+prognosticate,	make a prediction about tell in advance,	3,	13
+lout,	an awkward foolish person,	3,	4
+simper,	smile in an insincere unnatural or coy way,	3,	6
+iniquitous,	characterized by injustice or wickedness,	3,	10
+rile,	disturb especially by minor irritations,	3,	4
+sentient,	endowed with feeling and unstructured consciousness,	3,	8
+garish,	tastelessly showy,	3,	6
+readjustment,	the act of correcting again,	3,	12
+erstwhile,	belonging to some prior time,	3,	9
+aquiline,	curved down like an eagles beak,	3,	8
+bilious,	irritable as if suffering from indigestion,	3,	7
+vilify,	spread negative information about,	3,	6
+nuance,	a subtle difference in meaning or opinion or attitude,	3,	6
+gawk,	look with amazement,	3,	4
+refectory,	a communal dininghall usually in a monastery,	3,	9
+palatial,	suitable for or like a large and stately residence,	3,	8
+mincing,	affectedly dainty or refined,	3,	7
+trenchant,	having keenness and forcefulness and penetration in thought,	3,	9
+emboss,	raise in a relief,	3,	6
+proletarian,	a member of the working class,	3,	11
+careen,	pitching dangerously to one side,	3,	6
+debacle,	a sound defeat,	3,	7
+sycophant,	a person who tries to please someone to gain an advantage,	3,	9
+crabbed,	annoyed and irritable,	3,	7
+archetype,	something that serves as a model,	3,	9
+cryptic,	of an obscure nature,	3,	7
+penchant,	a strong liking or preference,	3,	8
+bauble,	cheap showy jewelry or ornament,	3,	6
+mountebank,	a flamboyant deceiver,	3,	10
+fawning,	attempting to win favor by flattery,	3,	7
+hummock,	a small natural mound,	3,	7
+apotheosis,	model of excellence or perfection of a kind,	3,	10
+discretionary,	not earmarked available for use as needed,	3,	13
+pithy,	concise and full of meaning,	3,	5
+comport,	behave in a certain manner,	3,	7
+checkered,	marked by changeable fortune,	3,	9
+ambrosia,	the food and drink of the gods,	3,	8
+factious,	dissenting with the majority opinion,	3,	8
+disgorge,	cause or allow to flow or run out or over,	3,	8
+filch,	make off with belongings of others,	3,	5
+wraith,	a ghostly figure especially one seen shortly before death,	3,	6
+demonstrable,	capable of being proved,	3,	12
+pertinacious,	stubbornly unyielding,	3,	12
+emend,	make corrections to,	3,	5
+laggard,	someone who takes more time than necessary,	3,	7
+waffle,	pause or hold back in uncertainty or unwillingness,	3,	6
+loquacious,	full of trivial conversation,	3,	10
+venial,	easily excused or forgiven,	3,	6
+peon,	a laborer who is obliged to do menial work,	3,	4
+effulgence,	the quality of being bright and sending out rays of light,	3,	10
+lode,	a deposit of valuable ore,	3,	4
+fanfare,	a gaudy outward display,	3,	7
+dilettante,	showing frivolous or superficial interest amateurish,	3,	10
+pusillanimous,	lacking in courage strength and resolution,	3,	13
+ingrained,	deeply rooted firmly fixed or held,	3,	9
+quagmire,	a soft wet area of lowlying land that sinks underfoot,	3,	8
+reprobation,	severe disapproval,	3,	11
+mannered,	having unnatural behavioral attributes,	3,	8
+squeamish,	easily disturbed or disgusted by unpleasant things,	3,	9
+proclivity,	a natural inclination,	3,	10
+miserly,	characterized by or indicative of lack of generosity,	3,	7
+vapid,	lacking significance or liveliness or spirit or zest,	3,	5
+mercurial,	liable to sudden unpredictable change,	3,	9
+perspicuous,	transparently clear easily understandable,	3,	11
+nonplus,	be a mystery or bewildering to,	3,	7
+enamor,	attract,	3,	6
+hackneyed,	repeated too often overfamiliar through overuse,	3,	9
+spate,	a large number or amount or extent,	3,	5
+pedagogue,	someone who educates young people,	3,	9
+acme,	the highest level or degree attainable,	3,	4
+masticate,	bite and grind with the teeth,	3,	9
+sinecure,	a job that involves minimal duties,	3,	8
+indite,	produce a literary work,	3,	6
+emetic,	a medicine that induces nausea and vomiting,	3,	6
+temporize,	draw out a discussion or process in order to gain time,	3,	9
+unimpeachable,	beyond doubt or reproach,	3,	13
+genesis,	a coming into being,	3,	7
+mordant,	harshly ironic or sinister,	3,	7
+smattering,	a small number or amount,	3,	10
+suavity,	the quality of being charming and gracious in manner,	3,	7
+stentorian,	very loud or booming,	3,	10
+junket,	a trip taken by an official at public expense,	3,	6
+appurtenance,	a supplementary component that improves capability,	3,	12
+nostrum,	patent medicine whose efficacy is questionable,	3,	7
+immure,	lock up or confine in or as in a jail,	3,	6
+astringent,	acidic or bitter in taste or smell,	3,	10
+unfaltering,	marked by firm determination or resolution not shakable,	3,	11
+tutelage,	attention and management implying responsibility for safety,	3,	8
+testator,	a person who makes a will,	3,	8
+elysian,	of such excellence as to suggest inspiration by the gods,	3,	7
+fulminate,	criticize severely,	3,	9
+fractious,	easily irritated or annoyed,	3,	9
+pummel,	strike usually with the fist,	3,	6
+manumit,	free from slavery or servitude,	3,	7
+unexceptionable,	completely acceptable not open to reproach,	3,	15
+triumvirate,	a group of three people responsible for civil authority,	3,	11
+sybarite,	a person addicted to luxury and pleasures of the senses,	3,	8
+jibe,	be compatible similar or consistent,	3,	4
+magisterial,	offensively selfassured or exercising unwarranted power,	3,	11
+roseate,	of something having a dusty purplish pink color,	3,	7
+obloquy,	abusive malicious and condemnatory language,	3,	7
+hoodwink,	influence by slyness,	3,	8
+striate,	mark with stripes of contrasting color,	3,	7
+arrogate,	seize and take control without authority,	3,	8
+rarefied,	of high moral or intellectual value,	3,	8
+chary,	characterized by great caution,	3,	5
+credo,	any system of principles or beliefs,	3,	5
+superannuated,	too old to be useful,	3,	13
+impolitic,	lacking tact shrewdness or prudence,	3,	9
+aspersion,	a disparaging remark,	3,	9
+abysmal,	exceptionally bad or displeasing,	4,	7
+poignancy,	a quality that arouses emotions especially pity or sorrow,	4,	9
+stilted,	artificially formal or stiff,	4,	7
+effete,	excessively selfindulgent affected or decadent,	4,	6
+provender,	food for domestic livestock,	4,	9
+endemic,	of a disease constantly present in a particular locality,	4,	7
+jocund,	full of or showing highspirited merriment,	4,	6
+procedural,	of or relating to processes,	4,	10
+rakish,	marked by a carefree unconventionality or disreputableness,	4,	6
+skittish,	unpredictably excitable especially of horses,	4,	8
+peroration,	a flowery and highly rhetorical address,	4,	10
+nonentity,	a person of no influence,	4,	9
+abstemious,	marked by temperance in indulgence,	4,	10
+viscid,	having the sticky properties of an adhesive,	4,	6
+doggerel,	a comic verse of irregular measure,	4,	8
+sleight,	adroitness in using the hands,	4,	7
+rubric,	category name,	4,	6
+plenitude,	a full supply,	4,	9
+rebus,	a puzzle consisting of pictures representing words,	4,	5
+wizened,	lean and wrinkled by shrinkage as from age or illness,	4,	7
+whorl,	a round shape formed by a series of concentric circles,	4,	5
+fracas,	a noisy quarrel,	4,	6
+iconoclast,	someone who attacks cherished ideas or institutions,	4,	10
+saturnine,	bitter or scornful,	4,	9
+madrigal,	an unaccompanied partsong for several voices,	4,	8
+discursive,	tending to cover a wide range of subjects,	4,	10
+zealot,	a fervent and even militant proponent of something,	4,	6
+moribund,	not growing or changing without force or vitality,	4,	8
+modicum,	a small or moderate or token amount,	4,	7
+connotation,	an idea that is implied or suggested,	4,	11
+adventitious,	associated by chance and not an integral part,	4,	12
+recondite,	difficult to understand,	4,	9
+zephyr,	a slight wind,	4,	6
+countermand,	cancel officially,	4,	11
+captious,	tending to find and call attention to faults,	4,	8
+cognate,	having the same ancestral language,	4,	7
+forebear,	a person from whom you are descended,	4,	8
+cadaverous,	very thin especially from disease or hunger or cold,	4,	10
+foist,	force onto another,	4,	5
+dotage,	mental infirmity as a consequence of old age,	4,	6
+nexus,	a connected series or group,	4,	5
+choleric,	characterized by anger,	4,	8
+garble,	distort or make false by mutilation or addition,	4,	6
+bucolic,	idyllically rustic,	4,	7
+denouement,	the outcome of a complex sequence of events,	4,	10
+animus,	a feeling of ill will arousing active hostility,	4,	6
+overweening,	unrestrained especially with regard to feelings,	4,	11
+tyro,	someone new to a field or activity,	4,	4
+preen,	dress or groom with elaborate care,	4,	5
+largesse,	liberality in bestowing gifts,	4,	8
+retentive,	good at remembering,	4,	9
+unconscionable,	greatly exceeding bounds of reason or moderation,	4,	14
+badinage,	frivolous banter,	4,	8
+insensate,	devoid of feeling and consciousness and animation,	4,	9
+sherbet,	a frozen dessert made primarily of fruit juice and sugar,	4,	7
+beatific,	resembling or befitting an angel or saint,	4,	8
+bemuse,	cause to be confused emotionally,	4,	6
+microcosm,	a miniature model of something,	4,	9
+factitious,	not produced by natural forces artificial or fake,	4,	10
+gestate,	develop in the mind have the idea for,	4,	7
+traduce,	speak unfavorably about,	4,	7
+sextant,	an instrument for measuring angular distance,	4,	7
+coiffure,	the arrangement of the hair,	4,	8
+malleable,	easily influenced,	4,	9
+rococo,	having excessive asymmetrical ornamentation,	4,	6
+fructify,	become productive or fruitful,	4,	8
+nihilist,	someone who rejects all theories of morality,	4,	8
+ellipsis,	a mark indicating that words have been omitted,	4,	8
+accolade,	a tangible symbol signifying approval or distinction,	4,	8
+codicil,	a supplement to a will,	4,	7
+roil,	be agitated,	4,	4
+grandiloquent,	lofty in style,	4,	13
+inconsequential,	lacking worth or importance,	4,	15
+effervescence,	the property of giving off bubbles,	4,	13
+stultify,	deprive of strength or efficiency make useless or worthless,	4,	8
+tureen,	large deep serving dish with a cover,	4,	6
+pellucid,	transparently clear easily understandable,	4,	8
+euphony,	any pleasing and harmonious sounds,	4,	7
+apocryphal,	being of questionable authenticity,	4,	10
+veracious,	precisely accurate,	4,	9
+pendulous,	hanging loosely or bending downward,	4,	9
+exegesis,	an explanation or critical interpretation,	4,	8
+effluvium,	a foulsmelling outflow or vapor,	4,	9
+apposite,	being of striking appropriateness and pertinence,	4,	8
+viscous,	having the sticky properties of an adhesive,	4,	7
+misanthrope,	someone who dislikes people in general,	4,	11
+vintner,	someone who makes wine,	4,	7
+halcyon,	idyllically calm and peaceful suggesting happy tranquility,	4,	7
+anthropomorphic,	suggesting human features for animals or inanimate things,	4,	15
+turgid,	ostentatiously lofty in style,	4,	6
+malaise,	a feeling of mild sickness or depression,	4,	7
+polemical,	of or involving dispute or controversy,	4,	9
+gadfly,	a persistently annoying person,	4,	6
+atavism,	a reappearance of an earlier characteristic,	4,	7
+contusion,	an injury in which the skin is not broken,	4,	9
+parsimonious,	excessively unwilling to spend,	4,	12
+dulcet,	pleasing to the ear,	4,	6
+reprise,	a repetition of a short musical passage,	4,	7
+anodyne,	capable of relieving pain,	4,	7
+bemused,	perplexed by many conflicting situations or statements,	4,	7

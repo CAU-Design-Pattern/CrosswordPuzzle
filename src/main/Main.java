@@ -26,9 +26,6 @@ public class Main {
     	// 단어 등록 화면
     	WordRegistrationView wordRegistrationView = new WordRegistrationView();
     	
-    	// 오답 노트 화면
-    	ReviewNoteView reviewNoteView = new ReviewNoteView();
-        
     	new Controller(
         	titleView,
         	signUpView,
@@ -36,8 +33,7 @@ public class Main {
         	gameLevelView,
         	gameView,
         	leaderboardView,
-        	wordRegistrationView,
-        	reviewNoteView
+        	wordRegistrationView
         );
     }
 }

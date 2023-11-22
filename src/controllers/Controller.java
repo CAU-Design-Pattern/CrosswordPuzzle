@@ -2,10 +2,7 @@ package controllers;
 
 import javax.swing.*;
 
-import models.CrosswordGameLevel1;
-import models.CrosswordGameLevel2;
-import models.CrosswordGameLevel3;
-import models.GameTimer;
+import models.*;
 import views.*;
 import java.awt.*;
 
@@ -21,8 +18,7 @@ public final class Controller {
     	GameLevelView gameLevelView,
     	GameView gameView,
    		LeaderboardView leaderboardView,
-   		WordRegistrationView wordRegistrationView, 
-    	ReviewNoteView reviewNoteView)
+   		WordRegistrationView wordRegistrationView)
     {
         frame = new JFrame();
         cardLayout = new CardLayout();
@@ -34,7 +30,6 @@ public final class Controller {
         panel.add(gameView, "gameView");
         panel.add(leaderboardView, "leaderboardView");
         panel.add(wordRegistrationView, "wordRegistrationView");
-        panel.add(reviewNoteView, "reviewNoteView");
         frame.add(panel);
 
         cardLayout.show(panel, "titleView");
@@ -80,10 +75,6 @@ public final class Controller {
         	cardLayout.show(panel, "wordRegistrationView");
         });
         
-        homeView.getReviewNoteButton().addActionListener(e -> {
-        	cardLayout.show(panel, "reviewNoteView");
-        });
-        
         gameLevelView.getBackButton().addActionListener(e -> {
         	cardLayout.show(panel, "homeView");
         });
@@ -126,10 +117,6 @@ public final class Controller {
         
         wordRegistrationView.getRegistrationButton().addActionListener(e -> {
         	// TODO
-        });
-        
-        reviewNoteView.getBackButton().addActionListener(e -> {
-        	cardLayout.show(panel, "homeView");
         });
     }
 }

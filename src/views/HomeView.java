@@ -11,7 +11,7 @@ public class HomeView extends JPanel {
     // HomeView 의 Height
     private static final int HEIGHT = 700;
     
-    // HomeView 의 5개의 버튼: 로그 아웃, 게임 시작, 리더보드, 단어 등록, 오답 노트
+    // HomeView 의 4개의 버튼: 로그 아웃, 게임 시작, 리더보드, 단어 등록
     private JButton[] buttons;
     
     // 화면 이미지
@@ -21,8 +21,8 @@ public class HomeView extends JPanel {
     public HomeView() {
     	Font font = new Font("Serif", Font.BOLD, 25);
 
-        buttons = new JButton[5];
-        for (int i = 0; i < 5; i++) {
+        buttons = new JButton[4];
+        for (int i = 0; i < buttons.length; i++) {
             buttons[i] = new JButton();
             buttons[i].setContentAreaFilled(false);
             buttons[i].setBorder(new LineBorder(Color.WHITE, 2));
@@ -33,13 +33,11 @@ public class HomeView extends JPanel {
         buttons[0].setText("Sign Out");
         buttons[0].setBounds(1180, 20, 200, 80);
         buttons[1].setText("Start Game");
-        buttons[1].setBounds(550, 160, 300, 80);
+        buttons[1].setBounds(550, 210, 300, 80);
         buttons[2].setText("Leaderboard");
-        buttons[2].setBounds(550, 260, 300, 80);
+        buttons[2].setBounds(550, 310, 300, 80);
         buttons[3].setText("Add New Words");
-        buttons[3].setBounds(550, 360, 300, 80);
-        buttons[4].setText("Review Note");
-        buttons[4].setBounds(550, 460, 300, 80);
+        buttons[3].setBounds(550, 410, 300, 80);
         
         image = new JLabel();
     	icon = new ImageIcon("resources/background.jpg");
@@ -66,9 +64,5 @@ public class HomeView extends JPanel {
     
     public JButton getWordRegistrationButton() {
     	return buttons[3];
-    }
-    
-    public JButton getReviewNoteButton() {
-    	return buttons[4];
     }
 }

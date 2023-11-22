@@ -1,7 +1,6 @@
 package factory;
 
 import java.io.IOException;
-import java.util.List;
 import com.holub.database.Database;
 import com.holub.text.ParseFailure;
 import connector.DatabaseConnector;

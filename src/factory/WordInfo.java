@@ -12,7 +12,7 @@ public class WordInfo {
 	}
 	
 	public WordInfo() {
-		this('@', " ", " ");
+		this('*', " ", " ");
 	}
 	
 	public char getLetter() {

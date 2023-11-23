@@ -226,7 +226,7 @@ public class GameView extends JPanel implements Observer {
     	
     	for (int i = 0; i < board.length; i++) {
     		for (int j = 0; j < board[0].length; j++) {
-    			if (board[i][j].getLetter() != '@') {
+    			if (board[i][j].getLetter() != '*') {
     				JTextField textField = new JTextField(" ");
     				textField.setDocument(new LengthRestrictedDocument(1));
     				textField.setHorizontalAlignment(JTextField.CENTER);

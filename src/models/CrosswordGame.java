@@ -42,7 +42,7 @@ public abstract class CrosswordGame extends Observable {
 	}
 	
 	public void startGame() {
-		gameTimer.setTime(180); // 180 seconds = 3 minutes
+		gameTimer.setTime(300); // 300 seconds = 5 minutes
 		timerThread = new Thread(gameTimer);
 		timerThread.start();
 	}

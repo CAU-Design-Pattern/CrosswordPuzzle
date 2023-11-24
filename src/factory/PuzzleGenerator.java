@@ -149,7 +149,7 @@ public class PuzzleGenerator {
 				}
 				
 				wordPlacementStrategy = WordPlacementStrategy.ACROSS;
-				word = wordService.getRandomWord(board[10][10].getLetter(), 2, 7);
+				word = wordService.getRandomWord(board[10][10].getLetter(), 1, 7);
 				str = word.getWord();
 				for (int i = 0; i < word.getLength(); i++) {
 					board[i + 10][10].setLetter(str.charAt(i));

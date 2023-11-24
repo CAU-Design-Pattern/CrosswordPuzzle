@@ -200,7 +200,7 @@ public class PuzzleGenerator {
 				x = 15;
 				y = 5;
 				wordPlacementStrategy = WordPlacementStrategy.ACROSS;
-				word = wordService.getRandomWord(board[15][5].getLetter(), 4, 8);
+				word = wordService.getRandomWord(board[15][5].getLetter(), 4, 4);
 				str = word.getWord();
 				for (int i = 0; i < word.getLength(); i++) {
 					board[i + 12][5].setLetter(str.charAt(i));
@@ -211,10 +211,24 @@ public class PuzzleGenerator {
 					}
 				}
 				
+				x = 15;
+				y = 4;
+				wordPlacementStrategy = WordPlacementStrategy.ACROSS;
+				word = wordService.getRandomWord(board[15][5].getLetter(), 1, 5);
+				str = word.getWord();
+				for (int i = 0; i < word.getLength(); i++) {
+					board[i + 15][4].setLetter(str.charAt(i));
+					if (wordPlacementStrategy == WordPlacementStrategy.ACROSS) {
+						board[i + 15][4].setAcrossDesc(word.getDesc());
+					} else {
+						board[i + 15][4].setDownDesc(word.getDesc());
+					}
+				}
+				
 				x = 12;
 				y = 5;
 				wordPlacementStrategy = WordPlacementStrategy.DOWN;
-				word = wordService.getRandomWord(board[12][5].getLetter(), 4, 7);
+				word = wordService.getRandomWord(board[12][5].getLetter(), 4, 4);
 				str = word.getWord();
 				for (int i = 0; i < word.getLength(); i++) {
 					board[12][i + 2].setLetter(str.charAt(i));
@@ -222,6 +236,20 @@ public class PuzzleGenerator {
 						board[12][i + 2].setAcrossDesc(word.getDesc());
 					} else {
 						board[12][i + 2].setDownDesc(word.getDesc());
+					}
+				}
+				
+				x = 13;
+				y = 5;
+				wordPlacementStrategy = WordPlacementStrategy.DOWN;
+				word = wordService.getRandomWord(board[13][5].getLetter(), 1, 4);
+				str = word.getWord();
+				for (int i = 0; i < word.getLength(); i++) {
+					board[13][i + 5].setLetter(str.charAt(i));
+					if (wordPlacementStrategy == WordPlacementStrategy.ACROSS) {
+						board[13][i + 5].setAcrossDesc(word.getDesc());
+					} else {
+						board[13][i + 5].setDownDesc(word.getDesc());
 					}
 				}
 				
@@ -240,16 +268,16 @@ public class PuzzleGenerator {
 				}
 				
 				x = 19;
-				y = 5;
+				y = 4;
 				wordPlacementStrategy = WordPlacementStrategy.DOWN;
-				word = wordService.getRandomWord(board[19][5].getLetter(), 1, 5);
+				word = wordService.getRandomWord(board[19][4].getLetter(), 1, 6);
 				str = word.getWord();
 				for (int i = 0; i < word.getLength(); i++) {
-					board[19][i + 5].setLetter(str.charAt(i));
+					board[19][i + 4].setLetter(str.charAt(i));
 					if (wordPlacementStrategy == WordPlacementStrategy.ACROSS) {
-						board[19][i + 5].setAcrossDesc(word.getDesc());
+						board[19][i + 4].setAcrossDesc(word.getDesc());
 					} else {
-						board[19][i + 5].setDownDesc(word.getDesc());
+						board[19][i + 4].setDownDesc(word.getDesc());
 					}
 				}
 			} catch (Exception e) {

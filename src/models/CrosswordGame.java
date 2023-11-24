@@ -38,7 +38,13 @@ public abstract class CrosswordGame extends Observable {
 		 * TODO: DB로부터 단어를 받아서 보드 생성하기
 		 */
 		
-		PuzzleGenerator.placeWords(board);
+		if (board.length == 20)
+			PuzzleGenerator.placeWords(board);
+		else if (board.length == 30) {
+			PuzzleGenerator.placeWordsLevel2(board);
+		} else {
+			PuzzleGenerator.placeWordsLevel3(board);
+		}
 	}
 	
 	public void startGame() {

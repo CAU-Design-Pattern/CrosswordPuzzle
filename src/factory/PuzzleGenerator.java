@@ -185,14 +185,14 @@ public class PuzzleGenerator {
 				}
 				
 				wordPlacementStrategy = WordPlacementStrategy.DOWN;
-				word = wordService.getRandomWord(board[12][5].getLetter(), 5, 7);
+				word = wordService.getRandomWord(board[12][5].getLetter(), 4, 7);
 				str = word.getWord();
 				for (int i = 0; i < word.getLength(); i++) {
-					board[12][i + 1].setLetter(str.charAt(i));
+					board[12][i + 2].setLetter(str.charAt(i));
 					if (wordPlacementStrategy == WordPlacementStrategy.ACROSS) {
-						board[12][i + 1].setAcrossDesc(word.getDesc());
+						board[12][i + 2].setAcrossDesc(word.getDesc());
 					} else {
-						board[12][i + 1].setDownDesc(word.getDesc());
+						board[12][i + 2].setDownDesc(word.getDesc());
 					}
 				}
 				
@@ -234,5 +234,169 @@ public class PuzzleGenerator {
 				}
 			}
 		}	
+	}
+	
+	public static void placeWordsLevel2(WordInfo[][] board) {
+		placeWords(board);
+		
+		Database db;
+		try {
+			DatabaseConnector dbConnector = DatabaseConnector.getInstance();
+			db = dbConnector.getDatabase();
+			db.dump();
+		} catch (IOException e) {
+			System.out.println("[DB Connection Error]");
+			e.printStackTrace();
+			db = null;
+		} catch (ParseFailure e) {
+			e.printStackTrace();
+			db = null;
+		}
+		
+		WordPlacementStrategy wordPlacementStrategy = WordPlacementStrategy.ACROSS;
+		if (db != null) {
+			WordService wordService = new WordService(new WordRepository(db));
+			
+			try {
+				wordPlacementStrategy = WordPlacementStrategy.ACROSS;
+				Word word = wordService.getRandomWord(board[19][7].getLetter(), 1, 8);
+				String str = word.getWord();
+				for (int i = 0; i < word.getLength(); i++) {
+					board[i + 19][7].setLetter(str.charAt(i));
+					if (wordPlacementStrategy == WordPlacementStrategy.ACROSS) {
+						board[i + 19][7].setAcrossDesc(word.getDesc());
+					} else {
+						board[i + 19][7].setDownDesc(word.getDesc());
+					}
+				}
+				
+				wordPlacementStrategy = WordPlacementStrategy.DOWN;
+				word = wordService.getRandomWord(board[21][7].getLetter(), 1, 6);
+				str = word.getWord();
+				for (int i = 0; i < word.getLength(); i++) {
+					board[21][i + 7].setLetter(str.charAt(i));
+					if (wordPlacementStrategy == WordPlacementStrategy.ACROSS) {
+						board[21][i + 7].setAcrossDesc(word.getDesc());
+					} else {
+						board[21][i + 7].setDownDesc(word.getDesc());
+					}
+				}
+				
+				wordPlacementStrategy = WordPlacementStrategy.ACROSS;
+				word = wordService.getRandomWord(board[21][12].getLetter(), 2, 4);
+				str = word.getWord();
+				for (int i = 0; i < word.getLength(); i++) {
+					board[i + 20][12].setLetter(str.charAt(i));
+					if (wordPlacementStrategy == WordPlacementStrategy.ACROSS) {
+						board[i + 20][12].setAcrossDesc(word.getDesc());
+					} else {
+						board[i + 20][12].setDownDesc(word.getDesc());
+					}
+				}
+				
+				wordPlacementStrategy = WordPlacementStrategy.DOWN;
+				word = wordService.getRandomWord(board[24][7].getLetter(), 5, 8);
+				str = word.getWord();
+				for (int i = 0; i < word.getLength(); i++) {
+					board[24][i + 3].setLetter(str.charAt(i));
+					if (wordPlacementStrategy == WordPlacementStrategy.ACROSS) {
+						board[24][i + 3].setAcrossDesc(word.getDesc());
+					} else {
+						board[24][i + 3].setDownDesc(word.getDesc());
+					}
+				}
+				
+				wordPlacementStrategy = WordPlacementStrategy.ACROSS;
+				word = wordService.getRandomWord(board[24][4].getLetter(), 4, 4);
+				str = word.getWord();
+				for (int i = 0; i < word.getLength(); i++) {
+					board[i + 21][4].setLetter(str.charAt(i));
+					if (wordPlacementStrategy == WordPlacementStrategy.ACROSS) {
+						board[i + 21][4].setAcrossDesc(word.getDesc());
+					} else {
+						board[i + 21][4].setDownDesc(word.getDesc());
+					}
+				}
+				
+				wordPlacementStrategy = WordPlacementStrategy.ACROSS;
+				word = wordService.getRandomWord(board[22][4].getLetter(), 4, 5);
+				str = word.getWord();
+				for (int i = 0; i < word.getLength(); i++) {
+					board[22][i + 1].setLetter(str.charAt(i));
+					if (wordPlacementStrategy == WordPlacementStrategy.ACROSS) {
+						board[22][i + 1].setAcrossDesc(word.getDesc());
+					} else {
+						board[22][i + 1].setDownDesc(word.getDesc());
+					}
+				}
+				
+				wordPlacementStrategy = WordPlacementStrategy.ACROSS;
+				word = wordService.getRandomWord(board[22][1].getLetter(), 1, 8);
+				str = word.getWord();
+				for (int i = 0; i < word.getLength(); i++) {
+					board[i + 22][1].setLetter(str.charAt(i));
+					if (wordPlacementStrategy == WordPlacementStrategy.ACROSS) {
+						board[i + 22][1].setAcrossDesc(word.getDesc());
+					} else {
+						board[i + 22][1].setDownDesc(word.getDesc());
+					}
+				}
+				
+				wordPlacementStrategy = WordPlacementStrategy.DOWN;
+				word = wordService.getRandomWord(board[29][1].getLetter(), 1, 12);
+				str = word.getWord();
+				for (int i = 0; i < word.getLength(); i++) {
+					board[29][i + 1].setLetter(str.charAt(i));
+					if (wordPlacementStrategy == WordPlacementStrategy.ACROSS) {
+						board[29][i + 1].setAcrossDesc(word.getDesc());
+					} else {
+						board[29][i + 1].setDownDesc(word.getDesc());
+					}
+				}
+				
+				wordPlacementStrategy = WordPlacementStrategy.ACROSS;
+				word = wordService.getRandomWord(board[24][10].getLetter(), 1, 4);
+				str = word.getWord();
+				for (int i = 0; i < word.getLength(); i++) {
+					board[i + 24][10].setLetter(str.charAt(i));
+					if (wordPlacementStrategy == WordPlacementStrategy.ACROSS) {
+						board[i + 24][10].setAcrossDesc(word.getDesc());
+					} else {
+						board[i + 24][10].setDownDesc(word.getDesc());
+					}
+				}
+				
+				wordPlacementStrategy = WordPlacementStrategy.DOWN;
+				word = wordService.getRandomWord(board[27][1].getLetter(), 1, 6);
+				str = word.getWord();
+				for (int i = 0; i < word.getLength(); i++) {
+					board[27][i + 1].setLetter(str.charAt(i));
+					if (wordPlacementStrategy == WordPlacementStrategy.ACROSS) {
+						board[27][i + 1].setAcrossDesc(word.getDesc());
+					} else {
+						board[27][i + 1].setDownDesc(word.getDesc());
+					}
+				}
+			} catch (IOException | ParseFailure e) {
+				e.printStackTrace();
+			}
+		}
+			
+		for (int i = 0; i < board[0].length; i++) {
+			System.out.println();
+			for (int j = 0; j < board.length; j++) {
+				if (board[j][i] == null){
+					System.out.print(" *");
+				} else {
+					System.out.print(" " + board[j][i].getLetter());
+				}
+			}
+		}
+	}
+	
+	public static void placeWordsLevel3(WordInfo[][] board) {
+		placeWordsLevel2(board);
+		
+		// TODO
 	}
 }

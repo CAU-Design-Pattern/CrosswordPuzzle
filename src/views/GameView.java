@@ -5,6 +5,7 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.IOException;
 import java.util.Observable;
 import java.util.Observer;
 import javax.swing.*;
@@ -12,8 +13,16 @@ import javax.swing.border.BevelBorder;
 import javax.swing.border.LineBorder;
 import javax.swing.text.*;
 
+import com.holub.database.Database;
+import com.holub.text.ParseFailure;
+
+import connector.DatabaseConnector;
 import factory.WordInfo;
 import models.*;
+import repository.RankRepository;
+import repository.WordRepository;
+import service.RankService;
+import service.WordService;
 import util.LengthRestrictedDocument;
 
 public class GameView extends JPanel implements Observer {
@@ -296,6 +305,29 @@ public class GameView extends JPanel implements Observer {
     	}
     	int score = crosswordGame.getResult(answer);
     	
+    	Database db;
+		try {
+			DatabaseConnector dbConnector = DatabaseConnector.getInstance();
+			db = dbConnector.getDatabase();
+			db.dump();
+		} catch (IOException e) {
+			System.out.println("[DB Connection Error]");
+			e.printStackTrace();
+			db = null;
+		} catch (ParseFailure e) {
+			e.printStackTrace();
+			db = null;
+		}
+		
+		if (db != null) {
+			RankService rankService = new RankService(new RankRepository(db));
+			try {
+				//rankService.saveRank("TEST20231126", score);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
     	JOptionPane.showMessageDialog(new JFrame(), "Your Score: " + score);
     }
     

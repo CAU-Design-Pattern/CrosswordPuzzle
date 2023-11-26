@@ -9,10 +9,11 @@ import com.holub.text.ParseFailure;
 
 import connector.DatabaseConnector;
 import dto.Word;
-import exception.UnsupportedExtensionException;
-import factory.WordPlacementStrategy;
+import exception.UniqueFailException;
 import models.*;
+import repository.AccountRepository;
 import repository.WordRepository;
+import service.AccountService;
 import service.WordService;
 import views.*;
 import java.awt.*;
@@ -59,6 +60,7 @@ public final class Controller {
         });
         
         titleView.getSignUpButton().addActionListener(e -> {
+        	signUpView.clear();
         	cardLayout.show(panel,  "signUpView");
         });
         
@@ -66,8 +68,45 @@ public final class Controller {
         	cardLayout.show(panel,  "titleView");
         });
         
-        signUpView.getSignUpButton().addActionListener(e -> {
-        	// TODO
+        signUpView.getSignUpButton().addActionListener(actionEvent -> {
+        	String[] accountData = signUpView.getAccountData();
+        	
+        	if (accountData[0].isEmpty() || accountData[1].isEmpty()) {
+        		JOptionPane.showMessageDialog(new JFrame(), "Please enter ID and password.");
+        		return;
+        	}
+        	
+        	Database db;
+    		try {
+    			DatabaseConnector dbConnector = DatabaseConnector.getInstance();
+    			db = dbConnector.getDatabase();
+    			db.dump();
+    		} catch (IOException e) {
+    			System.out.println("[DB Connection Error]");
+    			e.printStackTrace();
+    			db = null;
+    		} catch (ParseFailure e) {
+    			e.printStackTrace();
+    			db = null;
+    		}
+    		
+    		if (db != null) {
+    			AccountService accountService = new AccountService(new AccountRepository(db));
+    			try {
+    				accountService.signUp(accountData[0], accountData[1]);
+    				JOptionPane.showMessageDialog(new JFrame(), "Successfully signed up");
+    				cardLayout.show(panel, "titleView");
+    			} catch (UniqueFailException e) {
+    				JOptionPane.showMessageDialog(new JFrame(), "This ID already exists.");
+    				signUpView.clear();
+    			} catch (Exception e) {
+    				JOptionPane.showMessageDialog(new JFrame(), "Failed to sign up");
+    				signUpView.clear();
+    			}
+    		} else {
+    			JOptionPane.showMessageDialog(new JFrame(), "Failed to sign up");
+    			signUpView.clear();
+    		}
         });
         
         homeView.getSignOutButton().addActionListener(e -> {
@@ -112,7 +151,6 @@ public final class Controller {
         });
         
         gameView.getSubmitButton().addActionListener(e -> {
-        	// TODO
         	gameView.stopGame();
         	cardLayout.show(panel, "homeView");
         });

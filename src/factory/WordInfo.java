@@ -4,15 +4,17 @@ public class WordInfo {
 	private char letter;
 	private String acrossDesc;
 	private String downDesc;
+	private int level;
 	
-	public WordInfo(char letter, String acrossDesc, String downDesc) {
+	public WordInfo(char letter, String acrossDesc, String downDesc, int level) {
 		this.letter = letter;
 		this.acrossDesc = acrossDesc;
 		this.downDesc = downDesc;
+		this.level = level;
 	}
 	
 	public WordInfo() {
-		this('*', " ", " ");
+		this('*', " ", " ", 0);
 	}
 	
 	public char getLetter() {
@@ -27,6 +29,10 @@ public class WordInfo {
 		return downDesc;
 	}
 	
+	public int getLevel() {
+		return level;
+	}
+	
 	public void setLetter(char letter) {
 		this.letter = letter;
 	}
@@ -37,5 +43,9 @@ public class WordInfo {
 	
 	public void setDownDesc(String downDesc) {
 		this.downDesc = downDesc;
+	}
+	
+	public void setLevel(int level) {
+		this.level = level;
 	}
 }

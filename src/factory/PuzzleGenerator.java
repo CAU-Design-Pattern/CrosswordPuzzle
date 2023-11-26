@@ -33,6 +33,7 @@ public class PuzzleGenerator {
 				String str = word.getWord();
 				for (int i = 0; i < word.getLength(); i++) {
 					board[i][0].setLetter(str.charAt(i));
+					board[i][0].setLevel(word.getLevel());
 					if (wordPlacementStrategy == WordPlacementStrategy.ACROSS) {
 						board[i][0].setAcrossDesc(word.getDesc());
 					} else {
@@ -45,6 +46,7 @@ public class PuzzleGenerator {
 				str = word.getWord();
 				for (int i = 0; i < word.getLength(); i++) {
 					board[1][i].setLetter(str.charAt(i));
+					board[1][i].setLevel(word.getLevel());
 					if (wordPlacementStrategy == WordPlacementStrategy.ACROSS) {
 						board[1][i].setAcrossDesc(word.getDesc());
 					} else {
@@ -57,6 +59,7 @@ public class PuzzleGenerator {
 				str = word.getWord();
 				for (int i = 0; i < word.getLength(); i++) {
 					board[i + 1][3].setLetter(str.charAt(i));
+					board[i + 1][3].setLevel(word.getLevel());
 					if (wordPlacementStrategy == WordPlacementStrategy.ACROSS) {
 						board[i + 1][3].setAcrossDesc(word.getDesc());
 					} else {
@@ -69,6 +72,7 @@ public class PuzzleGenerator {
 				str = word.getWord();
 				for (int i = 0; i < word.getLength(); i++) {
 					board[4][i + 3].setLetter(str.charAt(i));
+					board[4][i + 3].setLevel(word.getLevel());
 					if (wordPlacementStrategy == WordPlacementStrategy.ACROSS) {
 						board[4][i + 3].setAcrossDesc(word.getDesc());
 					} else {
@@ -81,6 +85,7 @@ public class PuzzleGenerator {
 				str = word.getWord();
 				for (int i = 0; i < word.getLength(); i++) {
 					board[i + 1][6].setLetter(str.charAt(i));
+					board[i + 1][6].setLevel(word.getLevel());
 					if (wordPlacementStrategy == WordPlacementStrategy.ACROSS) {
 						board[i + 1][6].setAcrossDesc(word.getDesc());
 					} else {
@@ -93,6 +98,7 @@ public class PuzzleGenerator {
 				str = word.getWord();
 				for (int i = 0; i < word.getLength(); i++) {
 					board[i + 4][8].setLetter(str.charAt(i));
+					board[i + 4][8].setLevel(word.getLevel());
 					if (wordPlacementStrategy == WordPlacementStrategy.ACROSS) {
 						board[i + 4][8].setAcrossDesc(word.getDesc());
 					} else {
@@ -105,6 +111,7 @@ public class PuzzleGenerator {
 				str = word.getWord();
 				for (int i = 0; i < word.getLength(); i++) {
 					board[2][i + 6].setLetter(str.charAt(i));
+					board[2][i + 6].setLevel(word.getLevel());
 					if (wordPlacementStrategy == WordPlacementStrategy.ACROSS) {
 						board[2][i + 6].setAcrossDesc(word.getDesc());
 					} else {
@@ -117,6 +124,7 @@ public class PuzzleGenerator {
 				str = word.getWord();
 				for (int i = 0; i < word.getLength(); i++) {
 					board[6][i + 8].setLetter(str.charAt(i));
+					board[6][i + 8].setLevel(word.getLevel());
 					if (wordPlacementStrategy == WordPlacementStrategy.ACROSS) {
 						board[6][i + 8].setAcrossDesc(word.getDesc());
 					} else {
@@ -129,6 +137,7 @@ public class PuzzleGenerator {
 				str = word.getWord();
 				for (int i = 0; i < word.getLength(); i++) {
 					board[i + 6][12].setLetter(str.charAt(i));
+					board[i + 6][12].setLevel(word.getLevel());
 					if (wordPlacementStrategy == WordPlacementStrategy.ACROSS) {
 						board[i + 6][12].setAcrossDesc(word.getDesc());
 					} else {
@@ -141,6 +150,7 @@ public class PuzzleGenerator {
 				str = word.getWord();
 				for (int i = 0; i < word.getLength(); i++) {
 					board[10][i + 5].setLetter(str.charAt(i));
+					board[10][i + 5].setLevel(word.getLevel());
 					if (wordPlacementStrategy == WordPlacementStrategy.ACROSS) {
 						board[10][i + 5].setAcrossDesc(word.getDesc());
 					} else {
@@ -153,6 +163,7 @@ public class PuzzleGenerator {
 				str = word.getWord();
 				for (int i = 0; i < word.getLength(); i++) {
 					board[i + 10][10].setLetter(str.charAt(i));
+					board[i + 10][10].setLevel(word.getLevel());
 					if (wordPlacementStrategy == WordPlacementStrategy.ACROSS) {
 						board[i + 10][10].setAcrossDesc(word.getDesc());
 					} else {
@@ -165,6 +176,7 @@ public class PuzzleGenerator {
 				str = word.getWord();
 				for (int i = 0; i < word.getLength(); i++) {
 					board[15][i + 4].setLetter(str.charAt(i));
+					board[15][i + 4].setLevel(word.getLevel());
 					if (wordPlacementStrategy == WordPlacementStrategy.ACROSS) {
 						board[15][i + 4].setAcrossDesc(word.getDesc());
 					} else {
@@ -177,6 +189,7 @@ public class PuzzleGenerator {
 				str = word.getWord();
 				for (int i = 0; i < word.getLength(); i++) {
 					board[i + 12][5].setLetter(str.charAt(i));
+					board[i + 12][5].setLevel(word.getLevel());
 					if (wordPlacementStrategy == WordPlacementStrategy.ACROSS) {
 						board[i + 12][5].setAcrossDesc(word.getDesc());
 					} else {
@@ -189,6 +202,7 @@ public class PuzzleGenerator {
 				str = word.getWord();
 				for (int i = 0; i < word.getLength(); i++) {
 					board[i + 15][4].setLetter(str.charAt(i));
+					board[i + 15][4].setLevel(word.getLevel());
 					if (wordPlacementStrategy == WordPlacementStrategy.ACROSS) {
 						board[i + 15][4].setAcrossDesc(word.getDesc());
 					} else {
@@ -201,6 +215,7 @@ public class PuzzleGenerator {
 				str = word.getWord();
 				for (int i = 0; i < word.getLength(); i++) {
 					board[12][i + 2].setLetter(str.charAt(i));
+					board[12][i + 2].setLevel(word.getLevel());
 					if (wordPlacementStrategy == WordPlacementStrategy.ACROSS) {
 						board[12][i + 2].setAcrossDesc(word.getDesc());
 					} else {
@@ -213,6 +228,7 @@ public class PuzzleGenerator {
 				str = word.getWord();
 				for (int i = 0; i < word.getLength(); i++) {
 					board[13][i + 5].setLetter(str.charAt(i));
+					board[13][i + 5].setLevel(word.getLevel());
 					if (wordPlacementStrategy == WordPlacementStrategy.ACROSS) {
 						board[13][i + 5].setAcrossDesc(word.getDesc());
 					} else {
@@ -225,6 +241,7 @@ public class PuzzleGenerator {
 				str = word.getWord();
 				for (int i = 0; i < word.getLength(); i++) {
 					board[i + 10][2].setLetter(str.charAt(i));
+					board[i + 10][2].setLevel(word.getLevel());
 					if (wordPlacementStrategy == WordPlacementStrategy.ACROSS) {
 						board[i + 10][2].setAcrossDesc(word.getDesc());
 					} else {
@@ -237,6 +254,7 @@ public class PuzzleGenerator {
 				str = word.getWord();
 				for (int i = 0; i < word.getLength(); i++) {
 					board[19][i + 4].setLetter(str.charAt(i));
+					board[19][i + 4].setLevel(word.getLevel());
 					if (wordPlacementStrategy == WordPlacementStrategy.ACROSS) {
 						board[19][i + 4].setAcrossDesc(word.getDesc());
 					} else {
@@ -290,6 +308,7 @@ public class PuzzleGenerator {
 				String str = word.getWord();
 				for (int i = 0; i < word.getLength(); i++) {
 					board[i + 19][7].setLetter(str.charAt(i));
+					board[i + 19][7].setLevel(word.getLevel());
 					if (wordPlacementStrategy == WordPlacementStrategy.ACROSS) {
 						board[i + 19][7].setAcrossDesc(word.getDesc());
 					} else {
@@ -302,6 +321,7 @@ public class PuzzleGenerator {
 				str = word.getWord();
 				for (int i = 0; i < word.getLength(); i++) {
 					board[21][i + 7].setLetter(str.charAt(i));
+					board[21][i + 7].setLevel(word.getLevel());
 					if (wordPlacementStrategy == WordPlacementStrategy.ACROSS) {
 						board[21][i + 7].setAcrossDesc(word.getDesc());
 					} else {
@@ -314,6 +334,7 @@ public class PuzzleGenerator {
 				str = word.getWord();
 				for (int i = 0; i < word.getLength(); i++) {
 					board[i + 20][12].setLetter(str.charAt(i));
+					board[i + 20][12].setLevel(word.getLevel());
 					if (wordPlacementStrategy == WordPlacementStrategy.ACROSS) {
 						board[i + 20][12].setAcrossDesc(word.getDesc());
 					} else {
@@ -326,6 +347,7 @@ public class PuzzleGenerator {
 				str = word.getWord();
 				for (int i = 0; i < word.getLength(); i++) {
 					board[24][i + 3].setLetter(str.charAt(i));
+					board[24][i + 3].setLevel(word.getLevel());
 					if (wordPlacementStrategy == WordPlacementStrategy.ACROSS) {
 						board[24][i + 3].setAcrossDesc(word.getDesc());
 					} else {
@@ -338,6 +360,7 @@ public class PuzzleGenerator {
 				str = word.getWord();
 				for (int i = 0; i < word.getLength(); i++) {
 					board[i + 21][4].setLetter(str.charAt(i));
+					board[i + 21][4].setLevel(word.getLevel());
 					if (wordPlacementStrategy == WordPlacementStrategy.ACROSS) {
 						board[i + 21][4].setAcrossDesc(word.getDesc());
 					} else {
@@ -350,6 +373,7 @@ public class PuzzleGenerator {
 				str = word.getWord();
 				for (int i = 0; i < word.getLength(); i++) {
 					board[22][i + 1].setLetter(str.charAt(i));
+					board[22][i + 1].setLevel(word.getLevel());
 					if (wordPlacementStrategy == WordPlacementStrategy.ACROSS) {
 						board[22][i + 1].setAcrossDesc(word.getDesc());
 					} else {
@@ -362,6 +386,7 @@ public class PuzzleGenerator {
 				str = word.getWord();
 				for (int i = 0; i < word.getLength(); i++) {
 					board[i + 22][1].setLetter(str.charAt(i));
+					board[i + 22][1].setLevel(word.getLevel());
 					if (wordPlacementStrategy == WordPlacementStrategy.ACROSS) {
 						board[i + 22][1].setAcrossDesc(word.getDesc());
 					} else {
@@ -374,6 +399,7 @@ public class PuzzleGenerator {
 				str = word.getWord();
 				for (int i = 0; i < word.getLength(); i++) {
 					board[i + 24][10].setLetter(str.charAt(i));
+					board[i + 24][10].setLevel(word.getLevel());
 					if (wordPlacementStrategy == WordPlacementStrategy.ACROSS) {
 						board[i + 24][10].setAcrossDesc(word.getDesc());
 					} else {
@@ -386,6 +412,7 @@ public class PuzzleGenerator {
 				str = word.getWord();
 				for (int i = 0; i < word.getLength(); i++) {
 					board[27][i + 1].setLetter(str.charAt(i));
+					board[27][i + 1].setLevel(word.getLevel());
 					if (wordPlacementStrategy == WordPlacementStrategy.ACROSS) {
 						board[27][i + 1].setAcrossDesc(word.getDesc());
 					} else {
@@ -398,6 +425,7 @@ public class PuzzleGenerator {
 				str = word.getWord();
 				for (int i = 0; i < word.getLength(); i++) {
 					board[29][i + 1].setLetter(str.charAt(i));
+					board[29][i + 1].setLevel(word.getLevel());
 					if (wordPlacementStrategy == WordPlacementStrategy.ACROSS) {
 						board[29][i + 1].setAcrossDesc(word.getDesc());
 					} else {
@@ -409,19 +437,6 @@ public class PuzzleGenerator {
 				placeWordsLevel2(board);
 			}
 		}
-			
-		/*
-		for (int i = 0; i < board[0].length; i++) {
-			System.out.println();
-			for (int j = 0; j < board.length; j++) {
-				if (board[j][i] == null){
-					System.out.print(" *");
-				} else {
-					System.out.print(" " + board[j][i].getLetter());
-				}
-			}
-		}
-		*/
 	}
 	
 	public static void placeWordsLevel3(WordInfo[][] board) {
@@ -451,6 +466,7 @@ public class PuzzleGenerator {
 				String str = word.getWord();
 				for (int i = 0; i < word.getLength(); i++) {
 					board[i + 29][4].setLetter(str.charAt(i));
+					board[i + 29][4].setLevel(word.getLevel());
 					if (wordPlacementStrategy == WordPlacementStrategy.ACROSS) {
 						board[i + 29][4].setAcrossDesc(word.getDesc());
 					} else {
@@ -463,6 +479,7 @@ public class PuzzleGenerator {
 				str = word.getWord();
 				for (int i = 0; i < word.getLength(); i++) {
 					board[35][i + 4].setLetter(str.charAt(i));
+					board[35][i + 4].setLevel(word.getLevel());
 					if (wordPlacementStrategy == WordPlacementStrategy.ACROSS) {
 						board[35][i + 4].setAcrossDesc(word.getDesc());
 					} else {
@@ -475,6 +492,7 @@ public class PuzzleGenerator {
 				str = word.getWord();
 				for (int i = 0; i < word.getLength(); i++) {
 					board[i + 35][11].setLetter(str.charAt(i));
+					board[i + 35][11].setLevel(word.getLevel());
 					if (wordPlacementStrategy == WordPlacementStrategy.ACROSS) {
 						board[i + 35][11].setAcrossDesc(word.getDesc());
 					} else {
@@ -487,6 +505,7 @@ public class PuzzleGenerator {
 				str = word.getWord();
 				for (int i = 0; i < word.getLength(); i++) {
 					board[37][i + 4].setLetter(str.charAt(i));
+					board[37][i + 4].setLevel(word.getLevel());
 					if (wordPlacementStrategy == WordPlacementStrategy.ACROSS) {
 						board[37][i + 4].setAcrossDesc(word.getDesc());
 					} else {
@@ -499,6 +518,7 @@ public class PuzzleGenerator {
 				str = word.getWord();
 				for (int i = 0; i < word.getLength(); i++) {
 					board[i + 29][2].setLetter(str.charAt(i));
+					board[i + 29][2].setLevel(word.getLevel());
 					if (wordPlacementStrategy == WordPlacementStrategy.ACROSS) {
 						board[i + 29][2].setAcrossDesc(word.getDesc());
 					} else {
@@ -511,6 +531,7 @@ public class PuzzleGenerator {
 				str = word.getWord();
 				for (int i = 0; i < word.getLength(); i++) {
 					board[i + 29][6].setLetter(str.charAt(i));
+					board[i + 29][6].setLevel(word.getLevel());
 					if (wordPlacementStrategy == WordPlacementStrategy.ACROSS) {
 						board[i + 29][6].setAcrossDesc(word.getDesc());
 					} else {
@@ -523,6 +544,7 @@ public class PuzzleGenerator {
 				str = word.getWord();
 				for (int i = 0; i < word.getLength(); i++) {
 					board[i + 29][8].setLetter(str.charAt(i));
+					board[i + 29][8].setLevel(word.getLevel());
 					if (wordPlacementStrategy == WordPlacementStrategy.ACROSS) {
 						board[i + 29][8].setAcrossDesc(word.getDesc());
 					} else {
@@ -535,6 +557,7 @@ public class PuzzleGenerator {
 				str = word.getWord();
 				for (int i = 0; i < word.getLength(); i++) {
 					board[i + 29][10].setLetter(str.charAt(i));
+					board[i + 29][10].setLevel(word.getLevel());
 					if (wordPlacementStrategy == WordPlacementStrategy.ACROSS) {
 						board[i + 29][10].setAcrossDesc(word.getDesc());
 					} else {
@@ -547,6 +570,7 @@ public class PuzzleGenerator {
 				str = word.getWord();
 				for (int i = 0; i < word.getLength(); i++) {
 					board[i + 29][12].setLetter(str.charAt(i));
+					board[i + 29][12].setLevel(word.getLevel());
 					if (wordPlacementStrategy == WordPlacementStrategy.ACROSS) {
 						board[i + 29][12].setAcrossDesc(word.getDesc());
 					} else {
@@ -558,17 +582,5 @@ public class PuzzleGenerator {
 				placeWordsLevel3(board);
 			}
 		}
-			
-		for (int i = 0; i < board[0].length; i++) {
-			System.out.println();
-			for (int j = 0; j < board.length; j++) {
-				if (board[j][i] == null){
-					System.out.print(" *");
-				} else {
-					System.out.print(" " + board[j][i].getLetter());
-				}
-			}
-		}
-		
 	}
 }

@@ -19,12 +19,12 @@ public class GameLevelView extends JPanel {
     // 화면 이미지
     private final JLabel image;
     private final ImageIcon icon;
-
-    public GameLevelView() {
+    
+        public GameLevelView() {
     	Font font = new Font("Serif", Font.BOLD, 25);
 
         buttons = new JButton[4];
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < buttons.length; i++) {
             buttons[i] = new JButton();
             buttons[i].setContentAreaFilled(false);
             buttons[i].setBorder(new LineBorder(Color.WHITE, 2));
@@ -51,6 +51,7 @@ public class GameLevelView extends JPanel {
         setFocusable(true);
         setPreferredSize(new Dimension(WIDTH, HEIGHT));
     }
+    
     
     public JButton getBackButton() {
     	return buttons[0];

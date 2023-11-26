@@ -41,7 +41,6 @@ public class ReviewRepository {
             String sql = "insert into review values ('" + review.getId() + "', '" + review.getWord() + "', " + review.getCount() +")";
             database.execute(sql);
         }
-        database.dump();
     }
 
     private List<ReviewWord> transferReviewWordList(Cursor cursor){

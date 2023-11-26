@@ -113,7 +113,6 @@ public class WordRepository {
             return;
         String insertSql = "insert into word VALUES ('"+ word.getWord() +"',  '"+ word.getDesc() +"', "+ word.getLevel() +", "+ word.getLength() +")";
     	database.execute(insertSql);
-    	database.dump();
     }
 
     public void updateOneWord(Word word) throws IOException, ParseFailure {
@@ -121,7 +120,6 @@ public class WordRepository {
         database.execute(descSql);
         String levelSql = "update word set level = " + word.getLevel() +"  where word = \"" + word.getWord() + "\"" ;
         database.execute(levelSql);
-        database.dump();
     }
     
     public List<Word> transferWordList(Cursor cursor) {

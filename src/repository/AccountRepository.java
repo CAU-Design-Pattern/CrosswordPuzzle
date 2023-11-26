@@ -35,7 +35,6 @@ public class AccountRepository {
         if(existAccount != null) throw new UniqueFailException();
         String sql = "insert into account values ('" + account.getId() + "', '" + account.getPassword() +"', " + account.getLevel() +")";
         database.execute(sql);
-        database.dump();
     }
 
     private List<Account> transferAccountList(Cursor cursor){

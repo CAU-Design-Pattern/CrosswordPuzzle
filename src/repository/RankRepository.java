@@ -49,13 +49,11 @@ public class RankRepository {
     public void updateRank(Rank rank) throws IOException, ParseFailure {
         String sql = "update rank set score = " + rank.getScore() + " where id = \"" + rank.getId() + "\" AND playdate = \"" + rank.getPlaydate() + "\"";
         database.execute(sql);
-        database.dump();
     }
 
     public void insertRank(Rank rank) throws IOException, ParseFailure {
         String sql = "insert into rank VALUES ('" + rank.getId() + "',"+rank.getScore() + ",'" + rank.getPlaydate()+ "')";
         database.execute(sql);
-        database.dump();
     }
 
     private List<Rank> transferRankList(Cursor cursor){

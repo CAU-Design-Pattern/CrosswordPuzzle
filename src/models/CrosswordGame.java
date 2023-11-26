@@ -1,16 +1,8 @@
 package models;
 
-import java.io.IOException;
 import java.util.*;
-
-import com.holub.database.Database;
-import com.holub.text.ParseFailure;
-
-import connector.DatabaseConnector;
 import dto.Word;
-import factory.PuzzleGenerator;
 import factory.WordInfo;
-import repository.WordRepository;
 
 public abstract class CrosswordGame extends Observable {
 	protected String level;
@@ -33,19 +25,7 @@ public abstract class CrosswordGame extends Observable {
 	
 	public abstract void createBoard();
 	
-	public void placeWords() {
-		/**
-		 * TODO: DB로부터 단어를 받아서 보드 생성하기
-		 */
-		
-		if (board.length == 20)
-			PuzzleGenerator.placeWords(board);
-		else if (board.length == 30) {
-			PuzzleGenerator.placeWordsLevel2(board);
-		} else {
-			PuzzleGenerator.placeWordsLevel3(board);
-		}
-	}
+	public abstract void placeWords();
 	
 	public void startGame() {
 		gameTimer.setTime(300); // 300 seconds = 5 minutes
@@ -53,8 +33,18 @@ public abstract class CrosswordGame extends Observable {
 		timerThread.start();
 	}
 	
-	public void printResult() {
-		// TODO
+	public int getResult(char[][] answer) {
+		int score = 0;
+		for (int i = 0; i < answer.length; i++) {
+			for (int j = 0; j < answer[0].length; j++) {
+				char letter = board[i][j].getLetter();
+				if (letter != '*' && letter == answer[i][j]) {
+					score += board[i][j].getLevel();
+				}
+			}
+		}
+		
+		return score;
 	}
 	
 	public void stopGame() {

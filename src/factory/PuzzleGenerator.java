@@ -9,7 +9,7 @@ import repository.WordRepository;
 import service.WordService;
 
 public class PuzzleGenerator {
-	public static void placeWords(WordInfo[][] board) {
+	public static void placeWordsLevel1(WordInfo[][] board) {
 		Database db;
 		try {
 			DatabaseConnector dbConnector = DatabaseConnector.getInstance();
@@ -262,27 +262,13 @@ public class PuzzleGenerator {
 					}
 				}
 			} catch (Exception e) {
-				e.printStackTrace();
-				placeWords(board);
+				placeWordsLevel1(board);
 			}
 		}
-		
-		/*
-		for (int i = 0; i < board[0].length; i++) {
-			System.out.println();
-			for (int j = 0; j < board.length; j++) {
-				if (board[j][i] == null){
-					System.out.print(" *");
-				} else {
-					System.out.print(" " + board[j][i].getLetter());
-				}
-			}
-		}
-		*/
 	}
 	
 	public static void placeWordsLevel2(WordInfo[][] board) {
-		placeWords(board);
+		placeWordsLevel1(board);
 		
 		Database db;
 		try {
@@ -433,7 +419,6 @@ public class PuzzleGenerator {
 					}
 				}
 			} catch (Exception e) {
-				e.printStackTrace();
 				placeWordsLevel2(board);
 			}
 		}
@@ -578,7 +563,6 @@ public class PuzzleGenerator {
 					}
 				}
 			} catch (Exception e) {
-				e.printStackTrace();
 				placeWordsLevel3(board);
 			}
 		}

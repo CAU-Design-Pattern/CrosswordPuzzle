@@ -285,6 +285,18 @@ public class GameView extends JPanel implements Observer {
     
     public void stopGame() {
     	this.crosswordGame.stopGame();
+    	
+    	char[][] answer = new char[boardField.length][boardField[0].length];
+    	for (int i = 0; i < answer.length; i++) {
+    		for (int j = 0; j < answer[0].length; j++) {
+    			if (!boardField[i][j].getText().isEmpty()) {
+    				answer[i][j] = boardField[i][j].getText().charAt(0);
+    			}
+    		}
+    	}
+    	int score = crosswordGame.getResult(answer);
+    	
+    	JOptionPane.showMessageDialog(new JFrame(), "Your Score: " + score);
     }
     
     public JButton getHintButton() {
@@ -299,10 +311,16 @@ public class GameView extends JPanel implements Observer {
     @Override
 	public void update(Observable obs, Object arg) {
     	timeStampLabel.setText(gameTimer.getTimeStamp());
-    	
 		if (gameTimer.getTime() <= 0) {
-			// TODO: 게임 종료
-			System.out.println("게임 종료");
+			for (int i = 0; i < boardField.length; i++) {
+				for (int j = 0; j < boardField[0].length; j++) {
+					boardField[i][j].setEnabled(false);
+				}
+			}
+			crosswordGame.setHintCount(0);
+			hintButton.setText("0");
+			hintButton.setEnabled(false);
+			JOptionPane.showMessageDialog(new JFrame(), "Time Over!");
 		}
 	}
 }

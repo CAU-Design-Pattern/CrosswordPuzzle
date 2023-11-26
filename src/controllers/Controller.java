@@ -112,6 +112,7 @@ public final class Controller {
         });
         
         gameView.getSubmitButton().addActionListener(e -> {
+        	// TODO
         	gameView.stopGame();
         	cardLayout.show(panel, "homeView");
         });

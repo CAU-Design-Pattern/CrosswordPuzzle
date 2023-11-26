@@ -1,5 +1,6 @@
 package models;
 
+import factory.PuzzleGenerator;
 import factory.WordInfo;
 
 public class CrosswordGameLevel3 extends CrosswordGame {
@@ -12,5 +13,10 @@ public class CrosswordGameLevel3 extends CrosswordGame {
 				board[i][j] = new WordInfo();
 			}
 		}
+	}
+	
+	@Override
+	public void placeWords() {
+		PuzzleGenerator.placeWordsLevel3(board);
 	}
 }

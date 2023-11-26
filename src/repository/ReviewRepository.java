@@ -22,7 +22,7 @@ public class ReviewRepository {
 
 
     public List<ReviewWord> getReviewList(String id) throws IOException, ParseFailure {
-        String sql = "select * from review, word where review.word = word.word";
+        String sql = "select * from review, word where review.word = word.word AND review.id = '" + id + "'";
         Table table = database.execute(sql);
         Cursor cursor = table.rows();
 

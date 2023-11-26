@@ -9,6 +9,7 @@ import com.holub.text.ParseFailure;
 
 import connector.DatabaseConnector;
 import dto.Word;
+import exception.IncorrectPasswordException;
 import exception.UniqueFailException;
 import models.*;
 import repository.AccountRepository;
@@ -27,6 +28,7 @@ public final class Controller {
     public Controller(
     	TitleView titleView, 
     	SignUpView signUpView,
+    	SignInView signInView,
     	HomeView homeView,
     	GameLevelView gameLevelView,
     	GameView gameView,
@@ -38,6 +40,7 @@ public final class Controller {
         panel = new JPanel(cardLayout);
         panel.add(titleView, "titleView");
         panel.add(signUpView, "signUpView");
+        panel.add(signInView, "signInView");
         panel.add(homeView, "homeView");
         panel.add(gameLevelView, "gameLevelView");
         panel.add(gameView, "gameView");
@@ -55,8 +58,8 @@ public final class Controller {
         frame.setVisible(true);
         
         titleView.getSignInButton().addActionListener(e -> {
-        	// TODO: 로그인 logic
-        	cardLayout.show(panel, "homeView");
+        	signInView.clear();
+        	cardLayout.show(panel, "signInView");
         });
         
         titleView.getSignUpButton().addActionListener(e -> {
@@ -106,6 +109,47 @@ public final class Controller {
     		} else {
     			JOptionPane.showMessageDialog(new JFrame(), "Failed to sign up");
     			signUpView.clear();
+    		}
+        });
+        
+        signInView.getBackButton().addActionListener(e -> {
+        	cardLayout.show(panel, "titleView");
+        });
+        
+        signInView.getSignInButton().addActionListener(actionEvent -> {
+        	String[] accountData = signInView.getAccountData();
+        	
+        	if (accountData[0].isEmpty() || accountData[1].isEmpty()) {
+        		JOptionPane.showMessageDialog(new JFrame(), "Please enter ID and password.");
+        		return;
+        	}
+        	
+        	Database db;
+    		try {
+    			DatabaseConnector dbConnector = DatabaseConnector.getInstance();
+    			db = dbConnector.getDatabase();
+    			db.dump();
+    		} catch (IOException e) {
+    			System.out.println("[DB Connection Error]");
+    			e.printStackTrace();
+    			db = null;
+    		} catch (ParseFailure e) {
+    			e.printStackTrace();
+    			db = null;
+    		}
+    		
+    		if (db != null) {
+    			AccountService accountService = new AccountService(new AccountRepository(db));
+    			try {
+    				accountService.signIn(accountData[0], accountData[1]);
+    				cardLayout.show(panel, "homeView");
+    			} catch (Exception e) {
+    				JOptionPane.showMessageDialog(new JFrame(), "Failed to sign In");
+    				signInView.clear();
+    			}
+    		} else {
+    			JOptionPane.showMessageDialog(new JFrame(), "Failed to sign In");
+    			signInView.clear();
     		}
         });
         

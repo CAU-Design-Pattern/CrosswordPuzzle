@@ -11,6 +11,9 @@ public class Main {
     	// 회원가입 화면
     	SignUpView signUpView = new SignUpView();
     	
+    	// 로그인 화면
+    	SignInView signInView = new SignInView();
+    	
     	// 홈 화면
     	HomeView homeView = new HomeView();
     	
@@ -29,6 +32,7 @@ public class Main {
     	new Controller(
         	titleView,
         	signUpView,
+        	signInView,
         	homeView,
         	gameLevelView,
         	gameView,

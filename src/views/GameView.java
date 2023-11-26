@@ -17,6 +17,7 @@ import com.holub.database.Database;
 import com.holub.text.ParseFailure;
 
 import connector.DatabaseConnector;
+import dto.CurrentAccount;
 import factory.WordInfo;
 import models.*;
 import repository.RankRepository;
@@ -245,7 +246,6 @@ public class GameView extends JPanel implements Observer {
     				textField.addMouseListener(new MouseAdapter() {
     					@Override
     					public void mousePressed(MouseEvent e) {
-    						// TODO
     						int temp = 0;
     						if (crosswordGame.getLevel().equals("LEVEL 1")) {
     							temp = 300;
@@ -322,7 +322,8 @@ public class GameView extends JPanel implements Observer {
 		if (db != null) {
 			RankService rankService = new RankService(new RankRepository(db));
 			try {
-				//rankService.saveRank("TEST20231126", score);
+				CurrentAccount account = CurrentAccount.getInstance();
+				rankService.saveRank(account.getId(), score);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

@@ -8,6 +8,7 @@ import com.holub.database.Database;
 import com.holub.text.ParseFailure;
 
 import connector.DatabaseConnector;
+import dto.CurrentAccount;
 import dto.Word;
 import exception.IncorrectPasswordException;
 import exception.UniqueFailException;
@@ -143,6 +144,9 @@ public final class Controller {
     			try {
     				accountService.signIn(accountData[0], accountData[1]);
     				cardLayout.show(panel, "homeView");
+    				CurrentAccount account = CurrentAccount.getInstance();
+    				account.setId(accountData[0]);
+    				account.setPassword(accountData[1]);
     			} catch (Exception e) {
     				JOptionPane.showMessageDialog(new JFrame(), "Failed to sign In");
     				signInView.clear();
@@ -154,6 +158,9 @@ public final class Controller {
         });
         
         homeView.getSignOutButton().addActionListener(e -> {
+        	CurrentAccount account = CurrentAccount.getInstance();
+			account.setId("");
+			account.setPassword("");
         	cardLayout.show(panel, "titleView");
         });
         

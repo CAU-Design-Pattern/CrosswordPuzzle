@@ -10,7 +10,6 @@ import com.holub.text.ParseFailure;
 import connector.DatabaseConnector;
 import dto.CurrentAccount;
 import dto.Word;
-import exception.IncorrectPasswordException;
 import exception.UniqueFailException;
 import models.*;
 import repository.AccountRepository;
@@ -19,6 +18,8 @@ import service.AccountService;
 import service.WordService;
 import views.*;
 import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.IOException;
 
 public final class Controller {
@@ -37,6 +38,16 @@ public final class Controller {
    		WordRegistrationView wordRegistrationView)
     {
         frame = new JFrame();
+        frame.addWindowListener(new WindowAdapter() {
+        	@Override
+        	public void windowClosing(WindowEvent e) {
+        		try {
+					new Database().dump();
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
+        	}
+        });
         cardLayout = new CardLayout();
         panel = new JPanel(cardLayout);
         panel.add(titleView, "titleView");
